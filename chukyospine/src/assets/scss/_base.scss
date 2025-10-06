@@ -1,0 +1,38 @@
+@use "variables" as *;
+@use "mixins" as *;
+html {
+    // scroll-behavior: smooth!important;
+    margin: 0 !important;
+    padding: 0;
+    font-size: 10px !important;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    position: relative;
+    background-color: $color2;
+    color: $color1;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+// レイアウト
+.page-width {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.bold {
+    font-weight: 700;
+}

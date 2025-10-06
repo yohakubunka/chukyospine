@@ -1,0 +1,25 @@
+{
+  "name": "ejs-template",
+  "version": "1.0.0",
+  "description": "EJS-based landing page with hot reload and build system",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node build.js",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "chokidar": "^3.5.3",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "fs-extra": "^11.1.1",
+    "path": "^0.12.7"
+  },
+  "keywords": ["ejs", "sass", "hot-reload", "landing-page"],
+  "author": "",
+  "license": "MIT"
+}

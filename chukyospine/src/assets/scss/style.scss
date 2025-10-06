@@ -1,0 +1,25 @@
+// Import variables and mixins
+@use "reset";
+@use "variables" as *;
+@use "mixins" as *;
+@use "base" as *;
+
+header {
+    padding: 16px;
+    background-color: $color1;
+    color: $color2;
+    text-align: center;
+
+}
+
+main {
+    height: 400px;
+    text-align: center;
+}
+
+footer {
+    padding: 16px;
+    background-color: $color1;
+    color: $color2;
+    text-align: center;
+}

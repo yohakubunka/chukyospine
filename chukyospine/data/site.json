@@ -1,0 +1,31 @@
+{
+  "site": {
+    "title": "[サイトタイトル]",
+    "description": "[サイト説明文]",
+    "url": "https://example.com"
+  },
+  "review": [
+    {
+      "post": "2024.09.11",
+      "authorImage": "./images/review-user-img01.webp",
+      "star": 5,
+      "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+    },
+    {
+      "post": "2024.09.11",
+      "authorImage": "./images/review-user-img01.webp",
+      "star": 4,
+      "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+    }
+  ],
+  "title": {
+    "ja": "株式会社Example",
+    "en": "Example Inc.",
+    "zh": "Example公司"
+  },
+  "heading": {
+    "ja": "ようこそ！",
+    "en": "Welcome!",
+    "zh": "欢迎！"
+  }
+}

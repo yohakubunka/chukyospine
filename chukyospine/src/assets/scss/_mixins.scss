@@ -1,0 +1,303 @@
+@use 'variables' as *;
+
+//media query
+@mixin xxl {
+	@media screen and (max-width: $break-point_xxl) {
+		@content;
+	}
+}
+@mixin xl {
+	@media screen and (max-width: $break-point_xl) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media screen and (max-width: $break-point_lg) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media screen and (max-width: $break-point_md) {
+		@content;
+	}
+}
+
+@mixin sp {
+	@media screen and (max-width: $break-point_sp) {
+		@content;
+	}
+}
+
+@mixin xs {
+	@media screen and (max-width: $break-point_xs) {
+		@content;
+	}
+}
+
+
+// ----
+// * ex)
+//   @include media-max(横幅) {}
+//   @include media-min(横幅) {}
+// ----
+@mixin media-max($width) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}
+
+@mixin media-min($width) {
+	@media screen and (min-width: $width) {
+		@content;
+	}
+}
+
+/* --------------------------------  MIX IN  -------------------------------- */
+
+// 角丸ボタン
+// * ex) @include kadomaruBtn(文字サイズ, 文字色, 背景色, padding, radius)
+@mixin kadomaruBtn(
+	$font-size: 16px,
+	$text-color: $color1,
+	$bg-color: invert($text-color),
+	$padding: 0.65em 2em,
+	$radius: 1.4em
+) {
+	font-size: #{$font-size};
+	padding: #{$padding};
+	color: #{$text-color};
+	background-color: #{$bg-color};
+	border: solid 1px #{$bg-color};
+	border-radius: #{$radius};
+	transition: 0.25s;
+	&:hover {
+		color: #{$bg-color};
+		background-color: #{$text-color};
+		border: solid 1px #{$bg-color};
+	}
+}
+
+// 要素から溢れる文字を...と省略する
+// * ex) @include lines-truncate(省略する行)
+@mixin lines-truncate($lines: 1) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+}
+
+@mixin second-truncate($lines: 2) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+}
+
+// position:absolute一括設定
+// * ex) @include absolute(上, 右, 下, 左);
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+	position: absolute;
+	@if $top !=null {
+		top: $top;
+	}
+	@if $right !=null {
+		right: $right;
+	}
+	@if $bottom !=null {
+		bottom: $bottom;
+	}
+	@if $left !=null {
+		left: $left;
+	}
+}
+
+@mixin Arrow-Bottom {
+	width: 16px;
+	height: 8px;
+	background-image: url(../svg/common/accordion_arrow.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+// absolute center (X,Y)
+// * ex) @include absoluteCenter
+@mixin absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+// absolute center (Y)
+// * ex) @include absoluteCenterY
+@mixin absoluteCenterY {
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+// absolute center (X)
+// * ex) @include absoluteCenterX
+@mixin absoluteCenterX {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+}
+
+//flex
+// * ex) @include flex ()
+// trueとfalseを1と0にした。
+@mixin flex($justify: 0, $align: 0, $wrap: 0, $wrap_align: 0, $column: 0) {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	// justify-content水平方向揃え（第一引数）
+	@if $justify==start {
+		// 左揃え
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	} @else if $justify==end {
+		// 右揃え
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	} @else if $justify==center {
+		// 中央揃え
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	} @else if $justify==between {
+		// 両端配置
+		-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	} @else if $justify==around {
+		// 均等配置
+		-webkit-justify-content: space-around;
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+	}
+	// align-items垂直方向揃え（第二引数）
+	@if $align==start {
+		// 上揃え
+		-webkit-align-items: flex-start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+	} @else if $align==end {
+		// 下揃え
+		-webkit-align-items: flex-end;
+		-ms-flex-align: end;
+		align-items: flex-end;
+	} @else if $align==center {
+		// 中央揃え
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	} @else if $align==baseline {
+		// ベースライン
+		-webkit-align-items: baseline;
+		-ms-flex-align: baseline;
+		align-items: baseline;
+	} @else if $align==stretch {
+		// 高さ揃え
+		-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+	}
+	// flex-wrap子要素の折り返し設定（第三引数）
+	@if $wrap==nowrap {
+		// 折り返ししない
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+	} @else if $wrap==wrap {
+		// 上から下
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	} @else if $wrap==reverse {
+		// 下から上
+		-webkit-flex-wrap: wrap-reverse;
+		-ms-flex-wrap: wrap-reverse;
+		flex-wrap: wrap-reverse;
+	}
+	// align-content複数行設定（第四引数）
+	@if $wrap_align==start {
+		// 上揃え
+		-webkit-align-content: flex-start;
+		-ms-flex-line-pack: start;
+		align-content: flex-start;
+	} @else if $wrap_align==end {
+		// 下揃え
+		-webkit-align-content: flex-end;
+		-ms-flex-line-pack: end;
+		align-content: flex-end;
+	} @else if $wrap_align==center {
+		// 中央揃え
+		-webkit-align-content: center;
+		-ms-flex-line-pack: center;
+		align-content: center;
+	} @else if $wrap_align==between {
+		// 両端配置
+		-webkit-align-content: space-between;
+		-ms-flex-line-pack: justify;
+		align-content: space-between;
+	} @else if $wrap_align==around {
+		// 均等配置
+		-webkit-align-content: space-around;
+		-ms-flex-line-pack: distribute;
+		align-content: space-around;
+	} @else if $wrap_align==stretch {
+		// 高さ揃え
+		-webkit-align-content: stretch;
+		-ms-flex-line-pack: stretch;
+		align-content: stretch;
+	}
+	// 縦並び（第五引数）
+	@if $column==1 {
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+// ----
+// * ex)
+//   @include none-appearance;
+@mixin none-appearance {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none transparent;
+	background-clip: padding-box;
+	color: inherit;
+	font-size: inherit;
+	vertical-align: middle;
+	box-sizing: border-box;
+	&::-ms-clear {
+		display: none;
+	}
+	&::-ms-reveal {
+		display: none;
+	}
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+/* --------------------------------  MIX IN  -------------------------------- */
