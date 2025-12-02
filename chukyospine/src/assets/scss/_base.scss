@@ -1,5 +1,6 @@
-@use "variables"as *;
-@use "mixins"as *;
+@use "variables" as *;
+@use "mixins" as *;
+
 html {
     // scroll-behavior: smooth!important;
     margin: 0 !important;
@@ -14,7 +15,7 @@ html {
 body {
     position: relative;
     background-color: $color3;
-    color: $color1;
+    color: $color2;
     font-weight: 500;
     font-size: 1.6rem;
     letter-spacing: 0.01em;

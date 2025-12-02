@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_405" data-name="長方形 405" width="40" height="40" transform="translate(64.541 0.254)" fill="#333f69" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="hotel" transform="translate(-64.541 -0.254)" clip-path="url(#clip-path)">
+    <path id="パス_2340" data-name="パス 2340" d="M-2645.458-16893.021a15.745,15.745,0,0,1,15.727-15.727,15.748,15.748,0,0,1,15.726,15.727c0,13.7-15.726,24.273-15.726,24.273S-2645.458-16879.326-2645.458-16893.021Z" transform="translate(2714.273 16909)" fill="#63b67c"/>
+    <path id="パス_2339" data-name="パス 2339" d="M1.025,3.254V-10.021h2.68V-4.8H8.958v-5.225h2.68V3.254H8.958v-5.8H3.706v5.8Z" transform="translate(78.79 21.273)" fill="#fff"/>
+  </g>
+</svg>
