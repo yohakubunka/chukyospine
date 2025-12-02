@@ -3,14 +3,8 @@
 @use "variables" as *;
 @use "mixins" as *;
 @use "base" as *;
-
-header {
-    padding: 16px;
-    background-color: $color1;
-    color: $color2;
-    text-align: center;
-
-}
+@use "language-switcher" as *;
+@use "header" as *;
 
 main {
     height: 400px;

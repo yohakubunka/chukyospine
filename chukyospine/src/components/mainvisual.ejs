@@ -1,0 +1,43 @@
+<% const pickText = (obj) => { if (!obj) return ''; return obj[lang] || obj.ja
+|| Object.values(obj)[0] || ''; }; const head = pickText(site.mainVisualHead);
+const text = pickText(site.mainVisualText); const rightTitle =
+pickText(site.mainVisualTextRightTitle); const rightText =
+pickText(site.mainVisualTextRightText); const leftTitle =
+pickText(site.mainVisualTextLeftTitle); const leftText =
+pickText(site.mainVisualTextLeftText); const mainTitleSub =
+pickText(site.mainVisualMainTitleSub); const mainTitle =
+pickText(site.mainVisualMainTitle); %>
+
+    <div class="mainvisual">
+        <div class="mainvisual_left">
+            <p class="mainvisual_subtitle">
+                <%= head %>
+            </p>
+            <p class="mainvisual_text">
+                <%= text %>
+            </p>
+            <div class="mainvisual_panels">
+                <div class="mainvisual_panel">
+                    <p class="mainvisual_panel_title">
+                        <%= rightTitle %>
+                    </p>
+                    <p class="mainvisual_panel_text">
+                        <%= rightText %>
+                    </p>
+                </div>
+                <div class="mainvisual_panel">
+                    <p class="mainvisual_panel_title">
+                        <%= leftTitle %>
+                    </p>
+                    <p class="mainvisual_panel_text">
+                        <%= leftText %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mainvisual_right">
+            <p class="mainvisual_main_sub">
+                <%= mainTitleSub %>
+            </p>
+        </div>
+    </div>

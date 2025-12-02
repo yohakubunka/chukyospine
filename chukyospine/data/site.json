@@ -1,31 +1,70 @@
 {
-  "site": {
-    "title": "[サイトタイトル]",
-    "description": "[サイト説明文]",
-    "url": "https://example.com"
-  },
-  "review": [
-    {
-      "post": "2024.09.11",
-      "authorImage": "./images/review-user-img01.webp",
-      "star": 5,
-      "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+    "site": {
+        "title": "[サイトタイトル]",
+        "description": "[サイト説明文]",
+        "url": "https://example.com"
     },
-    {
-      "post": "2024.09.11",
-      "authorImage": "./images/review-user-img01.webp",
-      "star": 4,
-      "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+    "review": [{
+            "post": "2024.09.11",
+            "authorImage": "./images/review-user-img01.webp",
+            "star": 5,
+            "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+        },
+        {
+            "post": "2024.09.11",
+            "authorImage": "./images/review-user-img01.webp",
+            "star": 4,
+            "comment": "非常に良いクリニックです。\n眼の検査から診察まで全て親切丁寧にして頂きました。\nいつでも混んでるのも頷ける内容でした。目で困ったらこちらのクリニックで間違いなさそうです。"
+        }
+    ],
+    "title": {
+        "ja": "株式会社Example",
+        "en": "Example Inc.",
+        "zh": "Example公司"
+    },
+    "heading": {
+        "ja": "ようこそ！",
+        "en": "Welcome!",
+        "zh": "欢迎！"
+    },
+    "mainVisualHead": {
+        "ja": "これはメインビジュアルのテキストです。",
+        "en": "This is the text of the main visual.",
+        "zh": "全國首家實現\n“當日手術·當日出院”"
+    },
+    "mainVisualText": {
+        "ja": "",
+        "en": "",
+        "zh": "全國首作為全國第一家推行“日間脊椎內視鏡手術”的專科醫院，我們成功實現了當日手術，當日出院。\n患者術後即可恢復日常生活，減少住院負擔，更適合海外患者的就診需求。"
+    },
+    "mainVisualTextRightTitle": {
+        "ja": "",
+        "en": "",
+        "zh": "95%的康复率"
+    },
+    "mainVisualTextRightText": {
+        "ja": "",
+        "en": "",
+        "zh": "以早期發現與預防復發為目標、倡導醫師，患者，工作人員三方共同合作，推進以患者為中心的醫療過程。"
+    },
+    "mainVisualTextLeftTitle": {
+        "ja": "",
+        "en": "",
+        "zh": "日間微創治療方案"
+    },
+    "mainVisualTextLeftText": {
+        "ja": "",
+        "en": "",
+        "zh": "全國首家實現“當日手術·當日出院”全國首家實現“當日手術·當日出院”"
+    },
+    "mainVisualMainTitleSub": {
+        "ja": "",
+        "en": "",
+        "zh": "從手術到康復"
+    },
+    "mainVisualMainTitle": {
+        "ja": "",
+        "en": "",
+        "zh": "FROM SURGERY TO\nTREATMENT"
     }
-  ],
-  "title": {
-    "ja": "株式会社Example",
-    "en": "Example Inc.",
-    "zh": "Example公司"
-  },
-  "heading": {
-    "ja": "ようこそ！",
-    "en": "Welcome!",
-    "zh": "欢迎！"
-  }
 }

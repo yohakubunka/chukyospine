@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "variables"as *;
+@use "mixins"as *;
 html {
     // scroll-behavior: smooth!important;
     margin: 0 !important;
@@ -13,7 +13,7 @@ html {
 
 body {
     position: relative;
-    background-color: $color2;
+    background-color: $color3;
     color: $color1;
     font-weight: 500;
     font-size: 1.6rem;
@@ -26,6 +26,7 @@ img {
     max-width: 100%;
     display: block;
 }
+
 // レイアウト
 .page-width {
     max-width: 1280px;

@@ -12,6 +12,7 @@ const server = createServer(app);
 const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
+const DEFAULT_LANG = 'zh';
 
 // EJSの設定
 app.set('view engine', 'ejs');
@@ -20,7 +21,7 @@ app.set('views', path.join(__dirname, 'src/pages'));
 // 静的ファイルの配信
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
-app.use('/images', express.static(path.join(__dirname, 'src/assets/images')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // JSONデータを読み込む関数
 function loadSiteData() {
@@ -146,7 +147,7 @@ const siteData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'site.j
 // 言語ルート
 const langs = ['ja', 'en', 'zh'];
 langs.forEach(lang => {
-  const route = lang === 'ja' ? '/' : `/${lang}`;
+  const route = lang === DEFAULT_LANG ? '/' : `/${lang}`;
 
   // トップページ
   app.get(route, (req, res) => {

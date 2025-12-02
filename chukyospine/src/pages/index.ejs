@@ -2,47 +2,39 @@
 <html lang="<%= lang %>">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    <%= site.title %>
-  </title>
-  <meta name="description" content="<%= site.description %>" />
-  <!-- OGP（Open Graph Protocol） -->
-  <meta property="og:title" content="<%= site.title %>">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="<%= site.url %>">
-  <!-- <meta property="og:image" content="[画像のURL]"> -->
-  <meta property="og:site_name" content="<%= site.title %>">
-  <meta property="og:description" content="<%= site.description %>">
-  <meta property="og:locale" content="ja_JP">
-  <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= site.title %>
+    </title>
+    <meta name="description" content="<%= site.description %>" />
+    <!-- OGP（Open Graph Protocol） -->
+    <meta property="og:title" content="<%= site.title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= site.url %>" />
+    <!-- <meta property="og:image" content="[画像のURL]"> -->
+    <meta property="og:site_name" content="<%= site.title %>" />
+    <meta property="og:description" content="<%= site.description %>" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-  <!-- ヘッダーの呼び出し -->
-  <%- include('../components/header') %>
-    <main class="main">
-      <h1>TOPページ</h1>
+    <!-- ヘッダーの呼び出し -->
+    <%- include('../components/header') %>
+        <main class="main">
+            <%- include('../components/mainvisual') %>
 
-      <h1 class="header_title">
-        <% if (lang==='en' ) { %>
-          <%- site.heading.en %>
-            <% } else if (lang==='zh' ) { %>
-              <%- site.heading.zh %>
-                <% } else { %>
-                  <%- site.heading.ja %>
-                    <% } %>
-      </h1>
-
-      <p><a href="/">日本語</a> | <a href="/en">English</a> | <a href="/zh">中文</a></p>
-
-
-    </main>
-    <%- include('../components/footer') %>
-      <script src="./js/jquery-3.7.1.min.js" defer></script>
-      <script src="./js/gsap.min.js" defer></script>
-      <script src="./js/main.js" defer></script>
+                <section>
+                    <h2>
+                        <%- site.mainVisualMainTitle[lang] || site.mainVisualMainTitle.ja %>
+                    </h2>
+                </section>
+        </main>
+        <%- include('../components/footer') %>
+            <script src="./js/jquery-3.7.1.min.js" defer></script>
+            <script src="./js/gsap.min.js" defer></script>
+            <script src="./js/main.js" defer></script>
 </body>
 
 </html>
