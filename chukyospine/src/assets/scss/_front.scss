@@ -445,20 +445,28 @@
 
 
 #section06 {
+    padding-bottom: 120px;
 
     .price-table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 32px;
         font-size: 1.6rem;
         color: $color1;
+        margin-bottom: 24px;
 
-        th,
+        th {
+            padding: 32px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            border: 2px solid $color3;
+        }
+
         td {
-            border: 1px solid $color3;
-            padding: 16px;
+            border: 2px solid $color3;
             text-align: left;
             vertical-align: middle;
+            padding: 24px;
         }
 
         .price-head {
@@ -501,6 +509,165 @@
         .price-desc {
             font-weight: 400;
             background-color: $color2;
+        }
+    }
+
+    .price_notes {
+        p {
+            font-size: 1.4rem;
+            color: $color2;
+            margin-bottom: 8px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+#section07 {
+    background-color: $color2;
+    color: $color3;
+    padding: 120px 0;
+
+    .medium_title {
+        margin-bottom: 72px;
+    }
+
+    .doctor_lead {
+        font-size: 3.2rem;
+        margin-bottom: 8px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .philosophy_text {
+
+        padding: 0 16px;
+        margin: 0 auto;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 48px;
+
+        p {
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: $color2;
+            background-color: $color4;
+        }
+
+        .philosophy_highlight {
+            font-family: "arial", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 5.6rem;
+        }
+    }
+
+    .doctor_content {
+        display: flex;
+        gap: 48px;
+
+        .doctor_profile {
+            img {
+                max-width: 378px;
+                margin-bottom: 24px;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.6rem;
+            }
+        }
+
+        .doctor_details {
+            .doctor_message {
+                font-size: 1.6rem;
+                margin-bottom: 24px;
+                padding-bottom: 40px;
+                border-bottom: solid 1px $color8;
+            }
+
+            .list_title {
+                font-size: 2.4rem;
+                font-weight: 500;
+                margin-bottom: 16px;
+                position: relative;
+                padding-left: 24px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $color4;
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                }
+
+
+            }
+
+            .list_items {
+                li {
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                    margin-bottom: 16px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    span {
+                        font-size: 2.4rem;
+                        font-family: "arial", sans-serif;
+                        font-weight: 600;
+                        font-style: normal;
+                        line-height: 1;
+                    }
+
+                    &.item_line {
+                        position: relative;
+                        padding-left: calc(16px + 8px);
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            width: 16px;
+                            height: 1px;
+                            background-color: $color9;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+
+            }
+
+            .doctor_career {
+                padding-bottom: 32px;
+                margin-bottom: 24px;
+                border-bottom: solid 1px $color8;
+            }
+
+            .doctor_qualifications {
+                display: flex;
+                gap: 24px;
+                padding-bottom: 32px;
+                margin-bottom: 24px;
+                border-bottom: solid 1px $color8;
+
+                .left {
+                    max-width: 445px;
+                    width: 100%;
+                }
+            }
         }
     }
 }

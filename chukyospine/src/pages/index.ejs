@@ -417,42 +417,126 @@
                                         isAlt=idx % 2===0 ? 'price-row' : 'price-row price-row-alt' ; const
                                         subItem=row.subItem; const itemText=row.skipFirstColumn ? lastItem :
                                         pick(cols[0]); if (!row.skipFirstColumn) { lastItem=itemText; } const
-                                        amountVal=row.skipFirstColumn ? pick(cols[0]) : pick(cols[1]); const
-                                        descVal=row.skipFirstColumn ? pick(cols[1]) : pick(cols[2]); %>
+                                        amountVal=pick(cols[1]); const descVal=pick(cols[2]); %>
                                         <tr class="<%= isAlt %>">
                                             <% if (!row.skipFirstColumn) { %>
-                                                <td class="price-item" <% if (row.rowspan) { %> rowspan="<%= row.rowspan
-                                                        %>"<% } %>>
-                                                            <%= itemText %>
-                                                </td>
-                                                <% } %>
-                                                    <% if (!row.skipFirstColumn && row.rowspan && row.rowspan> 1) { %>
-                                                        <td class="price-item">
-                                                            <%= subItem ? pick(subItem) : '' %>
+                                                <% if (subItem) { %>
+                                                    <td class="price-item" <% if (row.rowspan) { %> rowspan="<%=
+                                                            row.rowspan %>"<% } %>>
+                                                                <%= itemText %>
+                                                    </td>
+                                                    <td class="price-item">
+                                                        <%= pick(subItem) %>
+                                                    </td>
+                                                    <% } else { %>
+                                                        <td class="price-item" colspan="2" <% if (row.rowspan) { %>
+                                                            rowspan="<%= row.rowspan %>"<% } %>>
+                                                                    <%= itemText %>
                                                         </td>
-                                                        <% } else if (row.skipFirstColumn || !row.rowspan) { %>
-                                                            <td class="price-item">
-                                                                <%= subItem ? pick(subItem) : '' %>
-                                                            </td>
+                                                        <% } %>
                                                             <% } %>
-                                                                <td class="price-amount">
-                                                                    <span>
-                                                                        <%= amountVal %>
-                                                                    </span>
-                                                                </td>
-                                                                <td class="price-desc">
-                                                                    <%= descVal %>
-                                                                </td>
+                                                                <% if (row.skipFirstColumn) { %>
+                                                                    <td class="price-item">
+                                                                        <%= subItem ? pick(subItem) : '' %>
+                                                                    </td>
+                                                                    <% } %>
+                                                                        <td class="price-amount">
+                                                                            <span>
+                                                                                <%= amountVal %>
+                                                                            </span>
+                                                                        </td>
+                                                                        <% if (!row.skipFirstColumn) { %>
+                                                                            <td class="price-desc" <% if (row.rowspan) {
+                                                                                %> rowspan="<%= row.rowspan %>"<% } %>>
+                                                                                        <%- brText(descVal) %>
+                                                                            </td>
+                                                                            <% } %>
                                         </tr>
                                         <% }) %>
                             </tbody>
                         </table>
-                        <div>
+                        <div class="price_notes">
                             <% notes.forEach(function(note) { %>
                                 <p>
                                     <%= pick(note) %>
                                 </p>
                                 <% }) %>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section07">
+                    <div class="page-width">
+                        <h2 class="medium_title">
+                            <%= pick(doctor.title) %>
+                        </h2>
+                        <div class="">
+                            <p class="doctor_lead">
+                                <%= pick(doctor.philosophyTitle) %>
+                            </p>
+                            <div class="philosophy_text">
+                                <p>
+                                    <%- pick(doctor.philosophyText) %>
+                                </p>
+                            </div>
+
+                            <div class="doctor_content">
+                                <div class="doctor_profile">
+                                    <img class="" src="/images/master.png" alt="" aria-hidden="true" />
+                                    <p>
+                                        <%= pick(doctor.name) %>
+                                    </p>
+                                </div>
+                                <div class="doctor_details">
+                                    <div class="doctor_message">
+                                        <p><%- brText(doctor.message) %></p>
+                                    </div>
+                                    <div class="doctor_career">
+                                        <p class="list_title">
+                                            <%= pick(doctor.careerTitle) %>
+                                        </p>
+                                        <ul class="list_items">
+                                            <% (doctor.career || []).forEach(function(item) { %>
+                                                <li>
+                                                    <span>
+                                                        <%= pick(item).split(' ')[0] %></span>
+                                                        <p>
+                                                        <%= pick(item).split(' ').slice(1).join(' ') %></p></li>
+                                            <% }) %>
+                                        </ul>
+                                    </div>
+                                    <div class="doctor_qualifications">
+                                        <div class="left">
+                                            <p class="list_title"><%= pick(doctor.qualificationTitle) %></p>
+                                            <ul class="list_items">
+                                                <% (doctor.qualifications || []).forEach(function(item) { %>
+                                                    <li><span><%= pick(item).split(' ')[0] %></span><%- brText({ ja:'', en:'', zh: pick(item).split(' ').slice(1).join(' ') }) %></li>
+                                                <% }) %>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="list_title"><%= pick(doctor.membershipTitle) %></p>
+                                            <ul class="list_items">
+                                                <% (doctor.memberships || []).forEach(function(item) { %>
+                                                    <li class="item_line"><%= pick(item) %></li>
+                                                <% }) %>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="doctor_certificates">
+                                <% (doctor.certificates || []).forEach(function(item, i) { const num = String(i + 1).padStart(2, '0'); %>
+                                    <div class="doctor_certificate_item">
+                                        <img class="" src="/images/certificate_<%= num %>.png"
+                                            alt="" aria-hidden="true" />
+                                        <p>
+                                            <%= pick(item) %>
+                                        </p>
+                                    </div>
+                                <% }) %>
+                            </div>
                         </div>
                     </div>
                 </section>
