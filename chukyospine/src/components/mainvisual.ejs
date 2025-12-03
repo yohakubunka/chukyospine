@@ -1,43 +1,56 @@
-<% const pickText = (obj) => { if (!obj) return ''; return obj[lang] || obj.ja
-|| Object.values(obj)[0] || ''; }; const head = pickText(site.mainVisualHead);
-const text = pickText(site.mainVisualText); const rightTitle =
-pickText(site.mainVisualTextRightTitle); const rightText =
-pickText(site.mainVisualTextRightText); const leftTitle =
-pickText(site.mainVisualTextLeftTitle); const leftText =
-pickText(site.mainVisualTextLeftText); const mainTitleSub =
-pickText(site.mainVisualMainTitleSub); const mainTitle =
-pickText(site.mainVisualMainTitle); %>
+<% const pickText=(obj)=> {
+        if (!obj) return '';
+        if (typeof obj === 'string') return obj;
+        const candidates = [obj[lang], obj.ja, obj.en, obj.zh, ...Object.values(obj)];
+        return candidates.find((v) => v) || '';
+    };
+    const withBr = (obj) => pickText(obj).replace(/\\n/g, '<br>').replace(/\n/g, '<br>');
+    const head = withBr(site.mainVisualHead);
+    const text = withBr(site.mainVisualText);
+    const rightTitle = pickText(site.mainVisualTextRightTitle);
+    const rightText = pickText(site.mainVisualTextRightText);
+    const leftTitle = pickText(site.mainVisualTextLeftTitle);
+    const leftText = pickText(site.mainVisualTextLeftText);
+    const mainTitleSub = pickText(site.mainVisualMainTitleSub);
+    const mainTitle = withBr(site.mainVisualMainTitle); %>
 
     <div class="mainvisual">
         <div class="mainvisual_left">
             <p class="mainvisual_subtitle">
-                <%= head %>
+                <%- head %>
             </p>
             <p class="mainvisual_text">
-                <%= text %>
+                <%- text %>
             </p>
             <div class="mainvisual_panels">
-                <div class="mainvisual_panel">
-                    <p class="mainvisual_panel_title">
+                <div class="mainvisual_panel ">
+                    <p class="mainvisual_panel_title mainvisual_panel_title_left">
                         <%= rightTitle %>
                     </p>
-                    <p class="mainvisual_panel_text">
+                    <p class="mainvisual_panel_text mainvisual_panel_text_left">
                         <%= rightText %>
                     </p>
                 </div>
-                <div class="mainvisual_panel">
-                    <p class="mainvisual_panel_title">
+                <div class="mainvisual_panel ">
+                    <p class="mainvisual_panel_title mainvisual_panel_title_right">
                         <%= leftTitle %>
                     </p>
-                    <p class="mainvisual_panel_text">
+                    <p class="mainvisual_panel_text mainvisual_panel_text_right">
                         <%= leftText %>
                     </p>
                 </div>
             </div>
         </div>
         <div class="mainvisual_right">
-            <p class="mainvisual_main_sub">
-                <%= mainTitleSub %>
-            </p>
+            <div class="mainvisual_text_wrap">
+                <p class="mainvisual_main_sub">
+                    <%= mainTitleSub %>
+                </p>
+                <p class="mainvisual_main_tltle">
+                    <%- mainTitle %>
+
+                </p>
+            </div>
+
         </div>
     </div>

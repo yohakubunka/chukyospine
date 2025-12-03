@@ -1,0 +1,144 @@
+<section>
+    <h2>
+        <%= pick(doctor.title) %>
+    </h2>
+    <p>
+        <%= pick(doctor.philosophyTitle) %>
+    </p>
+    <p><%- pick(doctor.philosophyText) %></p>
+
+    <div>
+        <div>
+            <img class="" src="/images/master.png" alt="" aria-hidden="true" />
+            <p>
+                <%= pick(doctor.name) %>
+            </p>
+        </div>
+        <div>
+            <div>
+                <p><%- brText(doctor.message) %></p>
+            </div>
+            <div>
+                <p>
+                    <%= pick(doctor.careerTitle) %>
+                </p>
+                <ul>
+                    <% (doctor.career || []).forEach(function(item) { %>
+                        <li><span>
+                                <%= pick(item).split(' ')[0] %></span><%= pick(item).split(' ').slice(1).join(' ') %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <p><%= pick(doctor.qualificationTitle) %></p>
+                            <ul>
+                                <% (doctor.qualifications || []).forEach(function(item) { %>
+                                    <li><span><%= pick(item).split(' ')[0] %></span><%- brText({ ja:'', en:'', zh: pick(item).split(' ').slice(1).join(' ') }) %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                        <div>
+                            <p><%= pick(doctor.membershipTitle) %></p>
+                            <ul>
+                                <% (doctor.memberships || []).forEach(function(item) { %>
+                                    <li><%= pick(item) %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <% (doctor.certificates || []).forEach(function(item, i) { const num = String(i + 1).padStart(2, ' 0');
+                                    %>
+                                    <div>
+                                        <img class="" src="/images/certificate_<%= num %>.png" alt=""
+                                            aria-hidden="true" />
+                                        <p>
+                                            <%= pick(item) %>
+                                        </p>
+                                    </div>
+                                    <% }) %>
+            </div>
+</section>
+
+
+<section>
+    <h2>
+        <%= pick(access.title) %>
+    </h2>
+    <p>
+        <%= pick(access.address) %>
+    </p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.1077619749926!2d137.03824707635027!3d35.128984260111714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600365d1a71c7c93%3A0xca14953fca9a2c41!2z6IWw44O76aaW44O76aCt44Gu5Lit5Lqs44K544OR44Kk44Oz44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1764657226574!5m2!1sja!2sjp"
+        width="1340" height="440" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div>
+        <div>
+            <p>
+                <img class="" src="/images/bullet_train.svg" alt="" aria-hidden="true" />
+                <%= pick(access.bulletTrainTitle) %>
+            </p>
+            <p>
+                <% bulletTrainRoutes.forEach(function(route, i) { %>
+                    <%- brText(route) %>
+                        <% if (i===0) { %><br>
+                            <% } %>
+                                <% }) %>
+            </p>
+        </div>
+        <div>
+            <div>
+                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                <p>
+                    <%= pick(access.metroTitle) %>
+                </p>
+            </div>
+            <p><%- brText(access.metroText) %></p>
+        </div>
+        <div>
+            <p>
+                <img class="" src="/images/plane.svg" alt="" aria-hidden="true" />
+                <%= pick(access.airportTitle) %>
+            </p>
+            <div>
+                <img class="" src="/images/meitethu_train.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                <p><%- brText(access.airportText) %></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <% legendItems.forEach(function(item, i) { const names=['ping','hotel','location','metro_line']; const
+                icon=names[i] || 'ping' ; %>
+                <div>
+                    <img class="" src="/images/<%= icon %>.svg" alt="" aria-hidden="true" />
+                    <p>
+                        <%= pick(item) %>
+                    </p>
+                </div>
+                <% }) %>
+
+        </div>
+        <img class="" src="/images/map_illust.svg" alt="" aria-hidden="true" />
+    </div>
+</section>
+
+<section>
+    <p>
+        <%= pick(hours.title) %>
+    </p>
+    <p>
+        <%= pick(hours.description) %>
+    </p>
+</section>

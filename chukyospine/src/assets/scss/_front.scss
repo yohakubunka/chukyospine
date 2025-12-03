@@ -1,0 +1,506 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+#section01 {
+    background-image: url("../images/clinical_back.png");
+
+    .clinical_wrap {
+        display: flex;
+        gap: 80px;
+        justify-content: space-between;
+        align-items: center;
+
+        .clinical_title {
+            font-family: "arial", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 6.4rem;
+            color: $color4;
+        }
+
+        .clinical_desc {
+            max-width: 670px;
+            width: 100%;
+
+            .clinical_desc_top {
+                font-size: 2.4rem;
+                position: relative;
+                display: inline-block;
+                padding-left: 90px;
+                margin-bottom: 16px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 80px;
+                    height: 1px;
+                    background: $color2;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .clinical_desc_middle {
+                font-size: 3.2rem;
+                font-weight: 500;
+                margin-bottom: 32px;
+
+                .clinical_cases_number {
+                    font-size: 4.8rem;
+                    font-weight: 700;
+                    color: $color4;
+                    font-family: "arial", sans-serif;
+                }
+
+                .clinical_cases_unit {
+                    color: $color4;
+
+                }
+            }
+
+            .clinical_approach {
+                font-size: 1.8rem;
+                font-weight: 500;
+                margin-bottom: 24px;
+            }
+
+            .clinical_services {
+                .clinical_services_title {
+                    font-weight: 600;
+                    margin-bottom: 16px;
+                }
+
+                .clinical_services_list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+
+                    .clinical_service_item {
+                        background-color: $color2;
+                        color: $color3;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        width: calc(100% / 4 - 6px);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+#section02 {
+    .policy_wrap {
+        max-width: 1630px;
+        width: 100%;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 48px;
+
+        .policy_text {
+            h2 {
+                font-size: 4.8rem;
+                font-weight: 600;
+                margin-bottom: 48px;
+            }
+
+            .policy_lead {
+                font-size: 3.2rem;
+                margin-bottom: 8px;
+            }
+
+            .policy_goal {
+                font-size: 3.2rem;
+                color: $color4;
+                margin-bottom: 32px;
+
+                .policy_goal_highlight {
+                    font-family: "arial", sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-size: 4rem;
+                    color: $color4;
+                }
+            }
+
+            .policy_body {
+                font-size: 2rem;
+                line-height: 1.6;
+            }
+        }
+
+    }
+
+    .approach_wrap {
+        .approach_items {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+
+            .approach_item_list {
+                display: flex;
+                gap: 32px;
+                flex-wrap: wrap;
+
+                .approach_item {
+                    max-width: calc(100% / 2 - 16px);
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    gap: 8px;
+
+                    .approach_item_title {
+                        font-size: 2.4rem;
+                        font-weight: 500;
+                        margin-bottom: 8px;
+                        letter-spacing: 0.05em;
+                    }
+
+                    .approach_item_body {
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                        letter-spacing: 0.05em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#section03 {
+    .treatment_menu_wrap {
+        .meddium_title {
+            margin-bottom: 64px;
+        }
+
+        .treatment_menu_content {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 80px;
+
+            .endoscopy_section {
+                display: flex;
+                flex-direction: column;
+                gap: 48px;
+            }
+        }
+
+        .treatment_benefits {
+            margin-bottom: 56px;
+
+            .treatment_benefits_title {
+                font-size: 3.2rem;
+                font-weight: 500;
+                margin-bottom: 32px;
+                text-align: center;
+            }
+
+            .treatment_benefits_items {
+                display: flex;
+
+                .treatment_benefit_item {
+                    max-width: calc(100% / 3);
+                    width: 100%;
+                    color: $color2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 48px 0;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 8px;
+                        left: 8px;
+                        width: 0;
+                        height: 0;
+
+                    }
+
+                    &.treatment_benefit_item_time {
+                        background-color: $color4;
+
+                        &::before {
+                            border-top: 64px solid $color6;
+                            border-right: 64px solid transparent;
+                        }
+                    }
+
+                    &.treatment_benefit_item_blood {
+                        background-color: $color5;
+
+                        &::before {
+                            border-top: 64px solid $color3;
+                            border-right: 64px solid transparent;
+                        }
+                    }
+
+                    &.treatment_benefit_item_runman {
+                        background-color: $color4;
+
+                        &::before {
+                            border-top: 64px solid $color6;
+                            border-right: 64px solid transparent;
+                        }
+                    }
+
+                    img {
+                        max-width: 64px;
+                        margin-bottom: 24px;
+                    }
+
+                    .title {
+                        font-size: 1.8rem;
+                        text-align: center;
+                    }
+
+                    .caution {
+                        margin-top: 8px;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+
+        .procedures_section {
+            .procedures_wrap {
+                margin-bottom: 56px;
+
+                .procedure_approaches {
+                    display: flex;
+                    gap: 24px;
+
+                    .procedure_approach_item {
+                        display: flex;
+                        flex-direction: column;
+
+                        .procedure_approach_title {
+                            font-size: 3.2rem;
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                            text-align: center;
+                        }
+
+                        .procedure_approach_method {
+                            margin-bottom: 32px;
+                            text-align: center;
+                        }
+
+                        .procedure_approach_img {
+                            margin-bottom: 32px;
+                        }
+
+                        .procedure_approach_desc {
+                            margin-bottom: 16px;
+                        }
+
+                        .procedure_approach_time {
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+
+                            p {
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .procedures_wrap_single {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                justify-content: space-between;
+
+                .procedures_single_title {
+                    font-size: 3.2rem;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                }
+
+                .procedures_single_method {
+                    margin-bottom: 32px;
+                }
+
+                .procedures_single_desc {
+                    font-size: 2rem;
+                    margin-bottom: 16px;
+                }
+
+                .procedures_single_time {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    p {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+#section04 {
+    .syringe_content {
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        margin-top: 48px;
+        margin-bottom: 40px;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+        }
+    }
+
+    .syringe_types {
+        h3 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .syringe_type_items {
+            display: flex;
+
+            .syringe_type_item {
+                max-width: calc(100% / 7);
+                width: 100%;
+                color: $color2;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 16px;
+                padding: 32px 16px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    width: 0;
+                    height: 0;
+
+                }
+
+                &.syringe_type_item_even {
+                    background-color: $color4;
+
+                    &::before {
+                        border-top: 40px solid $color6;
+                        border-right: 40px solid transparent;
+                    }
+
+                }
+
+                &.syringe_type_item_odd {
+                    background-color: $color5;
+
+                    &::before {
+                        border-top: 40px solid $color3;
+                        border-right: 40px solid transparent;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#section05 {
+    .medium_title {
+        margin-bottom: 64px;
+    }
+
+    .flow_desc {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    img {
+        margin: 0 auto;
+    }
+}
+
+
+#section06 {
+
+    .price-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 32px;
+        font-size: 1.6rem;
+        color: $color1;
+
+        th,
+        td {
+            border: 1px solid $color3;
+            padding: 16px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .price-head {
+            background-color: $color5;
+            color: $color2;
+            font-weight: 700;
+            text-align: center;
+
+            &-accent {
+                background-color: $color4;
+                color: $color2;
+            }
+        }
+
+        .price-row {
+            &-alt {
+                background-color: #f0f0f0;
+            }
+        }
+
+        .price-item {
+            background-color: $color8;
+
+            &.price-item-spacer {
+                background-color: transparent;
+            }
+        }
+
+
+        .price-amount {
+            font-weight: 700;
+            color: $color1;
+            background-color: $color2;
+
+            span {
+                font-size: 1.9rem;
+            }
+        }
+
+        .price-desc {
+            font-weight: 400;
+            background-color: $color2;
+        }
+    }
+}

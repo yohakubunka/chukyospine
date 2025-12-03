@@ -1,7 +1,13 @@
-@use "variables"as *;
+@use "variables" as *;
+
 .header {
     padding: 48px 80px;
     color: $color2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .header_inner {
@@ -13,6 +19,7 @@
 .header_logo {
     margin: 0;
     flex-shrink: 0;
+
     img {
         display: block;
         max-width: 211px;

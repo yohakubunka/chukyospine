@@ -8,497 +8,456 @@
         <%= site.title %>
     </title>
     <meta name="description" content="<%= site.description %>" />
-    <!-- OGP（Open Graph Protocol） -->
+    <!-- OGP?Open Graph Protocol? -->
     <meta property="og:title" content="<%= site.title %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= site.url %>" />
-    <!-- <meta property="og:image" content="[画像のURL]"> -->
+    <!-- <meta property="og:image" content="[???URL]"> -->
     <meta property="og:site_name" content="<%= site.title %>" />
     <meta property="og:description" content="<%= site.description %>" />
     <meta property="og:locale" content="ja_JP" />
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'ujv2rms',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-    <!-- ヘッダーの呼び出し -->
     <%- include('../components/header') %>
         <main class="main">
-            <%- include('../components/mainvisual') %>
+            <!-- <%- include('../components/mainvisual') %> -->
 
-                <section>
-                    <h2>
-                        <%- site.mainVisualMainTitle[lang] || site.mainVisualMainTitle.ja %>
-                    </h2>
-                </section>
+            <% const pick=(obj)=> {
+                if (!obj) return '';
+                if (typeof obj === 'string') return obj;
+                const candidates = [obj[lang], obj.ja, obj.en, obj.zh, ...Object.values(obj)];
+                return candidates.find((v) => v) || '';
+                };
+                const brText = (obj) => {
+                const val = pick(obj);
+                return val ? val.replace(/\\n/g, '<br>').replace(/\n/g, '<br>') : '';
+                };
+                const idx = site.index || {};
+                const clinical = idx.clinicalOutcomes || {};
+                const policy = idx.policy || {};
+                const goal = policy.goal || {};
+                const approaches = idx.approachItems || [];
+                const treatmentMenu = idx.treatmentMenu || {};
+                const benefits = treatmentMenu.benefits || [];
+                const procedures = idx.procedures || [];
+                const block = idx.blockInjection || {};
+                const flow = idx.flow || {};
+                const pricing = idx.pricing || {};
+                const doctor = idx.doctor || {};
+                const access = idx.access || {};
+                const hours = idx.hours || {};
+                const pricingRows = pricing.rows || [];
+                const pricingHeaders = pricing.headers || [];
+                const notes = pricing.notes || [];
+                const blockTypes = block.types || [];
+                const bulletTrainRoutes = access.bulletTrainRoutes || [];
+                const legendItems = access.legend || [];
+                const proc0 = procedures[0] || {};
+                const proc1 = procedures[1] || {};
+                const proc2 = procedures[2] || {};
+                const proc3 = procedures[3] || {};
+                %>
 
-                <section>
-                    <div>
-                        <div>
-                            CLINICAL<br>OUTCOMES
+                <section id="section01">
+                    <div class="page-width clinical_wrap">
+                        <div class="clinical_title">
+                            <%- brText(clinical.title) %>
                         </div>
-                        <div>
-                            <p>各領域的專業醫師為您提供徹底的治療。 </p>
-                            <h2>本院已擁有超過<span>3200</span><span>例</span>治療案例。 </h2>
-                            <p>一直以來，我們始終以真誠面對每一位患者的疼痛， 不斷追求最合適、最有效的治療方案。</p>
-                            <div>
-                                <p>診療内容</p>
-                                <div>
-                                    <div>腰椎間盤突出</div>
-                                    <div>腰椎管狹窄症</div>
-                                    <div>頸椎間盤突出</div>
-                                    <div>腰痛</div>
-                                    <div>肩頸僵硬</div>
-                                    <div>頸部疼痛</div>
-                                    <div>手腳麻木</div>
-                                    <div>骨科相關其他疾病</div>
+                        <div class="clinical_desc">
+                            <p class="clinical_desc_top">
+                                <%= pick(clinical.lead) %>
+                            </p>
+                            <p class="clinical_desc_middle">
+                                <%= pick(clinical.casesPrefix) %><span class="clinical_cases_number">
+                                        <%= pick(clinical.casesNumber) %>
+                                    </span><span class="clinical_cases_unit">
+                                        <%= pick(clinical.casesUnit) %>
+                                    </span>
+                                    <%= pick(clinical.casesSuffix) %>
+                            </p>
+                            <p class="clinical_approach">
+                                <%= pick(clinical.approach) %>
+                            </p>
+                            <div class="clinical_services">
+                                <p class="clinical_services_title">
+                                    <%= pick(clinical.servicesTitle) %>
+                                </p>
+                                <div class="clinical_services_list">
+                                    <% (clinical.services || []).forEach(function(service) { %>
+                                        <div class="clinical_service_item">
+                                            <%= pick(service) %>
+                                        </div>
+                                        <% }) %>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section>
-                    <div>
-                        <div>
-                            <img class="" src="/images/facility.png" alt="施設画像" aria-hidden="true" />
-                        </div>
-                        <div>
-                            <h2>本院的治療方針</h2>
-                            <p>我們致力於早期且精準的診斷與治療，</p>
-                            <p>目標是實現 <span>95%</span>的康復率。 </p>
-                            <p>相較於一般脊柱・脊髓治療的平均改善率（約70～80%）， 我們始終追求超越95%康復率的高品質醫療。 為此，我們不斷探索全新的醫學理念， 重新定義「腰・頸・頭」疾病的治療觀念。
-                                以熱情與專業為驅動力，持續推動醫療進步與社會貢獻， 並期望讓全體醫護人員及其家人共享幸福與成就。</p>
+                <section id="section02">
+                    <div class="policy_wrap">
+                        <img class="" src="/images/facility.png" alt="<%= pick(policy.imageAlt) %>"
+                            aria-hidden="true" />
+                        <div class="policy_text">
+                            <h2>
+                                <%= pick(policy.title) %>
+                            </h2>
+                            <p class="policy_lead">
+                                <%= pick(policy.lead) %>
+                            </p>
+                            <p class="policy_goal">
+                                <%= pick(goal.prefix) %><span class="policy_goal_highlight">
+                                        <%= pick(goal.highlight) %>
+                                    </span>
+                                    <%= pick(goal.suffix) %>
+                            </p>
+                            <p class="policy_body">
+                                <%= pick(policy.body) %>
+                            </p>
                         </div>
                     </div>
-                    <div>
-                        <h2>診療方針</h2>
-                        <div>
-                            <div>
-                                <img class="" src="/images/treatment-main.svg" alt="" aria-hidden="true" />
-                            </div>
-                            <div>
-                                <div>
-                                    <img class="" src="/images/treatment-icon01.svg" alt="" aria-hidden="true" />
-                                    <p>個性化治療</p>
-                                    <p>作為專注於「腰・頸・頭」疾病的專科醫院，我們為每一位患者提供量身訂製的診療方案，以細緻入微的關懷與專業判斷，找到最合適的治療途徑。</p>
-                                </div>
-                                <div>
-                                    <img class="" src="/images/treatment-icon02.svg" alt="" aria-hidden="true" />
-                                    <p>緩解疼痛</p>
-                                    <p>我們致力於減輕疼痛與不適，幫助患者擺脫身體束縛，重新找回輕鬆、自在的生活節奏。</p>
-                                </div>
-                                <div>
-                                    <img class="" src="/images/treatment-icon03.svg" alt="" aria-hidden="true" />
-                                    <p>醫患共創</p>
-                                    <p>我們相信，優質的醫療來自醫師、團隊與患者的共同參與。不僅由醫護人員主導，也希望患者能以醫療夥伴的角度加入，共同打造開放、互信、共榮的診療環境。</p>
-                                </div>
-                                <div>
-                                    <img class="" src="/images/treatment-icon04.svg" alt="" aria-hidden="true" />
-                                    <p>全程引導</p>
-                                    <p>從初診、診斷、治療到康復與復發預防，我們實行一體化診療體系。由醫師與專業團隊全程陪伴，為每一位患者的健康之路保駕護航。</p>
-                                </div>
+                    <div class="page-width approach_wrap">
+                        <h2 class="medium_title">
+                            <%= pick(idx.approachTitle) %>
+                        </h2>
+                        <div class="approach_items">
+                            <img class="" src="/images/treatment-main.svg" alt="" aria-hidden="true" />
+                            <div class="approach_item_list">
+                                <% approaches.forEach(function(item, i) { const iconNum=String(i + 1).padStart(2, '0' );
+                                    %>
+                                    <div class="approach_item">
+                                        <img class="" src="/images/treatment-icon<%= iconNum %>.svg" alt=""
+                                            aria-hidden="true" />
+                                        <p class="approach_item_title">
+                                            <%= pick(item.title) %>
+                                        </p>
+                                        <p class="approach_item_body">
+                                            <%= pick(item.body) %>
+                                        </p>
+                                    </div>
+                                    <% }) %>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section>
-                    <h2>診療內容</h2>
-                    <div>
-                        <div>
-                            <div>
-                                <img class="" src="/images/details_icon.svg" alt="" aria-hidden="true" />
+                <section id="section03">
+                    <div class="page-width treatment_menu_wrap">
+                        <h2 class="medium_title">
+                            <%= pick(treatmentMenu.title) %>
+                        </h2>
+                        <div class="treatment_menu_content">
+                            <div class="endoscopy_section">
+                                <div class="icon_title_wrap">
+                                    <div class="back_icon">
+                                        <img class="" src="/images/details_icon.svg" alt="" aria-hidden="true" />
+                                    </div>
+                                    <div class="icon_title_text">
+                                        <h3>
+                                            <%= pick(treatmentMenu.endoscopyTitle) %>
+                                        </h3>
+                                        <p class="icon_subtitle">
+                                            <%= pick(treatmentMenu.endoscopySubTitle) %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <%- brText(treatmentMenu.endoscopyBody) %>
                             </div>
-                            <div>
-                                <h3>日間脊椎內視鏡治療</h3>
-                                <p>PELD／PED治療</p>
+
+
+                            <img class="" src="/images/details.svg" alt="" aria-hidden="true" />
+                        </div>
+
+                        <div class="treatment_benefits">
+                            <h3 class="treatment_benefits_title">
+                                <%= pick(treatmentMenu.benefitsTitle) %>
+                            </h3>
+                            <div class="treatment_benefits_items">
+                                <% benefits.forEach(function(benefit, i) { const iconNum=['time','blood','runman'][i]
+                                    || 'time' ; const itemClass=`treatment_benefit_item
+                                    treatment_benefit_item_${iconNum}`; %>
+                                    <div class="<%= itemClass %>">
+                                        <img class="" src="/images/<%= iconNum %>-icon.svg" alt="" aria-hidden="true" />
+                                        <p class="title"><%- brText(benefit.title) %></p>
+                                        <% (benefit.lines || []).forEach(function(line) { %>
+                                            <p class="caution">
+                                                <%= pick(line) %>
+                                            </p>
+                                            <% }) %>
+                                    </div>
+                                    <% }) %>
                             </div>
                         </div>
 
-                        <img class="" src="/images/details.svg" alt="" aria-hidden="true" />
+                        <div class="procedures_section">
+                            <div class="procedures_wrap">
+                                <div class="number_title">
+                                    <img class="num_img" src="/images/num_01.svg" alt="" aria-hidden="true" />
+                                    <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                    <p>
+                                        <%= pick(proc0.title) %>
+                                    </p>
+                                </div>
+                                <div class="procedure_approaches">
+                                    <% (proc0.approaches || []).forEach(function(app, i) { const imgNum=i===0 ? '01'
+                                        : '02' ; %>
+                                        <div class="procedure_approach_item">
+                                            <p class="procedure_approach_title">
+                                                <%= pick(app.title) %>
+                                            </p>
+                                            <p class="procedure_approach_method">
+                                                <%= pick(app.method) %>
+                                            </p>
+                                            <img class="procedure_approach_img"
+                                                src="/images/number_image_<%= imgNum %>.svg" alt=""
+                                                aria-hidden="true" />
+                                            <p class="procedure_approach_desc"><%- brText(app.description) %></p>
+                                            <div class="procedure_approach_time">
+                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <p>
+                                                    <%= pick(app.time) %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                            </div>
+
+                            <div class="procedures_wrap procedures_wrap_single">
+                                <div>
+                                    <div class="number_title">
+                                        <img class="num_img" src="/images/num_02.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                        <p>
+                                            <%= pick(proc1.title) %>
+                                        </p>
+                                    </div>
+
+                                    <% (proc1.approaches || []).forEach(function(app) { %>
+                                        <p class="procedures_single_title">
+                                            <%= pick(app.title) %>
+                                        </p>
+                                        <p class="procedures_single_method">
+                                            <%= pick(app.method) %>
+                                        </p>
+
+                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
+                                        <div class="procedures_single_time">
+                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%= pick(app.time) %>
+                                            </p>
+                                        </div>
+                                        <% }) %>
+                                </div>
+
+                                <div>
+                                    <img class="" src="/images/number_image_03.svg" alt="" aria-hidden="true" />
+                                </div>
+                            </div>
+
+                            <div class="procedures_wrap procedures_wrap_single">
+                                <div class="">
+                                    <div class="number_title">
+                                        <img class="num_img" src="/images/num_03.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                        <p><%- brText(proc2.title) %> </p>
+                                    </div>
+
+                                    <% (proc2.approaches || []).forEach(function(app) { %>
+                                        <p class="procedures_single_title">
+                                            <%= pick(app.title) %>
+                                        </p>
+                                        <p class="procedures_single_method">
+                                            <%= pick(app.method) %>
+                                        </p>
+
+                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
+                                        <div class="procedures_single_time">
+                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%= pick(app.time) %>
+                                            </p>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                                <div>
+                                    <img class="" src="/images/number_image_04.svg" alt="" aria-hidden="true" />
+                                </div>
+                            </div>
+
+                            <div class="procedures_wrap procedures_wrap_single">
+                                <div>
+                                    <div class="number_title">
+                                        <img class="num_img" src="/images/num_04.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                        <p>
+                                            <%= pick(proc3.title) %>
+                                        </p>
+                                    </div>
+
+                                    <% (proc3.approaches || []).forEach(function(app) { %>
+                                        <p class="procedures_single_title">
+                                            <%= pick(app.title) %>
+                                        </p>
+                                        <p class="procedures_single_method">
+                                            <%= pick(app.method) %>
+                                        </p>
+
+                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
+                                        <div class="procedures_single_time">
+                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%= pick(app.time) %>
+                                            </p>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                                <div>
+                                    <img class="" src="/images/number_image_05.svg" alt="" aria-hidden="true" />
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
+                </section>
 
-                    <div>
-                        <h3>日間內視鏡治療的優點</h3>
-                        <div>
-                            <div>
-                                <img class="" src="/images/time-icon.svg" alt="" aria-hidden="true" />
-                                <p>手術時間短</p>
-                                <p>切口僅 6～8mm</p>
-                                <p>※不需拆線 </p>
+                <section id="section04">
+                    <div class="page-width">
+                        <div class="icon_title_wrap">
+                            <div class="back_icon">
+                                <img class="" src="/images/syringe.svg" alt="" aria-hidden="true" />
                             </div>
-                            <div>
-                                <img class="" src="/images/blood-icon.svg" alt="" aria-hidden="true" />
-                                <p>出血量少</p>
-                                <p>（約為養樂多 1/3） </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/runman-icon.svg" alt="" aria-hidden="true" />
-                                <p>上午手術，<br>傍晚即可自行步行回家</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <div>
-                                <img class="" src="/images/num_01.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                <p>腰椎間盤突出</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <p>經椎弓間入路</p>
-                                    <p>PELD Inter-Lamina法：PELD-IL法</p>
-                                    <img class="" src="/images/number_image_01.svg" alt="" aria-hidden="true" />
-                                    <p>從背部正後方進入內視鏡，解除神經壓迫<br>
-                                        風險：術後血腫或短暫神經障礙（1%） </p>
-                                    <div>
-                                        <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                        <p>治療時間：約 45 分鐘 </p>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <p>經椎間孔入路</p>
-                                    <p>PELD Transforaminal法：PELD-TF法</p>
-                                    <img class="" src="/images/number_image_02.svg" alt="" aria-hidden="true" />
-                                    <p>從背部側方進入內視鏡，摘除突出椎間盤<br>
-                                        風險：術後血腫或短暫神經障礙（1%） </p>
-                                    <div>
-                                        <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                        <p>治療時間：約 30～40 分鐘 </p>
-                                    </div>
-                                </div>
+                            <div class="icon_title_text">
+                                <h3>
+                                    <%= pick(block.title) %>
+                                </h3>
                             </div>
                         </div>
 
-                        <div>
-                            <div>
-                                <div>
-                                    <img class="" src="/images/num_02.svg" alt="" aria-hidden="true" />
-                                    <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                    <p>腰椎管狹窄症 </p>
-
-                                    <p>內視鏡下椎弓形成術</p>
-                                    <p>PELV法／FEL法</p>
-
-                                    <p>從背部正後方進入內視鏡，摘除壓迫神經的組織 <br>
-                                        風險：術後血腫或短暫神經障礙（1%） </p>
-                                    <div>
-                                        <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                        <p>治療時間：約 60 分鐘 </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div>
-                                <img class="" src="/images/number_image_02.svg" alt="" aria-hidden="true" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <div>
-                                <div>
-                                    <img class="" src="/images/num_03.svg" alt="" aria-hidden="true" />
-                                    <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                    <p>頸椎間盤突出<br>頸椎椎間孔狹窄症 </p>
-
-                                    <p>頸椎內視鏡下椎間盤摘除及減壓術</p>
-                                    <p>FECF</p>
-
-                                    <p>從背部正後方進入內視鏡，解除神經壓迫 <br>風險：術後血腫或短暫神經障礙（1%） </p>
-                                    <div>
-                                        <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                        <p>治療時間：約 45 分鐘 </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div>
-                                <img class="" src="/images/number_image_03.svg" alt="" aria-hidden="true" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <div>
-                                <div>
-                                    <img class="" src="/images/num_04.svg" alt="" aria-hidden="true" />
-                                    <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                    <p>壓迫性骨折 </p>
-
-                                    <p>經皮椎體成形術</p>
-
-                                    <p>於骨折位置左右各開一個約 6mm 小切口，注入骨水泥<br>
-                                        風險：術後血腫或短暫神經障礙（1%） </p>
-                                    <div>
-                                        <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                        <p>治療時間：約 30 分鐘 </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <img class="" src="/images/number_image_04.svg" alt="" aria-hidden="true" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3>
-                            <img class="" src="/images/syringe.svg" alt="" aria-hidden="true" />
-                            注射治療（Block注射）
-                        </h3>
-                        <div>
-                            <p>將麻醉藥或消炎藥注入引起疼痛的神經或組織，以緩解疼痛<br>
-                                可改善血流，促進治癒，並可用於判斷疼痛來源 </p>
+                        <div class="syringe_content">
+                            <p><%- brText(block.description) %></p>
                             <img class="" src="/images/syringe_illust.svg" alt="" aria-hidden="true" />
                         </div>
-                    </div>
-                    <div>
-                        <p>神経ブロック注射の種類</p>
-                        <div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_01.svg" alt="" aria-hidden="true" />
-                                <p>超音波引導下選擇性神經根阻滯 </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_02.svg" alt="" aria-hidden="true" />
-                                <p>觸發點阻滯注射 </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_03.svg" alt="" aria-hidden="true" />
-                                <p>仙骨裂孔阻滯注射 </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_04.svg" alt="" aria-hidden="true" />
-                                <p>X光透視下<br>神經根阻滯 </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_05.svg" alt="" aria-hidden="true" />
-                                <p>椎間盤阻滯 </p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/nerve_icon_06.svg" alt="" aria-hidden="true" />
-                                <p>椎間關節阻滯 </p>
-                            </div>
+                        <div class="syringe_types">
+                            <h3>
+                                <%= pick(block.typesTitle) %>
+                            </h3>
+                            <div class="syringe_type_items">
+                                <% blockTypes.forEach(function(item, i) { const num=String(i + 1).padStart(2, '0' );
+                                    const altClass=i % 2===0 ? 'syringe_type_item_even' : 'syringe_type_item_odd' ; %>
+                                    <div class="syringe_type_item <%= altClass %>">
+                                        <img class="" src="/images/nerve_icon_<%= num %>.svg" alt=""
+                                            aria-hidden="true" />
+                                        <p><%- brText(item) %> </p>
+                                    </div>
+                                    <% }) %>
 
-                            <div>
-                                <img class="" src="/images/nerve_icon_07.svg" alt="" aria-hidden="true" />
-                                <p>仙腸關節阻滯 </p>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
-                <section>
-                    <h2>治療の流れ</h2>
-                    <p>我們協助患者從手術到術後復發預防的全程治療：</p>
+
+                <section id="section05">
+                    <h2 class="medium_title">
+                        <%= pick(flow.title) %>
+                    </h2>
+                    <p class="flow_desc">
+                        <%= pick(flow.description) %>
+                    </p>
                     <img class="" src="/images/flow_illust.svg" alt="" aria-hidden="true" />
                 </section>
 
-                <section>
-                    <h2>治療料金</h2>
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>項目</th>
-                                <th>金額</th>
-                                <th>内容</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
-                            <tr>
-                                <td>初診費</td>
-                                <td>1,500ドル</td>
-                                <td>診察費用、X光、CT、MRI</td>
-                            </tr>
+                <section id="section06">
+                    <div class="page-width">
+                        <h2 class="medium_title">
+                            <%= pick(pricing.title) %>
+                        </h2>
+                        <table class="price-table">
+                            <colgroup>
+                                <col class="price-col-item" />
+                                <col class="price-col-sub" />
+                                <col class="price-col-amount" />
+                                <col class="price-col-desc" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="price-head" colspan="2">
+                                        <%= pick(pricingHeaders[0]) %>
+                                    </th>
+                                    <th class="price-head price-head-accent">
+                                        <%= pick(pricingHeaders[1]) %>
+                                    </th>
+                                    <th class="price-head price-head-accent">
+                                        <%= pick(pricingHeaders[2]) %>
+                                    </th>
+                                </tr>
+                            </thead>
 
-                            <tr>
-                                <td>手術前検査</td>
-                                <td>500ドル</td>
-                                <td>胸部X光、肺機能検査、心電図、採血</td>
-                            </tr>
-
-                            <tr>
-                                <td rowspan="2">内視鏡下後方減圧術</td>
-                                <td>13,000ドル（1椎間）</td>
-                                <td>手術費用、麻酔、術前診察費、術日前MRI、術後検診費</td>
-                            </tr>
-
-                            <tr>
-                                <td>23,000ドル（2椎間）</td>
-                                <td>手術費用、麻酔、術前診察費、術日前MRI、術後検診費</td>
-                            </tr>
-
-                            <tr>
-                                <td>神経根阻滞注射</td>
-                                <td>500ドル</td>
-                                <td>―</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div>
-                        <p>※　可使用信用卡（VISA、MASTER）付款</p>
-                        <p>不含交通費與住宿費</p>
-                        <p>現金（日本日幣）亦可支付（依當日匯率換算）</p>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>医師紹介</h2>
-                    <p>我們的理念</p>
-                    <p>「以<span>95％</span>的康復率為目標，並將每一次治療視為防止復發的長期承諾。」</p>
-
-                    <div>
+                            <tbody>
+                                <% let lastItem='' ; %>
+                                    <% pricingRows.forEach(function(row, idx) { const cols=row.columns || []; const
+                                        isAlt=idx % 2===0 ? 'price-row' : 'price-row price-row-alt' ; const
+                                        subItem=row.subItem; const itemText=row.skipFirstColumn ? lastItem :
+                                        pick(cols[0]); if (!row.skipFirstColumn) { lastItem=itemText; } const
+                                        amountVal=row.skipFirstColumn ? pick(cols[0]) : pick(cols[1]); const
+                                        descVal=row.skipFirstColumn ? pick(cols[1]) : pick(cols[2]); %>
+                                        <tr class="<%= isAlt %>">
+                                            <% if (!row.skipFirstColumn) { %>
+                                                <td class="price-item" <% if (row.rowspan) { %> rowspan="<%= row.rowspan
+                                                        %>"<% } %>>
+                                                            <%= itemText %>
+                                                </td>
+                                                <% } %>
+                                                    <% if (!row.skipFirstColumn && row.rowspan && row.rowspan> 1) { %>
+                                                        <td class="price-item">
+                                                            <%= subItem ? pick(subItem) : '' %>
+                                                        </td>
+                                                        <% } else if (row.skipFirstColumn || !row.rowspan) { %>
+                                                            <td class="price-item">
+                                                                <%= subItem ? pick(subItem) : '' %>
+                                                            </td>
+                                                            <% } %>
+                                                                <td class="price-amount">
+                                                                    <span>
+                                                                        <%= amountVal %>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="price-desc">
+                                                                    <%= descVal %>
+                                                                </td>
+                                        </tr>
+                                        <% }) %>
+                            </tbody>
+                        </table>
                         <div>
-                            <img class="" src="/images/master.png" alt="" aria-hidden="true" />
-                            <p>中京脊柱專科醫院院長　竹內 幹伸</p>
-                        </div>
-                        <div>
-                            <div>
-                                <p> 我在小學時期罹患罕見疾病，醫師曾告訴我將終身需使用輪椅。<br>
-                                    然而，因為遇到許多人幫助，我接受手術後幾乎無後遺症地生活。<br>
-                                    日常生活雖無大礙，但疼痛與麻木並非完全消失。<br><br>
-
-                                    成為醫師後，我以醫師視角發現，人體結構上疼痛及麻木的改善度約為80%，100%改善極為困難。<br><br>
-
-                                    我們致力於早期、精準的診斷與治療，追求95%的康復率，並將治療視為防止復發的長期過程。<br>
-                                    作為各領域的專業醫療團隊，我們全員投入，找出病因並給予適切治療。</p>
-                            </div>
-                            <div>
-                                <p>簡歷</p>
-                                <ul>
-                                    <li><span>1994.03</span>兵庫縣立龍野高中畢業 </li>
-                                    <li><span>2001.03</span>富山醫科藥科大學（現：富山大學醫學部）畢業</li>
-                                    <li><span>2001.05</span>富山大學附屬醫院 腦神經外科入局</li>
-                                    <li><span>2001.10</span>富山大學腦神經外科相關醫院勤務（國立水戶醫院／川崎幸醫院／齋藤紀念醫院／東海紀念醫院／東名厚木醫院） </li>
-                                    <li><span>2004.04</span>富山大學研究所</li>
-                                    <li><span>2008.04</span>石心會 狹山醫院（埼玉縣狹山市） </li>
-                                    <li><span>2009.04</span>富山大學附屬醫院腦神經外科助教 </li>
-                                    <li><span>2009.10</span>愛知醫科大學腦神經外科助教 </li>
-                                    <li><span>2012.10</span>愛知醫科大學脊椎脊髓中心・腦神經外科講師</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div>
-                                    <p>資格</p>
-                                    <ul>
-                                        <li><span>2008.03</span>醫學博士（富山大學）甲第451號</li>
-                                        <li><span>2009.08</span>腦神經外科專科醫師 7143號</li>
-                                        <li><span>2010.10</span>日本臨床神經生理學會 認定醫師 355號</li>
-                                        <li><span>2011.06</span>日本脊髓外科學會 認定醫師 324號</li>
-                                        <li><span>2013.09</span>日本脊髓外科學會 指導醫師 86號</li>
-                                        <li><span>2019.06</span>低侵襲・內視鏡脊髓神經外科研究會 <br>技術認定醫（SE-001-18）</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p>所屬學會</p>
-                                    <ul>
-                                        <li>日本腦神經外科學會</li>
-                                        <li>日本整形外科學會</li>
-                                        <li>日本脊髓外科學會</li>
-                                        <li>日本脊髓病學會</li>
-                                        <li>低侵襲／內視鏡脊髓外科研究會</li>
-                                        <li>日本整形外科超音波學會</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img class="" src="/images/certificate_01.png" alt="" aria-hidden="true" />
-                            <p>日本脊髓外科學會認定證 指導醫師 </p>
-                        </div>
-                        <div>
-                            <img class="" src="/images/certificate_02.png" alt="" aria-hidden="true" />
-                            <p>日本脊髓外科學會認定證 認定醫師 </p>
-                        </div>
-                        <div>
-                            <img class="" src="/images/certificate_03.png" alt="" aria-hidden="true" />
-                            <p>醫師執照 </p>
+                            <% notes.forEach(function(note) { %>
+                                <p>
+                                    <%= pick(note) %>
+                                </p>
+                                <% }) %>
                         </div>
                     </div>
                 </section>
 
 
-                <section>
-                    <h2>來院方式</h2>
-                    〒470-0115 愛知縣日進市折戶町笠寺山50-6
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.1077619749926!2d137.03824707635027!3d35.128984260111714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600365d1a71c7c93%3A0xca14953fca9a2c41!2z6IWw44O76aaW44O76aCt44Gu5Lit5Lqs44K544OR44Kk44Oz44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1764657226574!5m2!1sja!2sjp"
-                        width="1340" height="440" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <div>
-                        <div>
-                            <p>
-                                <img class="" src="/images/bullet_train.svg" alt="" aria-hidden="true" />
-                                新幹線
-                            </p>
-                            <p>
-                                大阪方向：大阪站 → 名古屋站 約60分鐘<br>
-                                東京方向：東京站 → 名古屋站 約90分鐘
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
-                                <p>地鐵（東山線・鶴舞線）的交通方式 </p>
-                            </div>
-                            <p>名古屋站搭乘名鐵東山線（藤丘方向）→ 伏見站換乘 搭乘地下鐵鶴舞線（赤池方向）→ 赤池站下車 <br>
-                                乘坐計程車至中京脊柱專科醫院（約10分鐘／約1130日幣） </p>
-                        </div>
-                        <div>
-                            <p>
-                                <img class="" src="/images/plane.svg" alt="" aria-hidden="true" />
-                                中部國際機場
-                            </p>
-                            <div>
-                                <img class="" src="/images/meitethu_train.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
-                                <p>從中部國際機場搭乘名鐵空港線至名古屋站下車，<br>
-                                    之後可參考<span>「地下鐵（東山線・鶴舞線）交通方式」</span>前往醫院。 </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <div>
-                                <img class="" src="/images/ping.svg" alt="" aria-hidden="true" />
-                                <p>觀光景點</p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/hotel.svg" alt="" aria-hidden="true" />
-                                <p>住宿</p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/location.svg" alt="" aria-hidden="true" />
-                                <p>所在地</p>
-                            </div>
-                            <div>
-                                <img class="" src="/images/metro_line.svg" alt="" aria-hidden="true" />
-                                <p>地鐵鶴舞線</p>
-                            </div>
-
-                        </div>
-                        <img class="" src="/images/map_illust.svg" alt="" aria-hidden="true" />
-                    </div>
-                </section>
-
-                <section>
-                    <p>診療時間</p>
-                    <p>完全預約制 上午 9:00 ～ 下午 5:00</p>
-                </section>
         </main>
         <%- include('../components/footer') %>
             <script src="./js/jquery-3.7.1.min.js" defer></script>

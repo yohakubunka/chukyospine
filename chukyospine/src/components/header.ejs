@@ -1,20 +1,24 @@
+<%
+const pick = (obj) => {
+    if (!obj) return '';
+    if (typeof obj === 'string') return obj;
+    return obj[lang] || obj.ja || obj.en || Object.values(obj)[0] || '';
+};
+const headerData = site.header || {};
+const navItems = headerData.navItems || [];
+%>
 <header class="header">
     <div class="header_inner">
         <h1 class="header_logo">
             <a href="/">
-                <img src="/images/logo.svg" alt="ロゴ" />
+                <img src="/images/logo.svg" alt="<%= pick(headerData.logoAlt) %>" />
             </a>
         </h1>
         <nav class="header_nav">
             <ul class="header_nav_list">
-                <li class="header_nav_item"><a href="##">治療案例</a></li>
-                <li class="header_nav_item"><a href="##">本院的治療方針</a></li>
-                <li class="header_nav_item"><a href="##">診療內容</a></li>
-                <li class="header_nav_item"><a href="##">診療の流れ</a></li>
-                <li class="header_nav_item"><a href="##">治療費用</a></li>
-                <li class="header_nav_item"><a href="##">醫師介紹</a></li>
-                <li class="header_nav_item"><a href="##">來院方式</a></li>
-                <li class="header_nav_item"><a href="##">診療時間</a></li>
+                <% navItems.forEach(function(item) { %>
+                    <li class="header_nav_item"><a href="##"><%= pick(item.label) %></a></li>
+                <% }) %>
             </ul>
         </nav>
         <%- include('./language-switcher', { lang }) %>

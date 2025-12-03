@@ -468,10 +468,11 @@ body {
   position: relative;
   background-color: #0B143F;
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.6rem;
   letter-spacing: 0.01em;
-  line-height: 1.6;
+  line-height: 1.4;
+  font-family: "Noto Sans TC", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -481,13 +482,71 @@ img {
 }
 
 .page-width {
-  max-width: 1280px;
+  max-width: 1340px;
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .bold {
   font-weight: 700;
+}
+
+section {
+  padding: 60px 0;
+}
+section:first-of-type {
+  padding: 120px 0 60px 0;
+}
+
+.medium_title {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.back_icon {
+  background-color: #B69863;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_title_wrap {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.icon_title_wrap .icon_title_text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.icon_title_wrap .icon_title_text h3 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+.icon_title_wrap .icon_title_text .icon_subtitle {
+  font-weight: 600;
+  color: #B69863;
+}
+
+.number_title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.number_title img {
+  display: block;
+}
+.number_title .num_img {
+  margin-right: 32px;
+}
+.number_title p {
+  font-size: 4rem;
+  font-weight: 500;
 }
 
 .lang-switcher {
@@ -539,6 +598,11 @@ img {
 .header {
   padding: 48px 80px;
   color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header_inner {
@@ -579,6 +643,484 @@ img {
 
 .lang-switcher {
   margin-left: auto;
+}
+
+.mainvisual {
+  background-color: #0B143F;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.mainvisual .mainvisual_left {
+  background-image: url("../images/white_back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #0B143F;
+  padding: 30px 64px 30px 104px;
+  max-width: 640px;
+  width: 100%;
+  margin-left: 124px;
+}
+.mainvisual .mainvisual_left .mainvisual_subtitle {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.mainvisual .mainvisual_left .mainvisual_text {
+  margin-bottom: 48px;
+}
+.mainvisual .mainvisual_left .mainvisual_panels {
+  display: flex;
+  gap: 24px;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel {
+  position: relative;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 8px 0;
+  background-color: #ffffff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 176px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_left {
+  color: #0B143F;
+  border: solid 1px #0B143F;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_right {
+  color: #B69863;
+  border: solid 1px #B69863;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text {
+  padding: 27px 16px 16px 16px;
+  color: #ffffff;
+  border-radius: 4px;
+  max-width: 224px;
+  font-size: 1.4rem;
+  height: 100%;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text.mainvisual_panel_text_left {
+  background-color: #0B143F;
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text.mainvisual_panel_text_right {
+  background-color: #B69863;
+}
+.mainvisual .mainvisual_right {
+  background-image: url("../images/mainvisual.png");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_sub {
+  font-size: 1.8rem;
+}
+.mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_tltle {
+  font-size: 4.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+#section01 {
+  background-image: url("../images/clinical_back.png");
+}
+#section01 .clinical_wrap {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+#section01 .clinical_wrap .clinical_title {
+  font-family: "arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6.4rem;
+  color: #B69863;
+}
+#section01 .clinical_wrap .clinical_desc {
+  max-width: 670px;
+  width: 100%;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_desc_top {
+  font-size: 2.4rem;
+  position: relative;
+  display: inline-block;
+  padding-left: 90px;
+  margin-bottom: 16px;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_desc_top::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background: #ffffff;
+  transform: translateY(-50%);
+}
+#section01 .clinical_wrap .clinical_desc .clinical_desc_middle {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_desc_middle .clinical_cases_number {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #B69863;
+  font-family: "arial", sans-serif;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_desc_middle .clinical_cases_unit {
+  color: #B69863;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_approach {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_title {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item {
+  background-color: #ffffff;
+  color: #0B143F;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  text-align: center;
+  width: calc(25% - 6px);
+}
+
+#section02 .policy_wrap {
+  max-width: 1630px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+#section02 .policy_wrap .policy_text h2 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+#section02 .policy_wrap .policy_text .policy_lead {
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+}
+#section02 .policy_wrap .policy_text .policy_goal {
+  font-size: 3.2rem;
+  color: #B69863;
+  margin-bottom: 32px;
+}
+#section02 .policy_wrap .policy_text .policy_goal .policy_goal_highlight {
+  font-family: "arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 4rem;
+  color: #B69863;
+}
+#section02 .policy_wrap .policy_text .policy_body {
+  font-size: 2rem;
+  line-height: 1.6;
+}
+#section02 .approach_wrap .approach_items {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+#section02 .approach_wrap .approach_items .approach_item_list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+#section02 .approach_wrap .approach_items .approach_item_list .approach_item {
+  max-width: calc(50% - 16px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+#section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+#section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_body {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+#section03 .treatment_menu_wrap .meddium_title {
+  margin-bottom: 64px;
+}
+#section03 .treatment_menu_wrap .treatment_menu_content {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+#section03 .treatment_menu_wrap .treatment_menu_content .endoscopy_section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+#section03 .treatment_menu_wrap .treatment_benefits {
+  margin-bottom: 56px;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  text-align: center;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items {
+  display: flex;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
+  max-width: 33.3333333333%;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0;
+  position: relative;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 0;
+  height: 0;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_time {
+  background-color: #B69863;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_time::before {
+  border-top: 64px solid #DFD3C6;
+  border-right: 64px solid transparent;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_blood {
+  background-color: #333F69;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_blood::before {
+  border-top: 64px solid #0B143F;
+  border-right: 64px solid transparent;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_runman {
+  background-color: #B69863;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item.treatment_benefit_item_runman::before {
+  border-top: 64px solid #DFD3C6;
+  border-right: 64px solid transparent;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item img {
+  max-width: 64px;
+  margin-bottom: 24px;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item .title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+#section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item .caution {
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap {
+  margin-bottom: 56px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches {
+  display: flex;
+  gap: 24px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item {
+  display: flex;
+  flex-direction: column;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: center;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_method {
+  margin-bottom: 32px;
+  text-align: center;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
+  margin-bottom: 32px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_desc {
+  margin-bottom: 16px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_time {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_time p {
+  font-size: 1.8rem;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_method {
+  margin-bottom: 32px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_desc {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_time {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_time p {
+  font-size: 1.8rem;
+}
+
+#section04 .syringe_content {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 48px;
+  margin-bottom: 40px;
+}
+#section04 .syringe_content p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+#section04 .syringe_types h3 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  text-align: center;
+}
+#section04 .syringe_types .syringe_type_items {
+  display: flex;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item {
+  max-width: 14.2857142857%;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 16px;
+  position: relative;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 0;
+  height: 0;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_even {
+  background-color: #B69863;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_even::before {
+  border-top: 40px solid #DFD3C6;
+  border-right: 40px solid transparent;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_odd {
+  background-color: #333F69;
+}
+#section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_odd::before {
+  border-top: 40px solid #0B143F;
+  border-right: 40px solid transparent;
+}
+
+#section05 .medium_title {
+  margin-bottom: 64px;
+}
+#section05 .flow_desc {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+#section05 img {
+  margin: 0 auto;
+}
+
+#section06 .price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+  font-size: 1.6rem;
+  color: #303030;
+}
+#section06 .price-table th,
+#section06 .price-table td {
+  border: 1px solid #0B143F;
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+#section06 .price-table .price-head {
+  background-color: #333F69;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+#section06 .price-table .price-head-accent {
+  background-color: #B69863;
+  color: #ffffff;
+}
+#section06 .price-table .price-row-alt {
+  background-color: #f0f0f0;
+}
+#section06 .price-table .price-item {
+  background-color: #EEEEEE;
+}
+#section06 .price-table .price-item.price-item-spacer {
+  background-color: transparent;
+}
+#section06 .price-table .price-amount {
+  font-weight: 700;
+  color: #303030;
+  background-color: #ffffff;
+}
+#section06 .price-table .price-amount span {
+  font-size: 1.9rem;
+}
+#section06 .price-table .price-desc {
+  font-weight: 400;
+  background-color: #ffffff;
 }
 
 footer {
