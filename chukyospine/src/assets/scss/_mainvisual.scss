@@ -1,12 +1,11 @@
 @use "variables" as *;
 @use "mixins" as *;
-
 .mainvisual {
     background-color: $color3;
     display: flex;
     align-items: center;
     height: 100vh;
-
+    max-height: 1080px;
     .mainvisual_left {
         background-image: url("../images/white_back.png");
         background-size: cover;
@@ -16,24 +15,19 @@
         max-width: 640px;
         width: 100%;
         margin-left: 124px;
-
         .mainvisual_subtitle {
             font-size: 4rem;
             font-weight: 500;
             margin-bottom: 16px;
         }
-
         .mainvisual_text {
             margin-bottom: 48px;
         }
-
         .mainvisual_panels {
             display: flex;
             gap: 24px;
-
             .mainvisual_panel {
                 position: relative;
-
                 .mainvisual_panel_title {
                     font-size: 1.4rem;
                     font-weight: 500;
@@ -48,19 +42,15 @@
                     position: absolute;
                     left: 50%;
                     transform: translate(-50%, -50%);
-
                     &.mainvisual_panel_title_left {
                         color: $color3;
                         border: solid 1px $color3;
                     }
-
                     &.mainvisual_panel_title_right {
                         color: $color4;
                         border: solid 1px $color4;
                     }
-
                 }
-
                 .mainvisual_panel_text {
                     padding: 27px 16px 16px 16px;
                     color: $color2;
@@ -68,39 +58,36 @@
                     max-width: 224px;
                     font-size: 1.4rem;
                     height: 100%;
-
                     &.mainvisual_panel_text_left {
                         background-color: $color3;
                     }
-
                     &.mainvisual_panel_text_right {
                         background-color: $color4;
                     }
                 }
-
-
             }
         }
     }
-
     .mainvisual_right {
         background-image: url("../images/mainvisual.png");
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
         background-position: right;
-
+        position: relative;
         .mainvisual_text_wrap {
+            position: absolute;
+            right: clamp(24px, 8vw, 80px);
+            bottom: clamp(40px, 20vh, 240px);
+            color: $color2;
             .mainvisual_main_sub {
                 font-size: 1.8rem;
             }
-
             .mainvisual_main_tltle {
                 font-size: 4.8rem;
                 font-weight: 700;
                 letter-spacing: 0.08em;
             }
         }
-
     }
 }

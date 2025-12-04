@@ -7,12 +7,4 @@
 @use "header" as *;
 @use "mainvisual" as *;
 @use "front" as *;
-
-main {}
-
-footer {
-    padding: 16px;
-    background-color: $color1;
-    color: $color2;
-    text-align: center;
-}
+@use "footer" as *;

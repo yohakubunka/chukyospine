@@ -1,5 +1,4 @@
 @use "variables" as *;
-
 .header {
     padding: 48px 80px;
     color: $color2;
@@ -19,7 +18,6 @@
 .header_logo {
     margin: 0;
     flex-shrink: 0;
-
     img {
         display: block;
         max-width: 211px;
@@ -35,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -49,4 +47,96 @@
 
 .lang-switcher {
     margin-left: auto;
+}
+
+.contact_wrap {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    .doctor_image {
+        position: absolute;
+        z-index: 1;
+        bottom: -16px;
+        max-width: 290px;
+    }
+    .contact_us {
+        position: relative;
+        z-index: 10;
+        background-color: $color4;
+        color: $color2;
+        padding: 12px 24px;
+        border-radius: 0 40px 40px 0;
+        font-size: 1.4rem;
+        .contact_title {
+            margin-bottom: 10px;
+        }
+        .contact_sns_wrap {
+            display: flex;
+            gap: 16px;
+            .contact_sns {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                img {
+                    max-width: 16px;
+                }
+            }
+        }
+    }
+}
+
+.scroll_down_wrap {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    display: flex;
+    gap: 16px;
+    .scroll_down_text {
+        font-family: "arial", sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.05em;
+    }
+    .scroll_icon {
+        /* 調整しやすいようにカスタムプロパティで定義 */
+        --size: 40px;
+        /* 円の直径 */
+        --triangle-width: 10px;
+        /* 三角形の横幅 */
+        --triangle-height: 6px;
+        /* 三角形の高さ */
+        --circle-color: #ffffff;
+        /* 円の色（白）*/
+        --triangle-color: #b28b55;
+        /* 三角形の色（黄色） */
+        width: var(--size);
+        height: var(--size);
+        position: relative;
+        display: inline-block;
+    }
+    /* 丸（背景） */
+    .scroll_icon::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /* top:0; right:0; bottom:0; left:0; と同等 */
+        background: var(--circle-color);
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        /* 任意の見た目調整 */
+    }
+    /* 下向き三角形（中央に配置） */
+    .scroll_icon::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -35%);
+        /* 見た目上少し上寄せ（調整可） */
+        width: var(--triangle-width);
+        height: var(--triangle-height);
+        /* 三角形を作る：clip-path を使用（高精度で中央に配置しやすい） */
+        background: var(--triangle-color);
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        /* 上辺が平らで下が尖っている -> 下向き三角 */
+    }
 }

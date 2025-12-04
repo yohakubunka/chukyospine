@@ -1,34 +1,41 @@
 @use "variables" as *;
 @use "mixins" as *;
-
 #section01 {
     background-image: url("../images/clinical_back.png");
-
     .clinical_wrap {
         display: flex;
         gap: 80px;
         justify-content: space-between;
         align-items: center;
-
+        @include xl {
+            gap: 40px;
+        }
+        @include lg {
+            flex-direction: column;
+        }
         .clinical_title {
             font-family: "arial", sans-serif;
             font-weight: 700;
             font-style: normal;
             font-size: 6.4rem;
             color: $color4;
+            @include lg {
+                font-size: 4rem;
+            }
         }
-
         .clinical_desc {
             max-width: 670px;
             width: 100%;
-
             .clinical_desc_top {
                 font-size: 2.4rem;
                 position: relative;
                 display: inline-block;
                 padding-left: 90px;
                 margin-bottom: 16px;
-
+                @include lg {
+                    font-size: 2rem;
+                    padding-left: 40px;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -38,44 +45,52 @@
                     height: 1px;
                     background: $color2;
                     transform: translateY(-50%);
+                    @include lg {
+                        width: 30px;
+                    }
                 }
             }
-
             .clinical_desc_middle {
                 font-size: 3.2rem;
                 font-weight: 500;
                 margin-bottom: 32px;
-
+                @include lg {
+                    font-size: 2.4rem;
+                    margin-bottom: 24px;
+                }
                 .clinical_cases_number {
                     font-size: 4.8rem;
                     font-weight: 700;
                     color: $color4;
                     font-family: "arial", sans-serif;
+                    @include lg {
+                        font-size: 3.2rem;
+                    }
                 }
-
                 .clinical_cases_unit {
                     color: $color4;
-
                 }
             }
-
             .clinical_approach {
                 font-size: 1.8rem;
                 font-weight: 500;
                 margin-bottom: 24px;
+                @include lg {
+                    margin-bottom: 16px;
+                }
             }
-
             .clinical_services {
                 .clinical_services_title {
                     font-weight: 600;
                     margin-bottom: 16px;
                 }
-
                 .clinical_services_list {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 8px;
-
+                    @include md {
+                        justify-content: center;
+                    }
                     .clinical_service_item {
                         background-color: $color2;
                         color: $color3;
@@ -84,90 +99,133 @@
                         font-size: 1.2rem;
                         text-align: center;
                         width: calc(100% / 4 - 6px);
+                        @include md {
+                            width: calc(100% / 3 - 6px);
+                        }
+                        @include sp {
+                            width: calc(100% / 2 - 6px);
+                        }
                     }
                 }
             }
-
         }
     }
 }
 
-
 #section02 {
+    padding-right: 24px;
+    @include lg {
+        padding-left: 24px;
+    }
     .policy_wrap {
-        max-width: 1630px;
+        max-width: 1654px;
         width: 100%;
         display: flex;
         gap: 40px;
         align-items: center;
         margin-bottom: 48px;
-
+        @include lg {
+            flex-direction: column;
+            gap: 24px;
+        }
+        img {
+            width: 100%;
+            @include media-max(1500px) {
+                max-width: 600px;
+            }
+            @include xl {
+                max-width: 500px;
+            }
+        }
         .policy_text {
             h2 {
                 font-size: 4.8rem;
                 font-weight: 600;
                 margin-bottom: 48px;
+                @include lg {
+                    font-size: 3.2rem;
+                    margin-bottom: 24px;
+                }
             }
-
             .policy_lead {
                 font-size: 3.2rem;
                 margin-bottom: 8px;
+                @include lg {
+                    font-size: 2.4rem;
+                }
             }
-
             .policy_goal {
                 font-size: 3.2rem;
                 color: $color4;
                 margin-bottom: 32px;
-
+                @include lg {
+                    font-size: 2.4rem;
+                    margin-bottom: 24px;
+                }
                 .policy_goal_highlight {
                     font-family: "arial", sans-serif;
                     font-weight: 700;
                     font-style: normal;
                     font-size: 4rem;
                     color: $color4;
+                    @include lg {
+                        font-size: 3.2rem;
+                    }
                 }
             }
-
             .policy_body {
                 font-size: 2rem;
                 line-height: 1.6;
+                @include lg {
+                    font-size: 1.8rem;
+                }
             }
         }
-
     }
-
     .approach_wrap {
         .approach_items {
             display: flex;
             gap: 48px;
             align-items: center;
-
+            @include lg {
+                flex-direction: column;
+                gap: 24px;
+            }
             .approach_item_list {
                 display: flex;
                 gap: 32px;
                 flex-wrap: wrap;
-
+                @include sp {
+                    flex-direction: column;
+                    gap: 24px;
+                }
                 .approach_item {
                     max-width: calc(100% / 2 - 16px);
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
                     text-align: center;
                     gap: 8px;
-
+                    @include sp {
+                        max-width: 100%;
+                    }
                     .approach_item_title {
                         font-size: 2.4rem;
                         font-weight: 500;
                         margin-bottom: 8px;
                         letter-spacing: 0.05em;
+                        @include lg {
+                            font-size: 2rem;
+                        }
                     }
-
                     .approach_item_body {
                         font-size: 1.8rem;
                         font-weight: 500;
                         letter-spacing: 0.05em;
+                        @include lg {
+                            font-size: 1.6rem;
+                        }
                     }
                 }
             }
@@ -180,32 +238,52 @@
         .meddium_title {
             margin-bottom: 64px;
         }
-
         .treatment_menu_content {
             display: flex;
             gap: 48px;
             margin-bottom: 80px;
-
+            @include lg {
+                flex-direction: column;
+                gap: 24px;
+                margin-bottom: 40px;
+                align-items: center;
+            }
             .endoscopy_section {
                 display: flex;
                 flex-direction: column;
                 gap: 48px;
+                @include lg {
+                    gap: 24px;
+                }
+            }
+            .spine_img {
+                @include media-max(1500px) {
+                    max-width: 500px;
+                    width: 100%;
+                }
+                @include xl {
+                    max-width: 400px;
+                }
+                @include lg {
+                    max-width: 600px;
+                }
             }
         }
-
         .treatment_benefits {
             margin-bottom: 56px;
-
             .treatment_benefits_title {
                 font-size: 3.2rem;
                 font-weight: 500;
                 margin-bottom: 32px;
                 text-align: center;
+                @include lg {
+                    font-size: 2.4rem;
+                    margin-bottom: 24px;
+                }
             }
-
             .treatment_benefits_items {
                 display: flex;
-
+                flex-wrap: wrap;
                 .treatment_benefit_item {
                     max-width: calc(100% / 3);
                     width: 100%;
@@ -215,7 +293,9 @@
                     align-items: center;
                     padding: 48px 0;
                     position: relative;
-
+                    @include md {
+                        max-width: 100%;
+                    }
                     &::before {
                         content: "";
                         position: absolute;
@@ -223,46 +303,36 @@
                         left: 8px;
                         width: 0;
                         height: 0;
-
                     }
-
                     &.treatment_benefit_item_time {
                         background-color: $color4;
-
                         &::before {
                             border-top: 64px solid $color6;
                             border-right: 64px solid transparent;
                         }
                     }
-
                     &.treatment_benefit_item_blood {
                         background-color: $color5;
-
                         &::before {
                             border-top: 64px solid $color3;
                             border-right: 64px solid transparent;
                         }
                     }
-
                     &.treatment_benefit_item_runman {
                         background-color: $color4;
-
                         &::before {
                             border-top: 64px solid $color6;
                             border-right: 64px solid transparent;
                         }
                     }
-
                     img {
                         max-width: 64px;
                         margin-bottom: 24px;
                     }
-
                     .title {
                         font-size: 1.8rem;
                         text-align: center;
                     }
-
                     .caution {
                         margin-top: 8px;
                         font-size: 1.4rem;
@@ -270,85 +340,91 @@
                 }
             }
         }
-
         .procedures_section {
             .procedures_wrap {
                 margin-bottom: 56px;
-
                 .procedure_approaches {
                     display: flex;
                     gap: 24px;
-
+                    @include md {
+                        flex-direction: column;
+                        align-items: center;
+                    }
                     .procedure_approach_item {
                         display: flex;
                         flex-direction: column;
-
                         .procedure_approach_title {
                             font-size: 3.2rem;
                             font-weight: 500;
                             margin-bottom: 8px;
                             text-align: center;
+                            @include md {
+                                font-size: 2.4rem;
+                            }
                         }
-
                         .procedure_approach_method {
                             margin-bottom: 32px;
                             text-align: center;
+                            @include md {
+                                margin-bottom: 24px;
+                            }
                         }
-
                         .procedure_approach_img {
                             margin-bottom: 32px;
+                            @include md {
+                                margin-bottom: 24px;
+                            }
                         }
-
                         .procedure_approach_desc {
                             margin-bottom: 16px;
                         }
-
                         .procedure_approach_time {
                             display: flex;
                             align-items: center;
                             gap: 16px;
-
                             p {
                                 font-size: 1.8rem;
                             }
                         }
                     }
                 }
-
             }
-
             .procedures_wrap_single {
                 display: flex;
                 align-items: center;
                 gap: 24px;
                 justify-content: space-between;
-
+                @include md {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
                 .procedures_single_title {
                     font-size: 3.2rem;
                     font-weight: 500;
                     margin-bottom: 8px;
+                    @include md {
+                        font-size: 2.4rem;
+                    }
                 }
-
                 .procedures_single_method {
                     margin-bottom: 32px;
+                    @include md {
+                        margin-bottom: 24px;
+                    }
                 }
-
                 .procedures_single_desc {
                     font-size: 2rem;
                     margin-bottom: 16px;
                 }
-
                 .procedures_single_time {
                     display: flex;
                     align-items: center;
                     gap: 16px;
-
                     p {
                         font-size: 1.8rem;
                     }
                 }
             }
-
         }
     }
 }
@@ -360,26 +436,50 @@
         justify-content: space-between;
         margin-top: 48px;
         margin-bottom: 40px;
-
+        @include lg {
+            margin-bottom: 32px;
+            margin-bottom: 24px;
+        }
+        @include md {
+            flex-direction: column;
+            align-items: center;
+        }
         p {
             font-size: 1.8rem;
             font-weight: 500;
             letter-spacing: 0.05em;
             line-height: 1.6;
+            @include lg {
+                font-size: 1.6rem;
+            }
+        }
+        img {
+            @include xl {
+                max-width: 500px;
+                width: 100%;
+            }
+            @include lg {
+                max-width: 400px;
+            }
         }
     }
-
     .syringe_types {
         h3 {
             font-size: 3.2rem;
             font-weight: 500;
             margin-bottom: 32px;
             text-align: center;
+            @include lg {
+                font-size: 2.4rem;
+                margin-bottom: 24px;
+            }
         }
-
         .syringe_type_items {
             display: flex;
-
+            @include xl {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
             .syringe_type_item {
                 max-width: calc(100% / 7);
                 width: 100%;
@@ -391,7 +491,10 @@
                 gap: 16px;
                 padding: 32px 16px;
                 position: relative;
-
+                @include xl {
+                    max-width: 100%;
+                    width: 190px;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -399,22 +502,16 @@
                     left: 8px;
                     width: 0;
                     height: 0;
-
                 }
-
                 &.syringe_type_item_even {
                     background-color: $color4;
-
                     &::before {
                         border-top: 40px solid $color6;
                         border-right: 40px solid transparent;
                     }
-
                 }
-
                 &.syringe_type_item_odd {
                     background-color: $color5;
-
                     &::before {
                         border-top: 40px solid $color3;
                         border-right: 40px solid transparent;
@@ -423,37 +520,40 @@
             }
         }
     }
-
 }
 
 #section05 {
+    @include lg {
+        padding: 60px 24px;
+    }
     .medium_title {
         margin-bottom: 64px;
+        @include lg {
+            margin-bottom: 40px;
+        }
     }
-
     .flow_desc {
         font-size: 2rem;
         text-align: center;
         margin-bottom: 40px;
         text-align: center;
+        @include lg {
+            margin-bottom: 24px;
+        }
     }
-
     img {
         margin: 0 auto;
     }
 }
 
-
 #section06 {
     padding-bottom: 120px;
-
     .price-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 1.6rem;
-        color: $color1;
+        color: $color3;
         margin-bottom: 24px;
-
         th {
             padding: 32px;
             text-align: center;
@@ -461,63 +561,65 @@
             font-weight: 600;
             border: 2px solid $color3;
         }
-
         td {
             border: 2px solid $color3;
             text-align: left;
             vertical-align: middle;
             padding: 24px;
         }
-
         .price-head {
             background-color: $color5;
             color: $color2;
             font-weight: 700;
             text-align: center;
-
             &-accent {
                 background-color: $color4;
                 color: $color2;
             }
         }
-
+        .head-item {
+            width: 536px;
+        }
+        .head-price {
+            width: 320px;
+        }
+        .head-content {
+            width: 478px;
+        }
         .price-row {
             &-alt {
                 background-color: #f0f0f0;
             }
         }
-
         .price-item {
             background-color: $color8;
-
             &.price-item-spacer {
                 background-color: transparent;
             }
         }
-
-
+        .item_left {
+            width: 267px;
+        }
         .price-amount {
             font-weight: 700;
-            color: $color1;
+            color: $color3;
             background-color: $color2;
-
             span {
-                font-size: 1.9rem;
+                font-size: 2.8rem
+            }
+            .unit {
+                font-size: 2rem;
             }
         }
-
         .price-desc {
             font-weight: 400;
             background-color: $color2;
         }
     }
-
     .price_notes {
         p {
             font-size: 1.4rem;
-            color: $color2;
-            margin-bottom: 8px;
-
+            color: $color3;
             &:last-of-type {
                 margin-bottom: 0;
             }
@@ -529,20 +631,22 @@
     background-color: $color2;
     color: $color3;
     padding: 120px 0;
-
     .medium_title {
         margin-bottom: 72px;
+        @include lg {
+            margin-bottom: 40px;
+        }
     }
-
     .doctor_lead {
         font-size: 3.2rem;
         margin-bottom: 8px;
         text-align: center;
         font-weight: 500;
+        @include lg {
+            font-size: 2.4rem;
+        }
     }
-
     .philosophy_text {
-
         padding: 0 16px;
         margin: 0 auto;
         margin-top: 8px;
@@ -550,53 +654,76 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 48px;
-
+        @include lg {
+            margin-bottom: 32px;
+        }
         p {
             font-size: 3.2rem;
             font-weight: 600;
             color: $color2;
             background-color: $color4;
+            @include xl {
+                font-size: 2.4rem;
+                padding: 4px;
+            }
         }
-
         .philosophy_highlight {
             font-family: "arial", sans-serif;
             font-weight: 700;
             font-style: normal;
             font-size: 5.6rem;
+            @include xl {
+                font-size: 4rem;
+            }
         }
     }
-
     .doctor_content {
         display: flex;
         gap: 48px;
-
+        margin-bottom: 48px;
+        @include lg {
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        @include md {
+            flex-direction: column;
+        }
         .doctor_profile {
+            @include md {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             img {
                 max-width: 378px;
                 margin-bottom: 24px;
+                @include lg {
+                    max-width: 300px;
+                }
             }
-
             p {
                 font-weight: 500;
                 font-size: 1.6rem;
+                text-align: center;
             }
         }
-
         .doctor_details {
             .doctor_message {
                 font-size: 1.6rem;
                 margin-bottom: 24px;
                 padding-bottom: 40px;
                 border-bottom: solid 1px $color8;
+                @include md {
+                    margin-bottom: 16px;
+                    padding-bottom: 32px;
+                }
             }
-
             .list_title {
                 font-size: 2.4rem;
                 font-weight: 500;
                 margin-bottom: 16px;
                 position: relative;
                 padding-left: 24px;
-
                 &::before {
                     content: "";
                     position: absolute;
@@ -608,21 +735,21 @@
                     border-radius: 50%;
                     transform: translateY(-50%);
                 }
-
-
             }
-
             .list_items {
                 li {
                     display: flex;
                     gap: 16px;
                     align-items: center;
                     margin-bottom: 16px;
-
+                    @include sp {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+                    }
                     &:last-of-type {
                         margin-bottom: 0;
                     }
-
                     span {
                         font-size: 2.4rem;
                         font-family: "arial", sans-serif;
@@ -630,11 +757,9 @@
                         font-style: normal;
                         line-height: 1;
                     }
-
                     &.item_line {
                         position: relative;
                         padding-left: calc(16px + 8px);
-
                         &::before {
                             content: "";
                             position: absolute;
@@ -647,27 +772,216 @@
                         }
                     }
                 }
-
             }
-
             .doctor_career {
                 padding-bottom: 32px;
                 margin-bottom: 24px;
                 border-bottom: solid 1px $color8;
+                @include md {
+                    margin-bottom: 16px;
+                    padding-bottom: 32px;
+                }
             }
-
             .doctor_qualifications {
                 display: flex;
                 gap: 24px;
                 padding-bottom: 32px;
                 margin-bottom: 24px;
                 border-bottom: solid 1px $color8;
-
+                @include lg {
+                    flex-direction: column;
+                }
                 .left {
                     max-width: 445px;
                     width: 100%;
                 }
             }
+        }
+    }
+    .doctor_certificates {
+        display: flex;
+        gap: 24px;
+        @include md {
+            flex-wrap: wrap;
+        }
+        .doctor_certificate_item {
+            max-width: calc(100% / 3 - 12px);
+            width: 100%;
+            text-align: center;
+            @include md {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            p {
+                margin-top: 16px;
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+#section08 {
+    padding: 120px 0;
+    .access_wrap {
+        .medium_title {
+            margin-bottom: 16px;
+        }
+        .access_address {
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map_wrap {
+            margin-bottom: 40px;
+            width: 100%;
+            iframe {
+                width: 100%;
+                height: 440px;
+            }
+        }
+        .access_details_wrap {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 120px;
+            @include xl {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 80px;
+            }
+            .access_details {
+                background-color: $color2;
+                padding: 40px;
+                color: $color3;
+                @include media-max (1500px) {
+                    padding: 24px;
+                }
+                @include xl {
+                    width: 100%;
+                }
+                .access_detail_item {
+                    margin-bottom: 16px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    .access_detail_title {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        margin-bottom: 16px;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: $color4;
+                    }
+                    .access_detail_train {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px 16px;
+                        margin-bottom: 8px;
+                        flex-wrap: wrap;
+                        .train_icons {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                        }
+                    }
+                    .metro-route {
+                        color: $color4;
+                    }
+                }
+            }
+        }
+    }
+    .access_map_legend {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        @include lg {
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .map_illust {
+            max-width: 1072px;
+            width: 100%;
+            @include media-max (1500px) {
+                max-width: 800px;
+            }
+            @include lg {
+                max-width: 100%;
+            }
+        }
+        .access_map_legend_items {
+            @include xl {
+                max-width: 160px;
+                width: 100%;
+            }
+            @include lg {
+                max-width: 100%;
+            }
+            .legend_title {
+                font-size: 4rem;
+                font-weight: 500;
+                margin-bottom: 40px;
+                @include xl {
+                    font-size: 2.8rem;
+                    margin-bottom: 32px;
+                }
+            }
+            .access_map_legend_item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 16px;
+                font-weight: 500;
+                @include lg {
+                    margin-bottom: 0;
+                }
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+            .map_ping {
+                @include lg {
+                    display: flex;
+                    gap: 8px 24px;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+                }
+            }
+        }
+    }
+}
+
+#section09 {
+    background-image: url("../images/footer_back.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 177px 0;
+    .hours_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .hours_title {
+            font-size: 3.2rem;
+            font-weight: 500;
+            color: $color2;
+            background-color: $color3;
+            padding: 16px 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 240px;
+            margin-bottom: 40px;
+        }
+        .hours_subtitle {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $color2;
+            letter-spacing: 0.05em;
         }
     }
 }

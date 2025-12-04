@@ -1,35 +1,52 @@
 <%
 const pick = (obj) => {
-    if (!obj) return '';
-    if (typeof obj === 'string') return obj;
-    return obj[lang] || obj.ja || obj.en || Object.values(obj)[0] || '';
+    if (obj === null || obj === undefined) return '';
+    if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
+    if (Object.prototype.hasOwnProperty.call(obj, lang)) {
+        const val = obj[lang];
+        return val === undefined || val === null ? '' : String(val);
+    }
+    return '';
 };
 const footerData = site.footer || {};
 const footerNav = footerData.navItems || [];
 %>
-<footer class="footer">
-  <img class="" src="/images/footer_logo.svg" alt="" aria-hidden="true" />
-  <div>
-    <img class="" src="/images/line_icon.svg" alt="" aria-hidden="true" />
-    <img class="" src="/images/wecaht_icon.svg" alt="" aria-hidden="true" />
-    <p><%= pick(footerData.cta) %></p>
-  </div>
-  <nav class="header_nav">
-    <ul class="header_nav_list">
-      <% footerNav.forEach(function(item) { %>
-        <li class="header_nav_item"><a href="##"><%= pick(item.label) %></a></li>
-      <% }) %>
-    </ul>
-  </nav>
+    <footer class="footer">
+        <div class="page-width">
+            <img class="footer_logo" src="/images/footer_logo.svg" alt="" aria-hidden="true" />
+            <div class="footer_cta">
+                <div class="footer_social_icons">
+                    <img class="" src="/images/line_icon.svg" alt="" aria-hidden="true" />
+                    <img class="" src="/images/wechat_icon.svg" alt="" aria-hidden="true" />
+                </div>
+                <p class="footer_cta_text">
+                    <%= pick(footerData.cta) %>
+                </p>
+            </div>
+            <nav class="footer_nav">
+                <ul class="footer_nav_list">
+                    <% footerNav.forEach(function(item) { %>
+                        <li class="footer_nav_item">
+                            <a href="##">
+                                <%= pick(item.label) %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+            </nav>
 
-  <div>
-    <div>
-      <img class="" src="/images/card_icon.svg" alt="" aria-hidden="true" />
-      <p><%= pick(footerData.paymentTitle) %></p>
-      <p><%= pick(footerData.paymentMethods) %></p>
+            <div class="footer_info">
+                <div class="footer_payment">
+                    <img class="" src="/images/card_icon.svg" alt="" aria-hidden="true" />
+                    <p>
+                        <span class="payment_title"><%= pick(footerData.paymentTitle) %></span>
+                        <%= pick(footerData.paymentMethods) %>
+                    </p>
+                </div>
+                <p class="footer_copyright">
+                    <%= pick(footerData.copyright) %>
+                </p>
 
-    </div>
-    <p><%= pick(footerData.copyright) %></p>
-
-  </div>
-</footer>
+            </div>
+        </div>
+    </footer>

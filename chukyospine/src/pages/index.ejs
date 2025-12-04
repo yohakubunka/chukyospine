@@ -4,42 +4,77 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        <%= site.title %>
-    </title>
-    <meta name="description" content="<%= site.description %>" />
-    <!-- OGP?Open Graph Protocol? -->
-    <meta property="og:title" content="<%= site.title %>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%= site.url %>" />
-    <!-- <meta property="og:image" content="[???URL]"> -->
-    <meta property="og:site_name" content="<%= site.title %>" />
-    <meta property="og:description" content="<%= site.description %>" />
-    <meta property="og:locale" content="ja_JP" />
-    <script>
-        (function (d) {
-            var config = {
-                kitId: 'ujv2rms',
-                scriptTimeout: 3000,
-                async: true
-            },
-                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
-        })(document);
-    </script>
+    <% const siteInfo = site.site || {}; %>
+        <% const resolveMeta = (val) => {
+        if (val === null || val === undefined) return '';
+        if (typeof val === 'string' || typeof val === 'number') return String(val);
+        if (typeof val === 'object') {
+            return val[lang] || val.ja || val.en || val.zh || '';
+        }
+        return '';
+    }; %>
+            <% const metaTitle = resolveMeta(siteInfo.title); %>
+                <% const metaDescription = resolveMeta(siteInfo.description); %>
+                    <% const siteUrl = siteInfo.url || ''; %>
+                        <title>
+                            <%= metaTitle %>
+                        </title>
+                        <meta name="description" content="<%= metaDescription %>" />
+                        <!-- OGP?Open Graph Protocol? -->
+                        <meta property="og:title" content="<%= metaTitle %>" />
+                        <meta property="og:type" content="website" />
+                        <meta property="og:url" content="<%= siteUrl %>" />
+                        <!-- <meta property="og:image" content="[???URL]"> -->
+                        <meta property="og:site_name" content="<%= metaTitle %>" />
+                        <meta property="og:description" content="<%= metaDescription %>" />
+                        <meta property="og:locale" content="ja_JP" />
+                        <script>
+                            (function(d) {
+                                var config = {
+                                        kitId: 'ujv2rms',
+                                        scriptTimeout: 3000,
+                                        async: true
+                                    },
+                                    h = d.documentElement,
+                                    t = setTimeout(function() {
+                                        h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                                    }, config.scriptTimeout),
+                                    tk = d.createElement("script"),
+                                    f = false,
+                                    s = d.getElementsByTagName("script")[0],
+                                    a;
+                                h.className += " wf-loading";
+                                tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+                                tk.async = true;
+                                tk.onload = tk.onreadystatechange = function() {
+                                    a = this.readyState;
+                                    if (f || a && a != "complete" && a != "loaded") return;
+                                    f = true;
+                                    clearTimeout(t);
+                                    try {
+                                        Typekit.load(config)
+                                    } catch (e) {}
+                                };
+                                s.parentNode.insertBefore(tk, s)
+                            })(document);
+                        </script>
 
-    <link rel="stylesheet" href="./css/style.css" />
+                        <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
     <%- include('../components/header') %>
         <main class="main">
-            <!-- <%- include('../components/mainvisual') %> -->
+            <%- include('../components/mainvisual') %>
 
-            <% const pick=(obj)=> {
-                if (!obj) return '';
-                if (typeof obj === 'string') return obj;
-                const candidates = [obj[lang], obj.ja, obj.en, obj.zh, ...Object.values(obj)];
-                return candidates.find((v) => v) || '';
+                <% const pick=(obj)=> {
+                if (obj === null || obj === undefined) return '';
+                if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
+                if (Object.prototype.hasOwnProperty.call(obj, lang)) {
+                    const val = obj[lang];
+                    return val === undefined || val === null ? '' : String(val);
+                }
+                return '';
                 };
                 const brText = (obj) => {
                 const val = pick(obj);
@@ -71,482 +106,613 @@
                 const proc3 = procedures[3] || {};
                 %>
 
-                <section id="section01">
-                    <div class="page-width clinical_wrap">
-                        <div class="clinical_title">
-                            <%- brText(clinical.title) %>
-                        </div>
-                        <div class="clinical_desc">
-                            <p class="clinical_desc_top">
-                                <%= pick(clinical.lead) %>
-                            </p>
-                            <p class="clinical_desc_middle">
-                                <%= pick(clinical.casesPrefix) %><span class="clinical_cases_number">
+                    <section id="section01">
+                        <div class="page-width clinical_wrap">
+                            <div class="clinical_title">
+                                <%- brText(clinical.title) %>
+                            </div>
+                            <div class="clinical_desc">
+                                <p class="clinical_desc_top">
+                                    <%= pick(clinical.lead) %>
+                                </p>
+                                <p class="clinical_desc_middle">
+                                    <%= pick(clinical.casesPrefix) %><span class="clinical_cases_number">
                                         <%= pick(clinical.casesNumber) %>
                                     </span><span class="clinical_cases_unit">
                                         <%= pick(clinical.casesUnit) %>
                                     </span>
-                                    <%= pick(clinical.casesSuffix) %>
-                            </p>
-                            <p class="clinical_approach">
-                                <%= pick(clinical.approach) %>
-                            </p>
-                            <div class="clinical_services">
-                                <p class="clinical_services_title">
-                                    <%= pick(clinical.servicesTitle) %>
+                                        <%= pick(clinical.casesSuffix) %>
                                 </p>
-                                <div class="clinical_services_list">
-                                    <% (clinical.services || []).forEach(function(service) { %>
-                                        <div class="clinical_service_item">
-                                            <%= pick(service) %>
+                                <p class="clinical_approach">
+                                    <%= pick(clinical.approach) %>
+                                </p>
+                                <div class="clinical_services">
+                                    <p class="clinical_services_title">
+                                        <%= pick(clinical.servicesTitle) %>
+                                    </p>
+                                    <div class="clinical_services_list">
+                                        <% (clinical.services || []).forEach(function(service) { %>
+                                            <div class="clinical_service_item">
+                                                <%= pick(service) %>
+                                            </div>
+                                            <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="section02">
+                        <div class="policy_wrap">
+                            <img class="" src="/images/facility.png" alt="<%= pick(policy.imageAlt) %>" aria-hidden="true" />
+                            <div class="policy_text">
+                                <h2>
+                                    <%= pick(policy.title) %>
+                                </h2>
+                                <p class="policy_lead">
+                                    <%= pick(policy.lead) %>
+                                </p>
+                                <p class="policy_goal">
+                                    <%= pick(goal.prefix) %><span class="policy_goal_highlight">
+                                        <%= pick(goal.highlight) %>
+                                    </span>
+                                        <%= pick(goal.suffix) %>
+                                </p>
+                                <p class="policy_body">
+                                    <%= pick(policy.body) %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="page-width approach_wrap">
+                            <h2 class="medium_title">
+                                <%= pick(idx.approachTitle) %>
+                            </h2>
+                            <div class="approach_items">
+                                <img class="" src="/images/treatment-main.svg" alt="" aria-hidden="true" />
+                                <div class="approach_item_list">
+                                    <% approaches.forEach(function(item, i) { const iconNum=String(i + 1).padStart(2, '0' );
+                                    %>
+                                        <div class="approach_item">
+                                            <img class="" src="/images/treatment-icon<%= iconNum %>.svg" alt="" aria-hidden="true" />
+                                            <p class="approach_item_title">
+                                                <%= pick(item.title) %>
+                                            </p>
+                                            <p class="approach_item_body">
+                                                <%= pick(item.body) %>
+                                            </p>
                                         </div>
                                         <% }) %>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section id="section02">
-                    <div class="policy_wrap">
-                        <img class="" src="/images/facility.png" alt="<%= pick(policy.imageAlt) %>"
-                            aria-hidden="true" />
-                        <div class="policy_text">
-                            <h2>
-                                <%= pick(policy.title) %>
+                    <section id="section03">
+                        <div class="page-width treatment_menu_wrap">
+                            <h2 class="medium_title">
+                                <%= pick(treatmentMenu.title) %>
                             </h2>
-                            <p class="policy_lead">
-                                <%= pick(policy.lead) %>
-                            </p>
-                            <p class="policy_goal">
-                                <%= pick(goal.prefix) %><span class="policy_goal_highlight">
-                                        <%= pick(goal.highlight) %>
-                                    </span>
-                                    <%= pick(goal.suffix) %>
-                            </p>
-                            <p class="policy_body">
-                                <%= pick(policy.body) %>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="page-width approach_wrap">
-                        <h2 class="medium_title">
-                            <%= pick(idx.approachTitle) %>
-                        </h2>
-                        <div class="approach_items">
-                            <img class="" src="/images/treatment-main.svg" alt="" aria-hidden="true" />
-                            <div class="approach_item_list">
-                                <% approaches.forEach(function(item, i) { const iconNum=String(i + 1).padStart(2, '0' );
-                                    %>
-                                    <div class="approach_item">
-                                        <img class="" src="/images/treatment-icon<%= iconNum %>.svg" alt=""
-                                            aria-hidden="true" />
-                                        <p class="approach_item_title">
-                                            <%= pick(item.title) %>
-                                        </p>
-                                        <p class="approach_item_body">
-                                            <%= pick(item.body) %>
-                                        </p>
+                            <div class="treatment_menu_content">
+                                <div class="endoscopy_section">
+                                    <div class="icon_title_wrap">
+                                        <div class="back_icon">
+                                            <img class="" src="/images/details_icon.svg" alt="" aria-hidden="true" />
+                                        </div>
+                                        <div class="icon_title_text">
+                                            <h3>
+                                                <%= pick(treatmentMenu.endoscopyTitle) %>
+                                            </h3>
+                                            <p class="icon_subtitle">
+                                                <%= pick(treatmentMenu.endoscopySubTitle) %>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <% }) %>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="section03">
-                    <div class="page-width treatment_menu_wrap">
-                        <h2 class="medium_title">
-                            <%= pick(treatmentMenu.title) %>
-                        </h2>
-                        <div class="treatment_menu_content">
-                            <div class="endoscopy_section">
-                                <div class="icon_title_wrap">
-                                    <div class="back_icon">
-                                        <img class="" src="/images/details_icon.svg" alt="" aria-hidden="true" />
-                                    </div>
-                                    <div class="icon_title_text">
-                                        <h3>
-                                            <%= pick(treatmentMenu.endoscopyTitle) %>
-                                        </h3>
-                                        <p class="icon_subtitle">
-                                            <%= pick(treatmentMenu.endoscopySubTitle) %>
-                                        </p>
-                                    </div>
+                                    <%- brText(treatmentMenu.endoscopyBody) %>
                                 </div>
-                                <%- brText(treatmentMenu.endoscopyBody) %>
+
+
+                                <img class="spine_img" src="/images/details.svg" alt="" aria-hidden="true" />
                             </div>
 
-
-                            <img class="" src="/images/details.svg" alt="" aria-hidden="true" />
-                        </div>
-
-                        <div class="treatment_benefits">
-                            <h3 class="treatment_benefits_title">
-                                <%= pick(treatmentMenu.benefitsTitle) %>
-                            </h3>
-                            <div class="treatment_benefits_items">
-                                <% benefits.forEach(function(benefit, i) { const iconNum=['time','blood','runman'][i]
+                            <div class="treatment_benefits">
+                                <h3 class="treatment_benefits_title">
+                                    <%= pick(treatmentMenu.benefitsTitle) %>
+                                </h3>
+                                <div class="treatment_benefits_items">
+                                    <% benefits.forEach(function(benefit, i) { const iconNum=['time','blood','runman'][i]
                                     || 'time' ; const itemClass=`treatment_benefit_item
                                     treatment_benefit_item_${iconNum}`; %>
-                                    <div class="<%= itemClass %>">
-                                        <img class="" src="/images/<%= iconNum %>-icon.svg" alt="" aria-hidden="true" />
-                                        <p class="title"><%- brText(benefit.title) %></p>
-                                        <% (benefit.lines || []).forEach(function(line) { %>
-                                            <p class="caution">
-                                                <%= pick(line) %>
+                                        <div class="<%= itemClass %>">
+                                            <img class="" src="/images/<%= iconNum %>-icon.svg" alt="" aria-hidden="true" />
+                                            <p class="title">
+                                                <%- brText(benefit.title) %>
                                             </p>
+                                            <% (benefit.lines || []).forEach(function(line) { %>
+                                                <p class="caution">
+                                                    <%= pick(line) %>
+                                                </p>
+                                                <% }) %>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                            </div>
+
+                            <div class="procedures_section">
+                                <div class="procedures_wrap">
+                                    <div class="number_title">
+                                        <img class="num_img" src="/images/num_01.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                        <p>
+                                            <%= pick(proc0.title) %>
+                                        </p>
+                                    </div>
+                                    <div class="procedure_approaches">
+                                        <% (proc0.approaches || []).forEach(function(app, i) { const imgNum=i===0 ? '01'
+                                        : '02' ; %>
+                                            <div class="procedure_approach_item">
+                                                <p class="procedure_approach_title">
+                                                    <%= pick(app.title) %>
+                                                </p>
+                                                <p class="procedure_approach_method">
+                                                    <%= pick(app.method) %>
+                                                </p>
+                                                <img class="procedure_approach_img" src="/images/number_image_<%= imgNum %>.svg" alt="" aria-hidden="true" />
+                                                <p class="procedure_approach_desc">
+                                                    <%- brText(app.description) %>
+                                                </p>
+                                                <div class="procedure_approach_time">
+                                                    <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                    <p>
+                                                        <%= pick(app.time) %>
+                                                    </p>
+                                                </div>
+                                            </div>
                                             <% }) %>
                                     </div>
-                                    <% }) %>
-                            </div>
-                        </div>
-
-                        <div class="procedures_section">
-                            <div class="procedures_wrap">
-                                <div class="number_title">
-                                    <img class="num_img" src="/images/num_01.svg" alt="" aria-hidden="true" />
-                                    <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                    <p>
-                                        <%= pick(proc0.title) %>
-                                    </p>
                                 </div>
-                                <div class="procedure_approaches">
-                                    <% (proc0.approaches || []).forEach(function(app, i) { const imgNum=i===0 ? '01'
-                                        : '02' ; %>
-                                        <div class="procedure_approach_item">
-                                            <p class="procedure_approach_title">
+
+                                <div class="procedures_wrap procedures_wrap_single">
+                                    <div>
+                                        <div class="number_title">
+                                            <img class="num_img" src="/images/num_02.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%= pick(proc1.title) %>
+                                            </p>
+                                        </div>
+
+                                        <% (proc1.approaches || []).forEach(function(app) { %>
+                                            <p class="procedures_single_title">
                                                 <%= pick(app.title) %>
                                             </p>
-                                            <p class="procedure_approach_method">
+                                            <p class="procedures_single_method">
                                                 <%= pick(app.method) %>
                                             </p>
-                                            <img class="procedure_approach_img"
-                                                src="/images/number_image_<%= imgNum %>.svg" alt=""
-                                                aria-hidden="true" />
-                                            <p class="procedure_approach_desc"><%- brText(app.description) %></p>
-                                            <div class="procedure_approach_time">
+
+                                            <p class="procedures_single_desc">
+                                                <%- brText(app.description) %>
+                                            </p>
+                                            <div class="procedures_single_time">
                                                 <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
                                                 <p>
                                                     <%= pick(app.time) %>
                                                 </p>
                                             </div>
-                                        </div>
-                                        <% }) %>
-                                </div>
-                            </div>
-
-                            <div class="procedures_wrap procedures_wrap_single">
-                                <div>
-                                    <div class="number_title">
-                                        <img class="num_img" src="/images/num_02.svg" alt="" aria-hidden="true" />
-                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                        <p>
-                                            <%= pick(proc1.title) %>
-                                        </p>
+                                            <% }) %>
                                     </div>
 
-                                    <% (proc1.approaches || []).forEach(function(app) { %>
-                                        <p class="procedures_single_title">
-                                            <%= pick(app.title) %>
-                                        </p>
-                                        <p class="procedures_single_method">
-                                            <%= pick(app.method) %>
-                                        </p>
-
-                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
-                                        <div class="procedures_single_time">
-                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
-                                            <p>
-                                                <%= pick(app.time) %>
-                                            </p>
-                                        </div>
-                                        <% }) %>
-                                </div>
-
-                                <div>
-                                    <img class="" src="/images/number_image_03.svg" alt="" aria-hidden="true" />
-                                </div>
-                            </div>
-
-                            <div class="procedures_wrap procedures_wrap_single">
-                                <div class="">
-                                    <div class="number_title">
-                                        <img class="num_img" src="/images/num_03.svg" alt="" aria-hidden="true" />
-                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                        <p><%- brText(proc2.title) %> </p>
+                                    <div>
+                                        <img class="" src="/images/number_image_03.svg" alt="" aria-hidden="true" />
                                     </div>
+                                </div>
 
-                                    <% (proc2.approaches || []).forEach(function(app) { %>
-                                        <p class="procedures_single_title">
-                                            <%= pick(app.title) %>
-                                        </p>
-                                        <p class="procedures_single_method">
-                                            <%= pick(app.method) %>
-                                        </p>
-
-                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
-                                        <div class="procedures_single_time">
-                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                <div class="procedures_wrap procedures_wrap_single">
+                                    <div class="">
+                                        <div class="number_title">
+                                            <img class="num_img" src="/images/num_03.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
                                             <p>
-                                                <%= pick(app.time) %>
+                                                <%- brText(proc2.title) %>
                                             </p>
                                         </div>
-                                        <% }) %>
-                                </div>
-                                <div>
-                                    <img class="" src="/images/number_image_04.svg" alt="" aria-hidden="true" />
-                                </div>
-                            </div>
 
-                            <div class="procedures_wrap procedures_wrap_single">
-                                <div>
-                                    <div class="number_title">
-                                        <img class="num_img" src="/images/num_04.svg" alt="" aria-hidden="true" />
-                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
-                                        <p>
-                                            <%= pick(proc3.title) %>
-                                        </p>
+                                        <% (proc2.approaches || []).forEach(function(app) { %>
+                                            <p class="procedures_single_title">
+                                                <%= pick(app.title) %>
+                                            </p>
+                                            <p class="procedures_single_method">
+                                                <%= pick(app.method) %>
+                                            </p>
+
+                                            <p class="procedures_single_desc">
+                                                <%- brText(app.description) %>
+                                            </p>
+                                            <div class="procedures_single_time">
+                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <p>
+                                                    <%= pick(app.time) %>
+                                                </p>
+                                            </div>
+                                            <% }) %>
                                     </div>
+                                    <div>
+                                        <img class="" src="/images/number_image_04.svg" alt="" aria-hidden="true" />
+                                    </div>
+                                </div>
 
-                                    <% (proc3.approaches || []).forEach(function(app) { %>
-                                        <p class="procedures_single_title">
-                                            <%= pick(app.title) %>
-                                        </p>
-                                        <p class="procedures_single_method">
-                                            <%= pick(app.method) %>
-                                        </p>
-
-                                        <p class="procedures_single_desc"><%- brText(app.description) %></p>
-                                        <div class="procedures_single_time">
-                                            <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                <div class="procedures_wrap procedures_wrap_single">
+                                    <div>
+                                        <div class="number_title">
+                                            <img class="num_img" src="/images/num_04.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
                                             <p>
-                                                <%= pick(app.time) %>
+                                                <%= pick(proc3.title) %>
                                             </p>
                                         </div>
-                                        <% }) %>
-                                </div>
-                                <div>
-                                    <img class="" src="/images/number_image_05.svg" alt="" aria-hidden="true" />
+
+                                        <% (proc3.approaches || []).forEach(function(app) { %>
+                                            <p class="procedures_single_title">
+                                                <%= pick(app.title) %>
+                                            </p>
+                                            <p class="procedures_single_method">
+                                                <%= pick(app.method) %>
+                                            </p>
+
+                                            <p class="procedures_single_desc">
+                                                <%- brText(app.description) %>
+                                            </p>
+                                            <div class="procedures_single_time">
+                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <p>
+                                                    <%= pick(app.time) %>
+                                                </p>
+                                            </div>
+                                            <% }) %>
+                                    </div>
+                                    <div>
+                                        <img class="" src="/images/number_image_05.svg" alt="" aria-hidden="true" />
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
+                    </section>
 
-
-                    </div>
-                </section>
-
-                <section id="section04">
-                    <div class="page-width">
-                        <div class="icon_title_wrap">
-                            <div class="back_icon">
-                                <img class="" src="/images/syringe.svg" alt="" aria-hidden="true" />
+                    <section id="section04">
+                        <div class="page-width">
+                            <div class="icon_title_wrap">
+                                <div class="back_icon">
+                                    <img class="" src="/images/syringe.svg" alt="" aria-hidden="true" />
+                                </div>
+                                <div class="icon_title_text">
+                                    <h3>
+                                        <%= pick(block.title) %>
+                                    </h3>
+                                </div>
                             </div>
-                            <div class="icon_title_text">
+
+                            <div class="syringe_content">
+                                <p>
+                                    <%- brText(block.description) %>
+                                </p>
+                                <img class="" src="/images/syringe_illust.svg" alt="" aria-hidden="true" />
+                            </div>
+                            <div class="syringe_types">
                                 <h3>
-                                    <%= pick(block.title) %>
+                                    <%= pick(block.typesTitle) %>
                                 </h3>
-                            </div>
-                        </div>
-
-                        <div class="syringe_content">
-                            <p><%- brText(block.description) %></p>
-                            <img class="" src="/images/syringe_illust.svg" alt="" aria-hidden="true" />
-                        </div>
-                        <div class="syringe_types">
-                            <h3>
-                                <%= pick(block.typesTitle) %>
-                            </h3>
-                            <div class="syringe_type_items">
-                                <% blockTypes.forEach(function(item, i) { const num=String(i + 1).padStart(2, '0' );
+                                <div class="syringe_type_items">
+                                    <% blockTypes.forEach(function(item, i) { const num=String(i + 1).padStart(2, '0' );
                                     const altClass=i % 2===0 ? 'syringe_type_item_even' : 'syringe_type_item_odd' ; %>
-                                    <div class="syringe_type_item <%= altClass %>">
-                                        <img class="" src="/images/nerve_icon_<%= num %>.svg" alt=""
-                                            aria-hidden="true" />
-                                        <p><%- brText(item) %> </p>
-                                    </div>
-                                    <% }) %>
+                                        <div class="syringe_type_item <%= altClass %>">
+                                            <img class="" src="/images/nerve_icon_<%= num %>.svg" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%- brText(item) %>
+                                            </p>
+                                        </div>
+                                        <% }) %>
 
+                                </div>
                             </div>
+
                         </div>
-
-                    </div>
-                </section>
+                    </section>
 
 
-                <section id="section05">
-                    <h2 class="medium_title">
-                        <%= pick(flow.title) %>
-                    </h2>
-                    <p class="flow_desc">
-                        <%= pick(flow.description) %>
-                    </p>
-                    <img class="" src="/images/flow_illust.svg" alt="" aria-hidden="true" />
-                </section>
-
-
-                <section id="section06">
-                    <div class="page-width">
+                    <section id="section05">
                         <h2 class="medium_title">
-                            <%= pick(pricing.title) %>
+                            <%= pick(flow.title) %>
                         </h2>
-                        <table class="price-table">
-                            <colgroup>
-                                <col class="price-col-item" />
-                                <col class="price-col-sub" />
-                                <col class="price-col-amount" />
-                                <col class="price-col-desc" />
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="price-head" colspan="2">
-                                        <%= pick(pricingHeaders[0]) %>
-                                    </th>
-                                    <th class="price-head price-head-accent">
-                                        <%= pick(pricingHeaders[1]) %>
-                                    </th>
-                                    <th class="price-head price-head-accent">
-                                        <%= pick(pricingHeaders[2]) %>
-                                    </th>
-                                </tr>
-                            </thead>
+                        <p class="flow_desc">
+                            <%= pick(flow.description) %>
+                        </p>
+                        <img class="" src="/images/flow_illust.svg" alt="" aria-hidden="true" />
+                    </section>
 
-                            <tbody>
-                                <% let lastItem='' ; %>
-                                    <% pricingRows.forEach(function(row, idx) { const cols=row.columns || []; const
+
+                    <section id="section06">
+                        <div class="page-width">
+                            <h2 class="medium_title">
+                                <%= pick(pricing.title) %>
+                            </h2>
+                            <table class="price-table">
+                                <colgroup>
+                                    <col class="price-col-item" />
+                                    <col class="price-col-sub" />
+                                    <col class="price-col-amount" />
+                                    <col class="price-col-desc" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="price-head head-item" colspan="2">
+                                            <%= pick(pricingHeaders[0]) %>
+                                        </th>
+                                        <th class="price-head price-head-accent head-price">
+                                            <%= pick(pricingHeaders[1]) %>
+                                        </th>
+                                        <th class="price-head price-head-accent head-content">
+                                            <%= pick(pricingHeaders[2]) %>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <% let lastItem='' ; %>
+                                        <% pricingRows.forEach(function(row, idx) { const cols=row.columns || []; const
                                         isAlt=idx % 2===0 ? 'price-row' : 'price-row price-row-alt' ; const
                                         subItem=row.subItem; const itemText=row.skipFirstColumn ? lastItem :
                                         pick(cols[0]); if (!row.skipFirstColumn) { lastItem=itemText; } const
                                         amountVal=pick(cols[1]); const descVal=pick(cols[2]); %>
-                                        <tr class="<%= isAlt %>">
-                                            <% if (!row.skipFirstColumn) { %>
-                                                <% if (subItem) { %>
-                                                    <td class="price-item" <% if (row.rowspan) { %> rowspan="<%=
-                                                            row.rowspan %>"<% } %>>
-                                                                <%= itemText %>
-                                                    </td>
-                                                    <td class="price-item">
-                                                        <%= pick(subItem) %>
-                                                    </td>
-                                                    <% } else { %>
-                                                        <td class="price-item" colspan="2" <% if (row.rowspan) { %>
-                                                            rowspan="<%= row.rowspan %>"<% } %>>
+                                            <tr class="<%= isAlt %>">
+                                                <% if (!row.skipFirstColumn) { %>
+                                                    <% if (subItem) { %>
+                                                        <td class="price-item" <% if (row.rowspan) { %> rowspan="
+                                                            <%=
+                                                            row.rowspan %>"
+                                                                <% } %>>
                                                                     <%= itemText %>
                                                         </td>
-                                                        <% } %>
+                                                        <td class="price-item">
+                                                            <%= pick(subItem) %>
+                                                        </td>
+                                                        <% } else { %>
+                                                            <td class="price-item " colspan="2" <% if (row.rowspan) { %>
+                                                                rowspan="
+                                                                <%= row.rowspan %>"
+                                                                    <% } %>>
+                                                                        <%= itemText %>
+                                                            </td>
                                                             <% } %>
-                                                                <% if (row.skipFirstColumn) { %>
-                                                                    <td class="price-item">
-                                                                        <%= subItem ? pick(subItem) : '' %>
-                                                                    </td>
-                                                                    <% } %>
-                                                                        <td class="price-amount">
-                                                                            <span>
-                                                                                <%= amountVal %>
-                                                                            </span>
+                                                                <% } %>
+                                                                    <% if (row.skipFirstColumn) { %>
+                                                                        <td class="price-item">
+                                                                            <%= subItem ? pick(subItem) : '' %>
                                                                         </td>
-                                                                        <% if (!row.skipFirstColumn) { %>
-                                                                            <td class="price-desc" <% if (row.rowspan) {
-                                                                                %> rowspan="<%= row.rowspan %>"<% } %>>
-                                                                                        <%- brText(descVal) %>
+                                                                        <% } %>
+                                                                            <td class="price-amount">
+                                                                                <span>
+                                                                                  <%- pick(amountVal) %>
+
+                                                                            </span>
                                                                             </td>
-                                                                            <% } %>
-                                        </tr>
-                                        <% }) %>
-                            </tbody>
-                        </table>
-                        <div class="price_notes">
-                            <% notes.forEach(function(note) { %>
-                                <p>
-                                    <%= pick(note) %>
-                                </p>
-                                <% }) %>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="section07">
-                    <div class="page-width">
-                        <h2 class="medium_title">
-                            <%= pick(doctor.title) %>
-                        </h2>
-                        <div class="">
-                            <p class="doctor_lead">
-                                <%= pick(doctor.philosophyTitle) %>
-                            </p>
-                            <div class="philosophy_text">
-                                <p>
-                                    <%- pick(doctor.philosophyText) %>
-                                </p>
-                            </div>
-
-                            <div class="doctor_content">
-                                <div class="doctor_profile">
-                                    <img class="" src="/images/master.png" alt="" aria-hidden="true" />
+                                                                            <% if (!row.skipFirstColumn) { %>
+                                                                                <td class="price-desc" <% if (row.rowspan) { %> rowspan="
+                                                                                    <%= row.rowspan %>"
+                                                                                        <% } %>>
+                                                                                            <%- brText(descVal) %>
+                                                                                </td>
+                                                                                <% } %>
+                                            </tr>
+                                            <% }) %>
+                                </tbody>
+                            </table>
+                            <div class="price_notes">
+                                <% notes.forEach(function(note) { %>
                                     <p>
-                                        <%= pick(doctor.name) %>
+                                        <%= pick(note) %>
+                                    </p>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="section07">
+                        <div class="page-width">
+                            <h2 class="medium_title">
+                                <%= pick(doctor.title) %>
+                            </h2>
+                            <div class="">
+                                <p class="doctor_lead">
+                                    <%= pick(doctor.philosophyTitle) %>
+                                </p>
+                                <div class="philosophy_text">
+                                    <p>
+                                        <%- pick(doctor.philosophyText) %>
                                     </p>
                                 </div>
-                                <div class="doctor_details">
-                                    <div class="doctor_message">
-                                        <p><%- brText(doctor.message) %></p>
-                                    </div>
-                                    <div class="doctor_career">
-                                        <p class="list_title">
-                                            <%= pick(doctor.careerTitle) %>
+
+                                <div class="doctor_content">
+                                    <div class="doctor_profile">
+                                        <img class="" src="/images/master.png" alt="" aria-hidden="true" />
+                                        <p>
+                                            <%= pick(doctor.name) %>
                                         </p>
-                                        <ul class="list_items">
-                                            <% (doctor.career || []).forEach(function(item) { %>
-                                                <li>
-                                                    <span>
+                                    </div>
+                                    <div class="doctor_details">
+                                        <div class="doctor_message">
+                                            <p>
+                                                <%- brText(doctor.message) %>
+                                            </p>
+                                        </div>
+                                        <div class="doctor_career">
+                                            <p class="list_title">
+                                                <%= pick(doctor.careerTitle) %>
+                                            </p>
+                                            <ul class="list_items">
+                                                <% (doctor.career || []).forEach(function(item) { %>
+                                                    <li>
+                                                        <span>
                                                         <%= pick(item).split(' ')[0] %></span>
                                                         <p>
-                                                        <%= pick(item).split(' ').slice(1).join(' ') %></p></li>
-                                            <% }) %>
-                                        </ul>
-                                    </div>
-                                    <div class="doctor_qualifications">
-                                        <div class="left">
-                                            <p class="list_title"><%= pick(doctor.qualificationTitle) %></p>
-                                            <ul class="list_items">
-                                                <% (doctor.qualifications || []).forEach(function(item) { %>
-                                                    <li><span><%= pick(item).split(' ')[0] %></span><%- brText({ ja:'', en:'', zh: pick(item).split(' ').slice(1).join(' ') }) %></li>
-                                                <% }) %>
+                                                            <%= pick(item).split(' ').slice(1).join(' ') %>
+                                                        </p>
+                                                    </li>
+                                                    <% }) %>
                                             </ul>
                                         </div>
-                                        <div>
-                                            <p class="list_title"><%= pick(doctor.membershipTitle) %></p>
-                                            <ul class="list_items">
-                                                <% (doctor.memberships || []).forEach(function(item) { %>
-                                                    <li class="item_line"><%= pick(item) %></li>
-                                                <% }) %>
-                                            </ul>
+                                        <div class="doctor_qualifications">
+                                            <div class="left">
+                                                <p class="list_title">
+                                                    <%= pick(doctor.qualificationTitle) %>
+                                                </p>
+                                                <ul class="list_items">
+                                                    <% (doctor.qualifications || []).forEach(function(item) { %>
+                                                        <li><span><%= pick(item).split(' ')[0] %></span>
+                                                            <%- brText({ ja:'', en:'', zh: pick(item).split(' ').slice(1).join(' ') }) %>
+                                                        </li>
+                                                        <% }) %>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <p class="list_title">
+                                                    <%= pick(doctor.membershipTitle) %>
+                                                </p>
+                                                <ul class="list_items">
+                                                    <% (doctor.memberships || []).forEach(function(item) { %>
+                                                        <li class="item_line">
+                                                            <%= pick(item) %>
+                                                        </li>
+                                                        <% }) %>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="doctor_certificates">
-                                <% (doctor.certificates || []).forEach(function(item, i) { const num = String(i + 1).padStart(2, '0'); %>
-                                    <div class="doctor_certificate_item">
-                                        <img class="" src="/images/certificate_<%= num %>.png"
-                                            alt="" aria-hidden="true" />
-                                        <p>
-                                            <%= pick(item) %>
-                                        </p>
-                                    </div>
-                                <% }) %>
+                                <div class="doctor_certificates">
+                                    <% (doctor.certificates || []).forEach(function(item, i) { const num = String(i + 1).padStart(2, '0'); %>
+                                        <div class="doctor_certificate_item">
+                                            <img class="" src="/images/certificate_<%= num %>.png" alt="" aria-hidden="true" />
+                                            <p>
+                                                <%= pick(item) %>
+                                            </p>
+                                        </div>
+                                        <% }) %>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+
+                    <section id="section08">
+                        <div class="page-width access_wrap">
+                            <h2 class="medium_title">
+                                <%= pick(access.title) %>
+                            </h2>
+                            <p class="access_address">
+                                <%= pick(access.address) %>
+                            </p>
+                            <div class="map_wrap">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.1077619749926!2d137.03824707635027!3d35.128984260111714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600365d1a71c7c93%3A0xca14953fca9a2c41!2z6IWw44O76aaW44O76aCt44Gu5Lit5Lqs44K544OR44Kk44Oz44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1764657226574!5m2!1sja!2sjp"
+                                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                            <div class="access_details_wrap">
+                                <div class="access_details">
+                                    <div class="access_detail_item">
+                                        <p class="access_detail_title">
+                                            <img class="" src="/images/bullet_train.svg" alt="" aria-hidden="true" />
+                                            <%= pick(access.bulletTrainTitle) %>
+                                        </p>
+                                        <p>
+                                            <% bulletTrainRoutes.forEach(function(route, i) { %>
+                                                <%- brText(route) %>
+                                                    <% if (i===0) { %><br>
+                                                        <% } %>
+                                                            <% }) %>
+                                        </p>
+                                    </div>
+                                    <div class="access_detail_item">
+                                        <div class="access_detail_train">
+                                            <div class="train_icons">
+                                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                                            </div>
+                                            <p>
+                                                <%= pick(access.metroTitle) %>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            <%- brText(access.metroText) %>
+                                        </p>
+                                    </div>
+                                    <div class="access_detail_item">
+                                        <p class="access_detail_title">
+                                            <img class="" src="/images/plane.svg" alt="" aria-hidden="true" />
+                                            <%= pick(access.airportTitle) %>
+                                        </p>
+                                        <div class="access_detail_train">
+                                            <div class="train_icons">
+                                                <img class="" src="/images/meitethu_train.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                                            </div>
+                                            <p>
+                                                <%= pick(access.airportMetroTitle) %>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            <%- brText(access.airportText) %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <img class="" src="/images/youtube.png" alt="" aria-hidden="true" />
+                            </div>
+
+                            <div class="access_map_legend">
+
+                                <div class="access_map_legend_items">
+                                    <p class="legend_title">
+                                        <%= pick(access.legendTitle) %>
+                                    </p>
+                                    <div class="map_ping">
+                                        <% legendItems.forEach(function(item, i) { const names=['ping','hotel','location','metro_line']; const
+                icon=names[i] || 'ping' ; %>
+                                            <div class="access_map_legend_item">
+                                                <img class="" src="/images/<%= icon %>.svg" alt="" aria-hidden="true" />
+                                                <p>
+                                                    <%= pick(item) %>
+                                                </p>
+                                            </div>
+                                            <% }) %>
+                                    </div>
+
+                                </div>
+                                <img class="map_illust" src="/images/map_illust.svg" alt="" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="section09">
+                        <div class="page-width hours_wrap">
+                            <p class="hours_title">
+                                <%= pick(hours.title) %>
+                            </p>
+                            <p class="hours_subtitle">
+                                <%= pick(hours.description) %>
+                            </p>
+                        </div>
+                    </section>
 
 
         </main>
         <%- include('../components/footer') %>
-            <script src="./js/jquery-3.7.1.min.js" defer></script>
-            <script src="./js/gsap.min.js" defer></script>
-            <script src="./js/main.js" defer></script>
+            <script src="/js/jquery-3.7.1.min.js" defer></script>
+            <script src="/js/gsap.min.js" defer></script>
+            <script src="/js/main.js" defer></script>
 </body>
 
 </html>

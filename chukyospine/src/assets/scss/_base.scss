@@ -1,6 +1,5 @@
 @use "variables" as *;
 @use "mixins" as *;
-
 html {
     // scroll-behavior: smooth!important;
     margin: 0 !important;
@@ -24,6 +23,11 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -31,7 +35,8 @@ img {
 
 // レイアウト
 .page-width {
-    max-width: 1340px;
+    max-width: 1384px;
+    padding: 0 24px;
     margin: 0 auto;
 }
 
@@ -41,7 +46,6 @@ img {
 
 section {
     padding: 60px 0;
-
     &:first-of-type {
         padding: 120px 0 60px 0;
     }
@@ -53,6 +57,10 @@ section {
     font-weight: 600;
     margin-bottom: 40px;
     text-align: center;
+    @include lg {
+        font-size: 3.2rem;
+        margin-bottom: 24px;
+    }
 }
 
 // 黄色背景資格アイコン
@@ -63,6 +71,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    @include lg {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 // 上記を使用した見出し
@@ -70,17 +82,20 @@ section {
     display: flex;
     gap: 16px;
     align-items: center;
-
     .icon_title_text {
         display: flex;
         flex-direction: column;
         gap: 16px;
-
+        @include md {
+            gap: 8px;
+        }
         h3 {
             font-size: 4rem;
             font-weight: 500;
+            @include lg {
+                font-size: 3.2rem;
+            }
         }
-
         .icon_subtitle {
             font-weight: 600;
             color: $color4;
@@ -94,18 +109,29 @@ section {
     align-items: center;
     gap: 16px;
     margin-bottom: 40px;
-
+    @include lg {
+        margin-bottom: 32px;
+        gap: 8px;
+    }
     img {
         display: block;
     }
-
     .num_img {
         margin-right: 32px;
-
+        @include lg {
+            margin-right: 16px;
+            max-width: 80px;
+            width: 100%;
+        }
+        @include sp {
+            margin-right: 8px;
+        }
     }
-
     p {
         font-size: 4rem;
         font-weight: 500;
+        @include lg {
+            font-size: 2.4rem;
+        }
     }
 }
