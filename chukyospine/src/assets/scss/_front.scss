@@ -548,12 +548,18 @@
 
 #section06 {
     padding-bottom: 120px;
+    .price-table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 24px;
+    }
     .price-table {
         width: 100%;
+        min-width: 1100px;
         border-collapse: collapse;
         font-size: 1.6rem;
         color: $color3;
-        margin-bottom: 24px;
         th {
             padding: 32px;
             text-align: center;
@@ -593,6 +599,7 @@
         }
         .price-item {
             background-color: $color8;
+            width: 260px;
             &.price-item-spacer {
                 background-color: transparent;
             }

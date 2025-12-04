@@ -1652,12 +1652,18 @@ section:first-of-type {
 #section06 {
   padding-bottom: 120px;
 }
+#section06 .price-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 24px;
+}
 #section06 .price-table {
   width: 100%;
+  min-width: 1100px;
   border-collapse: collapse;
   font-size: 1.6rem;
   color: #0B143F;
-  margin-bottom: 24px;
 }
 #section06 .price-table th {
   padding: 32px;
@@ -1696,6 +1702,7 @@ section:first-of-type {
 }
 #section06 .price-table .price-item {
   background-color: #EEEEEE;
+  width: 260px;
 }
 #section06 .price-table .price-item.price-item-spacer {
   background-color: transparent;
