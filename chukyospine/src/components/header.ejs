@@ -11,47 +11,72 @@ const pick = (obj) => {
 const headerData = site.header || {};
 const navItems = headerData.navItems || [];
 %>
-    <header class="header">
-        <div class="header_inner">
-            <h1 class="header_logo">
-                <a href="/">
+<header class="header">
+    <div class="header_inner">
+        <h1 class="header_logo">
+            <a href="/">
                 <img src="/images/logo.svg" alt="<%= pick(headerData.logoAlt) %>" />
             </a>
-            </h1>
-            <nav class="header_nav">
-                <ul class="header_nav_list">
-                    <% navItems.forEach(function(item) { %>
-                        <li class="header_nav_item">
-                            <a href="##">
-                                <%= pick(item.label) %>
-                            </a>
-                        </li>
-                        <% }) %>
-                </ul>
-            </nav>
-            <%- include('./language-switcher', { lang }) %>
-        </div>
+        </h1>
+  
+        <nav class="header_nav">
+            <ul class="header_nav_list">
+                <% navItems.forEach(function(item) { %>
+                    <li class="header_nav_item">
+                        <a href="##">
+                            <%= pick(item.label) %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+        </nav>
+        <%- include('./language-switcher', { lang }) %>
 
-        <div class="contact_wrap">
-            <img src="/images/doctor.png" alt="院長の写真" class="doctor_image" />
-            <div class="contact_us">
-                <p class="contact_title">聯繫我們</p>
-                <div class="contact_sns_wrap">
-                    <a class="contact_sns" href="##">
-                        <img src="/images/line_icon.svg" alt="Line アイコン" />
-                        <p>LINE</p>
-                    </a>
-                    <img src="/images/sns_line.svg" alt="" />
-                    <a class="contact_sns" href="##">
-                        <img src="/images/wechat_icon.svg" alt="WeChat アイコン" />
-                        <p>WeChat</p>
-                    </a>
-                </div>
+              <input type="checkbox" id="header_nav_toggle" class="header_nav_toggle" aria-label="Toggle navigation" />
+        <label class="header_burger" for="header_nav_toggle" aria-label="メニューを開閉">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <label for="header_nav_toggle" class="header_overlay" aria-hidden="true"></label>
+    </div>
+
+    <div class="contact_wrap">
+        <img src="/images/doctor.png" alt="院長の写真" class="doctor_image" />
+        <div class="contact_us">
+            <p class="contact_title">聯繫我們</p>
+            <div class="contact_sns_wrap">
+                <a class="contact_sns" href="##">
+                    <img src="/images/line_icon.svg" alt="Line アイコン" />
+                    <p>LINE</p>
+                </a>
+                <img src="/images/sns_line.svg" alt="" />
+                <a class="contact_sns" href="##">
+                    <img src="/images/wechat_icon.svg" alt="WeChat アイコン" />
+                    <p>WeChat</p>
+                </a>
             </div>
         </div>
+    </div>
 
-        <div class="scroll_down_wrap">
-            <p class="scroll_down_text">SCROLL<br>DOWN</p>
-            <div class="scroll_icon"></div>
-        </div>
-    </header>
+    <div class="scroll_down_wrap">
+        <p class="scroll_down_text">SCROLL<br>DOWN</p>
+        <div class="scroll_icon"></div>
+    </div>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var headerEl = document.querySelector('.header');
+        var toggleEl = document.getElementById('header_nav_toggle');
+        if (!headerEl || !toggleEl) return;
+        var syncHeaderState = function() {
+            if (toggleEl.checked) {
+                headerEl.classList.add('header--open');
+            } else {
+                headerEl.classList.remove('header--open');
+            }
+        };
+        toggleEl.addEventListener('change', syncHeaderState);
+        syncHeaderState();
+    });
+</script>
