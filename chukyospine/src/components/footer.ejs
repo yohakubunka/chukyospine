@@ -10,6 +10,7 @@ const pick = (obj) => {
 };
 const footerData = site.footer || {};
 const footerNav = footerData.navItems || [];
+const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#section06', '#section07', '#section08'];
 %>
     <footer class="footer">
         <div class="page-width">
@@ -25,10 +26,11 @@ const footerNav = footerData.navItems || [];
             </div>
             <nav class="footer_nav">
                 <ul class="footer_nav_list">
-                    <% footerNav.forEach(function(item) { %>
+                    <% footerNav.forEach(function(item, index) { const href = navAnchors[index] || '#'; %>
                         <li class="footer_nav_item">
-                            <a href="##">
-                                <%= pick(item.label) %>
+                            <a href="<%= href %>">
+href="##">
+) %>
                             </a>
                         </li>
                         <% }) %>

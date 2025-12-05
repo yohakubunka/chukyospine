@@ -10,6 +10,7 @@ const pick = (obj) => {
 };
 const headerData = site.header || {};
 const navItems = headerData.navItems || [];
+const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#section06', '#section07', '#section08', '#section09'];
 %>
     <header class="header">
         <div class="header_inner">
@@ -20,9 +21,9 @@ const navItems = headerData.navItems || [];
             </h1>
             <nav class="header_nav">
                 <ul class="header_nav_list">
-                    <% navItems.forEach(function(item) { %>
+                    <% navItems.forEach(function(item, index) { const href = navAnchors[index] || '#'; %>
                         <li class="header_nav_item">
-                            <a href="##">
+                            <a href="<%= href %>">
                                 <%= pick(item.label) %>
                             </a>
                         </li>

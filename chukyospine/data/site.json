@@ -101,8 +101,8 @@
             },
             {
                 "label": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "診療の流れ",
+                    "en": "Process",
                     "zh": "就診流程"
                 }
             },
@@ -192,34 +192,34 @@
                 "zh": "CLINICAL\nOUTCOMES"
             },
             "lead": {
-                "ja": "",
-                "en": "",
+                "ja": "各分野の専門医が徹底に治療します。",
+                "en": "Our specialized physicians deliver comprehensive and meticulous treatment.",
                 "zh": "各領域的專業醫師為您提供徹底的治療。"
             },
             "casesPrefix": {
-                "ja": "",
-                "en": "",
+                "ja": "当院は、",
+                "en": "We have a track record of more than",
                 "zh": "本院已擁有超過"
             },
             "casesNumber": {
-                "ja": "",
-                "en": "",
+                "ja": "3200",
+                "en": "3200",
                 "zh": "3200"
             },
             "casesUnit": {
-                "ja": "",
-                "en": "",
+                "ja": "件",
+                "en": "successful cases.",
                 "zh": "例"
             },
             "casesSuffix": {
-                "ja": "",
+                "ja": "以上の実績がございます",
                 "en": "",
                 "zh": "治療案例。"
             },
             "approach": {
-                "ja": "",
-                "en": "",
-                "zh": "一直以來，我們始終以真誠面對每一位患者的疼痛，不斷追求最合適、最有效的治療方案。"
+                "ja": "多くの患者様の痛みと向き合い、最適な治療を追求してきました。",
+                "en": "We are committed to relieving our patients' pain and pursuing the best possible treatments.",
+                "zh": "一直以來，我們始終以真誠面對每一位患者的疼痛， 不斷追求最合適、最有效的治療方案。"
             },
             "servicesTitle": {
                 "ja": "",
@@ -227,43 +227,43 @@
                 "zh": "診療內容"
             },
             "services": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰椎椎間板ヘルニア",
+                    "en": "Lumbar Disc Herniation",
                     "zh": "腰椎間盤突出"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰部脊柱管狭窄症",
+                    "en": "Lumbar Spinal Stenosis",
                     "zh": "腰椎管狹窄症"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "頸椎椎間板ヘルニア",
+                    "en": "Cervical Disc Herniation",
                     "zh": "頸椎間盤突出"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰痛",
+                    "en": "Lower Back Pain",
                     "zh": "腰痛"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "肩こり",
+                    "en": "Stiff Shoulders",
                     "zh": "肩頸僵硬"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "首の痛み",
+                    "en": "Neck Pain",
                     "zh": "頸部疼痛"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "手足のしびれ",
+                    "en": "Numbness in Limb",
                     "zh": "手腳麻木"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "整形外科",
+                    "en": "Orthopedics",
                     "zh": "骨科相關其他疾病"
                 }
             ]
@@ -275,152 +275,152 @@
                 "zh": "施設画像"
             },
             "title": {
-                "ja": "",
-                "en": "",
+                "ja": "当院の治療",
+                "en": "Treatments",
                 "zh": "本院的治療方針"
             },
             "lead": {
-                "ja": "",
-                "en": "",
+                "ja": "私たちは早期かつ的確な診断・治療を行い、",
+                "en": "We strive for a",
                 "zh": "我們致力於早期且精準的診斷與治療，"
             },
             "goal": {
                 "prefix": {
                     "ja": "",
                     "en": "",
-                    "zh": "目標是實現 "
+                    "zh": "目標是實現"
                 },
                 "highlight": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "95%",
+                    "en": "95%",
                     "zh": "95%"
                 },
                 "suffix": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "の回復を目指していきます。",
+                    "en": "recovery rate by ensuring timely, accurate diagnosis and treatment.",
                     "zh": "的康復率。"
                 }
             },
             "body": {
-                "ja": "",
-                "en": "",
-                "zh": "相比於一般脊柱・脊髓治療的平均改善率（約70〜80%），我們始終追求超越95%康復率的高品質醫療。為此，我們不斷探索全新的醫學理念，重新定義「腰・頸・頭」疾病的治療觀念。以熱情與專業為驅動力，持續推動醫療進步與社會貢獻，並期望讓全體醫護人員及其家人共享幸福與成就。"
+                "ja": "脊椎脊髄治療の一般的な改善度70-80%を上回る、95％以上の回復を目指した治療を提供するため、私たちは腰・首・頭の治療概念を変える新たな考え方を常に追求し、情熱と専門性をもって医療の進歩と社会貢献に努め、職員とその家族全員の幸せを実現します。",
+                "en": "Striving for recovery rates above 95%, surpassing the standard 70–80% in spinal care, we continually develop innovative treatments for the lower back, neck, and head. Guided by passion and expertise, we are dedicated to advancing healthcare, serving society, and supporting our staff and their families.",
+                "zh": "相較於一般脊柱・脊髓治療的平均改善率（約70～80%）， 我們始終追求超越95%康復率的高品質醫療。 為此，我們不斷探索全新的醫學理念， 重新定義「腰・頸・頭」疾病的治療觀念。 以熱情與專業為驅動力，持續推動醫療進步與社會貢獻， 並期望讓全體醫護人員及其家人共享幸福與成就。"
             }
         },
         "approachTitle": {
-            "ja": "",
-            "en": "",
+            "ja": "診療方針",
+            "en": "Our Policy",
             "zh": "診療方針"
         },
         "approachItems": [{
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "寄り添う",
+                    "en": "Support",
                     "zh": "個性化治療"
                 },
                 "body": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰・首・頭の病院として、個々の患者さんの症状にあった治療を行います。",
+                    "en": "We specialize in treating the lower back, neck, and head, offering personalized care for each patient's unique symptoms.",
                     "zh": "作為專注於「腰・頸・頭」疾病的專科醫院，我們為每一位患者提供量身訂製的診療方案，以細緻入微的關懷與專業判斷，找到最合適的治療途徑。"
                 }
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "和らげる",
+                    "en": "Pain Relief",
                     "zh": "緩解疼痛"
                 },
                 "body": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "激痛や不快を和らげることで生活を豊かにしていきます。",
+                    "en": "We ease severe pain to enhance quality of life.",
                     "zh": "我們致力於減輕疼痛與不適，幫助患者擺脫身體束縛，重新找回輕鬆、自在的生活節奏。"
                 }
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "共創",
+                    "en": "Collaboration",
                     "zh": "醫患共創"
                 },
                 "body": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "医師・スタッフだけではなく、患者さんにも医療者側の目線で医療に参加してもらえるようなクリニックを目指します。",
+                    "en": "We aim to be a clinic where doctors, staff, and patients all take part in care decisions.",
                     "zh": "我們相信，優質的醫療來自醫師、團隊與患者的共同參與。不僅由醫護人員主導，也希望患者能以醫療夥伴的角度加入，共同打造開放、互信、共榮的診療環境。"
                 }
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "導く",
+                    "en": "Guidance",
                     "zh": "全程引導"
                 },
                 "body": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "初診から診断、治療、治療後、再発予防までの一貫治療を、医師だけでなく、プロフェッショナルスタッフ全員で手助けをします。",
+                    "en": "We deliver continuous care at every stage, backed by our full professional staff rather than doctors alone.",
                     "zh": "從初診、診斷、治療到康復與復發預防，我們實行一體化診療體系。由醫師與專業團隊全程陪伴，為每一位患者的健康之路保駕護航。"
                 }
             }
         ],
         "treatmentMenu": {
             "title": {
-                "ja": "",
+                "ja": "診療内容",
                 "en": "",
                 "zh": "診療內容"
             },
             "endoscopyTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "日帰り脊椎内視鏡治療",
+                "en": "Same-Day Endoscopic Spine Treatment",
                 "zh": "日間脊椎內視鏡治療"
             },
             "endoscopySubTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "PELD／PED治療",
+                "en": "PELD／PED Treatment",
                 "zh": "PELD／PED治療"
             },
             "endoscopyBody": {
-                "ja": "",
-                "en": "",
+                "ja": "腰椎椎間板ヘルニア、腰部脊柱管狭窄症、頸椎椎間板ヘルニア・頸椎椎間孔狭窄症、圧迫骨折の治療方法の一つです。従来は背中を大きく開いてする治療に比べると、内視鏡による治療は患者さんの負担が格段に軽減されます。\nこの治療は入院されるケースが多いですが、当院では午前中に治療を行い、夕方帰宅となる日帰りで対応できるようにしています。",
+                "en": "This treatment option is available for lumbar disc herniation, lumbar spinal stenosis, cervical disc herniation/cervical foraminal stenosis, and vertebral compression fractures.\nUnlike traditional procedures with large back incisions, endoscopic treatment minimizes patient burden.\nWhile hospitalization is typically required, our clinic offers same-day outpatient treatment: patients are treated in the morning and can return home by evening.",
                 "zh": "腰椎間盤突出、腰椎管狹窄症、頸椎間盤突出、頸椎椎間孔狹窄症、壓迫性骨折等，都可以使用此治療方法。\n相比傳統需大範圍開背手術，內視鏡治療能大幅減輕患者負擔。\n雖然此治療多數情況下需住院，但本院可安排上午手術，當日傍晚即可回家的日間治療方案。"
             },
             "benefitsTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "日帰り内視鏡治療のメリット",
+                "en": "Benefits of Same-Day Endoscopic Treatment",
                 "zh": "日間內視鏡治療的優點"
             },
             "benefits": [{
                     "title": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "治療時間はが短く",
+                        "en": "Shorter Treatment Time",
                         "zh": "手術時間短"
                     },
                     "lines": [{
-                            "ja": "",
-                            "en": "",
+                            "ja": "切る部分が6～8mmで最小限",
+                            "en": "Minimal Incision (6–8 mm)",
                             "zh": "切口僅 6～8mm"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "※抜糸が不要",
+                            "en": "No stitches required",
                             "zh": "※不需拆線"
                         }
                     ]
                 },
                 {
                     "title": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "出血が少ない",
+                        "en": "Minimal Blood Loss",
                         "zh": "出血量少"
                     },
                     "lines": [{
-                        "ja": "",
-                        "en": "",
+                        "ja": "（ヤクルト1／3本程度）",
+                        "en": "(Equivalent to about 1/3 of a Yakult bottle)",
                         "zh": "（約為養樂多 1/3）"
                     }]
                 },
                 {
                     "title": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "午前中に治療をして、\n夕方に歩行して帰れる",
+                        "en": "Get treated in the morning\nand walk home the same day.",
                         "zh": "上午手術，\n傍晚即可自行步行回家"
                     },
                     "lines": []
@@ -429,51 +429,51 @@
         },
         "procedures": [{
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰椎椎間板ヘルニア",
+                    "en": "Lumbar Disc Herniation",
                     "zh": "腰椎間盤突出"
                 },
                 "approaches": [{
                         "title": {
-                            "ja": "",
-                            "en": "",
+                            "ja": "経椎弓間アプローチ",
+                            "en": "Trans-Laminar Approach ",
                             "zh": "經椎弓間入路"
                         },
                         "method": {
-                            "ja": "",
-                            "en": "",
-                            "zh": "PELD Inter-Lamina法：PELD-IL法"
+                            "ja": "PELD Inter-Lamina法：PELD-IL法",
+                            "en": "PELD Inter-Laminar Method: PELD-IL",
+                            "zh": "（PELD Inter-Lamina法：PELD-IL法） "
                         },
                         "description": {
-                            "ja": "",
-                            "en": "",
-                            "zh": "從背部正後方進入內視鏡，解除神經壓迫\n風險：術後血腫或短暫神經障礙（1%）"
+                            "ja": "背中の真後ろから内視鏡を入れて、神経の圧迫を解放する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                            "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                            "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（<1%） "
                         },
                         "time": {
                             "ja": "",
                             "en": "",
-                            "zh": "治療時間：約 45 分鐘"
+                            "zh": "治療時間：約 45 分鐘 "
                         }
                     },
                     {
                         "title": {
-                            "ja": "",
-                            "en": "",
+                            "ja": "経椎間孔アプローチ法",
+                            "en": "Transforaminal Approach",
                             "zh": "經椎間孔入路"
                         },
                         "method": {
-                            "ja": "",
-                            "en": "",
-                            "zh": "PELD Transforaminal法：PELD-TF法"
+                            "ja": "PELD Inter-Lamina法：PELD-IL法",
+                            "en": "PELD Inter-Laminar Method: PELD-IL",
+                            "zh": "（PELD Transforaminal法：PELD-TF法） "
                         },
                         "description": {
-                            "ja": "",
-                            "en": "",
-                            "zh": "從背部側方進入內視鏡，摘除突出椎間盤\n風險：術後血腫或短暫神經障礙（1%）"
+                            "ja": "背中の横から内視鏡を入れて、ヘルニアを摘出する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                            "en": "Minor complications such as bruising (hematoma) or temporary nerve symptoms are very rare (under 1%).",
+                            "zh": "從背部側方進入內視鏡，摘除突出椎間盤 \n風險：術後血腫或短暫神經障礙（<1%） "
                         },
                         "time": {
-                            "ja": "",
-                            "en": "",
+                            "ja": "治療時間：約30～40分",
+                            "en": "Treatment time:  About 30–40 minutes",
                             "zh": "治療時間：約 30～40 分鐘"
                         }
                     }
@@ -481,67 +481,67 @@
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
+                    "ja": "腰部脊柱管狭窄症",
+                    "en": "Lumbar Spinal Stenosis",
                     "zh": "腰椎管狹窄症"
                 },
                 "approaches": [{
                     "title": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "内視鏡下椎弓形成術",
+                        "en": "Endoscopic Laminotomy",
                         "zh": "內視鏡下椎弓形成術"
                     },
                     "method": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "PELV法／FEL法"
+                        "ja": "PEL法、FEL法",
+                        "en": "PEL / FEL Methods",
+                        "zh": "（PELV法／FEL法） "
                     },
                     "description": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "從背部正後方進入內視鏡，摘除壓迫神經的組織 \n風險：術後血腫或短暫神經障礙（1%）"
+                        "ja": "背中の真後ろから内視鏡を入れて、ヘルニアを摘出する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "從背部正後方進入內視鏡，摘除壓迫神經的組織\n風險：術後血腫或短暫神經障礙（<1%） "
                     },
                     "time": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "治療時間：約 60 分鐘"
+                        "ja": "治療時間：約60分",
+                        "en": "Treatment time: About 60 minutes",
+                        "zh": "治療時間：約 60 分鐘 "
                     }
                 }]
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
-                    "zh": "頸椎間盤突出\n頸椎椎間孔狹窄症"
+                    "ja": "頸椎椎間板ヘルニア\n頸椎椎間孔狭窄症",
+                    "en": "Cervical Disc Herniation and \nCervical Foraminal Stenosis",
+                    "zh": "頸椎間盤突出\n頸椎椎間孔狹窄症 "
                 },
                 "approaches": [{
                     "title": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "頚椎内視鏡下ヘルニア摘出・除圧術",
+                        "en": "Cervical Endoscopic Discectomy and Decompression",
                         "zh": "頸椎內視鏡下椎間盤摘除及減壓術"
                     },
                     "method": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "FECF"
+                        "ja": "FECF",
+                        "en": "FECF",
+                        "zh": "（FECF）"
                     },
                     "description": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（1%）"
+                        "ja": "背中の真後ろから内視鏡を入れて、神経の圧迫を解放する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（<1%）  "
                     },
                     "time": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "治療時間：約45分",
+                        "en": "Treatment time: About 45 minutes",
                         "zh": "治療時間：約 45 分鐘"
                     }
                 }]
             },
             {
                 "title": {
-                    "ja": "",
-                    "en": "",
-                    "zh": "壓迫性骨折"
+                    "ja": "圧迫骨折",
+                    "en": "Vertebral Compression Fracture",
+                    "zh": "壓迫性骨折 "
                 },
                 "approaches": [{
                     "title": {
@@ -555,13 +555,13 @@
                         "zh": ""
                     },
                     "description": {
-                        "ja": "",
-                        "en": "",
-                        "zh": "於骨折位置左右各開一個約 6mm 小切口，注入骨水泥\n風險：術後血腫或短暫神經障礙（1%）"
+                        "ja": "皮膚は骨折している骨の左右2カ所（もしくは1カ所）に約6mmの皮膚切開を設けます。そこから、骨セメントを注入します。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "於骨折位置左右各開一個約 6mm 小切口，注入骨水泥 \n風險：術後血腫或短暫神經障礙（<1%） "
                     },
                     "time": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "治療時間：約30分",
+                        "en": "Treatment time: About 30 minutes",
                         "zh": "治療時間：約 30 分鐘"
                     }
                 }]
@@ -569,156 +569,156 @@
         ],
         "blockInjection": {
             "title": {
-                "ja": "",
-                "en": "",
-                "zh": "注射治療（Block注射）"
+                "ja": "ブロック注射",
+                "en": "Nerve Block Injections",
+                "zh": "注射治療（Block注射） "
             },
             "description": {
-                "ja": "",
-                "en": "",
-                "zh": "將麻醉藥或消炎藥注入引起疼痛的神經或組織，以緩解疼痛\n可改善血流，促進治癒，並可用於判斷疼痛來源"
+                "ja": "ブロック注射とは、痛みを引き起こしている神経や組織に、麻酔薬や炎症を止める薬を注入し痛みを緩和する方法です。痛みが続くことで血流が悪くなり、血流が悪くなることで痛みを誘発する物質が出て悪化するという悪循環に陥ります。\n神経ブロックは血流も良くしてくれるので、痛みの緩和だけではなく治癒促進の効果も期待できます。\nまた、痛みの原因を探る目的でも行われることがあります。",
+                "en": "A nerve block reduces pain by injecting an anesthetic or anti-inflammatory medication directly into the affected nerve or tissue.\nPersistent pain can worsen blood flow, releasing substances that trigger more pain and creating a vicious cycle. Nerve blocks not only relieve pain but also improve circulation, promoting healing. Additionally, they can help identify the precise source of the pain.",
+                "zh": "將麻醉藥或消炎藥注入引起疼痛的神經或組織，以緩解疼痛 \n可改善血流，促進治癒，並可用於判斷疼痛來源 "
             },
             "typesTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "神経ブロック注射の種類",
+                "en": "神経ブロック注射の種類",
                 "zh": "神経ブロック注射の種類"
             },
             "types": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "超音波ガイド下超\n選択的神経根ブロック",
+                    "en": "Ultrasound-Guided Selective Nerve Root Block",
                     "zh": "超音波引導下選擇性神經根阻滯"
                 },
                 {
-                    "ja": "",
-                    "en": "",
-                    "zh": "觸發點阻滯注射"
+                    "ja": "トリガーポイント\nブロック注射",
+                    "en": "Trigger Point Block Injection",
+                    "zh": "觸發點阻滯注射（Trigger Point Block） "
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "仙骨裂孔\nブロック注射",
+                    "en": "Sacral Hiatus Block Injection",
                     "zh": "仙骨裂孔阻滯注射"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "レントゲン透視下\n神経根ブロック",
+                    "en": "Fluoroscopy-Guided Nerve Root Block",
                     "zh": "X光透視下\n神經根阻滯"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "椎間板\nブロック",
+                    "en": "Disc Block Injection",
                     "zh": "椎間盤阻滯"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "椎間関節\nブロック",
+                    "en": "Facet Joint Block Injection",
                     "zh": "椎間關節阻滯"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "仙腸関節\nブロック",
+                    "en": "Sacroiliac Joint Block Injection",
                     "zh": "仙腸關節阻滯"
                 }
             ]
         },
         "flow": {
             "title": {
-                "ja": "",
-                "en": "",
+                "ja": "治療的流程",
+                "en": "治療的流程",
                 "zh": "治療的流程"
             },
             "description": {
-                "ja": "",
-                "en": "",
-                "zh": "我們協助患者從手術到術後復發預防的全程治療！"
+                "ja": "中京スパインクリニックでは、患者様の術後の再発防止まで一貫治療を手助けします。",
+                "en": "Chukyo Spine Clinic offers continuous care through surgery and beyond, including recurrence prevention.",
+                "zh": "我們協助患者從手術到術後復發預防的全程治療："
             }
         },
         "pricing": {
             "title": {
-                "ja": "",
-                "en": "",
+                "ja": "治療料金",
+                "en": "Treatment fee",
                 "zh": "治療料金"
             },
             "headers": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "項目",
+                    "en": "Item",
                     "zh": "項目"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "金額",
+                    "en": "price",
                     "zh": "金額"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "内容",
+                    "en": "Details",
                     "zh": "內容"
                 }
             ],
             "rows": [{
                     "columns": [{
-                            "ja": "",
-                            "en": "",
+                            "ja": "初診料",
+                            "en": "Initial Consultation Fee",
                             "zh": "初診費"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>",
+                            "en": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>",
                             "zh": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "診察料・レントゲン・CT・MRI",
+                            "en": "Consultation Fee, X-ray, CT, and MRI",
                             "zh": "診察費用、X光、CT、MRI"
                         }
                     ]
                 },
                 {
                     "columns": [{
-                            "ja": "",
-                            "en": "",
+                            "ja": "手術前検査",
+                            "en": "Pre-Operative Tests",
                             "zh": "手術前檢查"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "500<span class=\"unit\">ドル</span>",
+                            "en": "500<span class=\"unit\">ドル</span>",
                             "zh": "500<span class=\"unit\">ドル</span>"
                         },
                         {
-                            "ja": "",
-                            "en": "",
-                            "zh": "胸部X光、肺功能檢查、心電圖、採血"
+                            "ja": "胸部レントゲン・肺機能検査・心電図・採血",
+                            "en": "Chest X-ray, Pulmonary Function Test, ECG, and Blood Draw",
+                            "zh": "胸部X光、肺功能檢查、心電圖、抽血"
                         }
                     ]
                 },
                 {
                     "rowspan": 2,
                     "subItem": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "1椎間",
+                        "en": "Single Level (1 Vertebra)",
                         "zh": "1椎間"
                     },
                     "columns": [{
-                            "ja": "",
-                            "en": "",
-                            "zh": "內視鏡下後方減圧術"
+                            "ja": "内視鏡下後方除圧術",
+                            "en": "Endoscopic Posterior Decompression",
+                            "zh": "內視鏡下後方減壓術"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "13,000<span class=\"unit\">ドル</span>",
+                            "en": "13,000<span class=\"unit\">ドル</span>",
                             "zh": "13,000<span class=\"unit\">ドル</span>"
                         },
                         {
-                            "ja": "",
-                            "en": "",
-                            "zh": "手術費用、麻酔、術前診察費、術日前MRI、術後檢診費"
+                            "ja": "手術料・コルセット・翌日の診察料・翌日のMRI・術後紹介状",
+                            "en": "Surgery Fee, Brace/Corset, Next-Day Consultation Fee, Next-Day MRI, and Post-Operative Referral Letter",
+                            "zh": "手術費用、護腰、隔日診察費、隔日MRI、術後轉診證明"
                         }
                     ]
                 },
                 {
                     "skipFirstColumn": true,
                     "subItem": {
-                        "ja": "",
-                        "en": "",
+                        "ja": "2椎間",
+                        "en": "Two Levels (2 Vertebrae)",
                         "zh": "2椎間"
                     },
                     "columns": [{
@@ -727,8 +727,8 @@
                             "zh": ""
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "23,000<span class=\"unit\">ドル</span>",
+                            "en": "23,000<span class=\"unit\">ドル</span>",
                             "zh": "23,000<span class=\"unit\">ドル</span>"
                         },
                         {
@@ -740,294 +740,294 @@
                 },
                 {
                     "columns": [{
-                            "ja": "",
-                            "en": "",
+                            "ja": "神経根ブロック注射",
+                            "en": "Nerve Root Block Injection",
                             "zh": "神經根阻滯注射"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "500<span class=\"unit\">ドル</span>",
+                            "en": "500<span class=\"unit\">ドル</span>",
                             "zh": "500<span class=\"unit\">ドル</span>"
                         },
                         {
-                            "ja": "",
-                            "en": "",
+                            "ja": "―",
+                            "en": "―",
                             "zh": "―"
                         }
                     ]
                 }
             ],
             "notes": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "クレジットカードにてお支払いください。VISA・MASTERのみ",
+                    "en": "Credit card payment for injections: VISA/Mastercard only.",
                     "zh": "※　可使用信用卡（VISA、MASTER）付款"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "交通費、宿泊費は含みません。",
+                    "en": "Excludes transportation and accommodation.",
                     "zh": "不含交通費與住宿費"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "現金（日本円）払いも可能　（当日のレート換算になります）",
+                    "en": "Cash payment (JPY) accepted at the day’s exchange rate.",
                     "zh": "現金（日本日幣）亦可支付（依當日匯率換算）"
                 }
             ]
         },
         "doctor": {
             "title": {
-                "ja": "",
-                "en": "",
-                "zh": "醫師介紹"
+                "ja": "医師紹介",
+                "en": "Doctor introduction",
+                "zh": "医師紹介"
             },
             "philosophyTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "我們的理念",
+                "en": "我們的理念",
                 "zh": "我們的理念"
             },
             "philosophyText": {
-                "ja": "",
-                "en": "",
+                "ja": "私たちのクリニックの理念は、「<span class=\"philosophy_highlight\">95％</span>の回復、その先まで」です。",
+                "en": "Our clinic philosophy: <span class=\"philosophy_highlight\">“95%</span> Recovery and Beyond.”",
                 "zh": "「以<span class=\"philosophy_highlight\">95％</span>的康復率為目標，並將每一次治療視為防止復發的長期承諾。」"
             },
             "name": {
-                "ja": "",
-                "en": "",
-                "zh": "中京脊柱專科醫院院長　竹內 幹伸"
+                "ja": "中京スパインクリニック院長　竹内幹伸",
+                "en": "Masanobu Takeuchi, Director, Chukyo Spine Clinic",
+                "zh": "中京脊柱專科醫院院長 竹內 幹伸"
             },
             "message": {
-                "ja": "",
-                "en": "",
-                "zh": "我在小學時期罹患罕見疾病，醫師曾告訴我將終身需使用輪椅。然而，因為遇到許多人幫助，我接受手術後幾乎無後遺症地生活。日常生活雖無大礙，但疼痛與麻木並非完全消失。\n\n成為醫師後，我以醫師視角發現，人體結構上疼痛及麻木的改善度約為80%，100%改善極為困難。\n\n我們致力於早期、精準的診斷與治療，追求95%的康復率，並將治療視為防止復發的長期過程。\n作為各領域的專業醫療團隊，我們全員投入，找出病因並給予適切治療。"
+                "ja": "私は 小学生の頃、難病にかかり医師から今後一生車いす生活になると言われました。しかし、そこからたくさんの人と出会い・手助けがあり、手術をしてほぼ後遺症無く過ごしています。日常生活は問題ないですが、痛みしびれはゼロにはなっていません。\n医師になり患者目線ではなく、医師目線としてわかったことは人体の構造上、痛み・しびれの治療による症状の改善度は約80%で100%の改善は難しいと言うことでした。\n私たちは早期かつ的確な診断・治療を行い、95%の回復を目指していきます。再発のない未来までを治療と考え、分野のプロフェッショナルとしてスタッフ全員で取り組みます。病気の原因を発見し、その治療をしていきます。",
+                "en": "When I was in elementary school, I was diagnosed with an intractable disease and told I would need a wheelchair for life. Thanks to the support of many people, I underwent surgery and now live with virtually no lasting effects, though some pain and numbness remain.\nBecoming a physician, I realized that because of the human body’s structure, typical treatments for pain and numbness only achieve about an 80% improvement, making full recovery rare.\nAt our clinic, we are committed to prompt, accurate diagnosis and treatment, aiming for a 95% recovery rate. Our approach goes beyond immediate relief, focusing on preventing recurrence. Our entire team is dedicated to identifying the root cause of each condition and providing lasting, effective care.",
+                "zh": "我在小學時期罹患罕見疾病，醫師曾告訴我將終身需使用輪椅。然而，因為遇到許多人幫助，我接受手術後幾乎無後遺症地生活。 日常生活雖無大礙，但疼痛與麻木並非完全消失。\n\n成為醫師後，我以醫師視角發現，人體結構上疼痛及麻木的改善度約為80%，100%改善極為困難。\n\n我們致力於早期、精準的診斷與治療，追求95%的康復率，並將治療視為防止復發的長期過程。 作為各領域的專業醫療團隊，我們全員投入，找出病因並給予適切治療。"
             },
             "careerTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "略歴",
+                "en": "Profile",
                 "zh": "簡歷"
             },
             "career": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "1994.03 兵庫県立龍野高校卒業",
+                    "en": "1994.03 Graduated from Hyogo Prefectural Tatsuno High School.",
                     "zh": "1994.03 兵庫縣立龍野高中畢業"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2001.03 富山医科薬科大学（現：富山大学　医学部）卒業",
+                    "en": "2001.03 Graduated from the University of Toyama, School of Medicine (formerly Toyama Medical and Pharmaceutical University).",
                     "zh": "2001.03 富山醫科藥科大學（現：富山大學醫學部）畢業"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2001.05 同付属病院 脳神経外科入局",
+                    "en": "2001.05 Joined the Department of Neurosurgery at the University of Toyama Hospital.",
                     "zh": "2001.05 富山大學附屬醫院 腦神經外科入局"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2001.10 富山大学脳神経外科 関連病院勤務（国立水戸病院／川崎幸病院／斎藤記念病院／東海記念病院／東名厚木病院）",
+                    "en": "2001.10 Served at affiliated hospitals of the University of Toyama, Department of Neurosurgery (National Mito Hospital / Kawasaki Saiwai Hospital / Saito Memorial Hospital / Tokai Memorial Hospital / Tomei Atsugi Hospital).",
                     "zh": "2001.10 富山大學腦神經外科相關醫院勤務（國立水戶醫院／川崎幸醫院／齋藤紀念醫院／東海紀念醫院／東名厚木醫院）"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2004.04 富山大学大学院",
+                    "en": "2004.04 University of Toyama Graduate School.",
                     "zh": "2004.04 富山大學研究所"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2008.04 石心会 狭山病院（埼玉県狭山市）",
+                    "en": "2008.04 Sekishinkai Sayama Hospital (Sayama City, Saitama).",
                     "zh": "2008.04 石心會 狹山醫院（埼玉縣狹山市）"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2009.04 富山大学付属病院 脳神経外科助教 以上、すべて富山大学脳神経外科 関連病院",
+                    "en": "2009.04 Assistant Professor, Department of Neurosurgery, University of Toyama Hospital (All positions above were at University of Toyama affiliated hospitals).",
                     "zh": "2009.04 富山大學附屬醫院腦神經外科助教"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2009.10 愛知医科大学 脳神経外科助教",
+                    "en": "2009.10 Assistant Professor, Department of Neurosurgery, Aichi Medical University.",
                     "zh": "2009.10 愛知醫科大學腦神經外科助教"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2012.10 愛知医科大学 脊椎脊髄センター・脳神経外科講師",
+                    "en": "2012.10 Lecturer, Spine and Spinal Cord Center & Department of Neurosurgery, Aichi Medical University.",
                     "zh": "2012.10 愛知醫科大學脊椎脊髓中心・腦神經外科講師"
                 }
             ],
             "qualificationTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "資格",
+                "en": "Qualifications",
                 "zh": "資格"
             },
             "qualifications": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "2008.03 医学博士（富山大学）甲第451号",
+                    "en": "2008.03 Ph.D. in Medicine – University of Toyama (No. 451)",
                     "zh": "2008.03 醫學博士（富山大學）甲第451號"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2009.08 脳神経外科学会 専門医7143号",
+                    "en": "2009.08 Board Certified Neurosurgeon (No. 7143)",
                     "zh": "2009.08 腦神經外科專科醫師 7143號"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2010.10 日本臨床神経生理学会 認定医355号",
+                    "en": "2010.10 Board Certified Clinical Neurophysiologist (No. 355)",
                     "zh": "2010.10 日本臨床神經生理學會 認定醫師 355號"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2011.06 日本脊髄外科学会 認定医324号",
+                    "en": "2011.06 Board Certified Spine Surgeon (No. 324)",
                     "zh": "2011.06 日本脊髓外科學會 認定醫師 324號"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "2013.09 日本脊髄外科学会 指導医86号",
+                    "en": "2013.09 Senior Consultant/Instructor, Japanese Society for Spine Surgery and Related Research (No. 86)",
                     "zh": "2013.09 日本脊髓外科學會 指導醫師 86號"
                 },
                 {
-                    "ja": "",
-                    "en": "",
-                    "zh": "2019.06 低侵襲・內視鏡脊髓神經外科研究會 \n技術認定醫（SE-001-18）"
+                    "ja": "2019.06 低侵襲・内視鏡脊髄神経外科研究会\n技術認定医(認定医番号SE-001-18)",
+                    "en": "2019.06 Japanese Society for Minimally Invasive and Endoscopic Spinal Neurosurgery \nTechnique Certified Physician(No. SE-001-18)",
+                    "zh": "2019.06 低侵襲・內視鏡脊髓神經外科研究會\n技術認定醫（SE-001-18）"
                 }
             ],
             "membershipTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "所属学会",
+                "en": "Professional Societies",
                 "zh": "所屬學會"
             },
             "memberships": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "日本脳神経外科学会",
+                    "en": "The Japan Neurosurgical Society",
                     "zh": "日本腦神經外科學會"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "日本整形外科学会",
+                    "en": "The Japanese Orthopaedic Association",
                     "zh": "日本整形外科學會"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "日本脊髄外科学会",
+                    "en": "Japanese Society for Spine Surgery and Related Research (JSSR)",
                     "zh": "日本脊髓外科學會"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "日本脊髄病学会",
+                    "en": "Japanese Society for Spinal Disorders",
                     "zh": "日本脊髓病學會"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "低侵襲/内視鏡脊髄外科研究会",
+                    "en": "Japanese Society for Minimally Invasive and Endoscopic Spinal Neurosurgery",
                     "zh": "低侵襲／內視鏡脊髓外科研究會"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "日本整形外科超音波学会",
+                    "en": "The Japanese Society of Orthopaedic Ultrasonics",
                     "zh": "日本整形外科超音波學會"
                 }
             ],
             "certificates": [{
-                    "ja": "",
-                    "en": "",
-                    "zh": "日本脊髓外科学会認定證 指導醫師"
+                    "ja": "日本脊髄外科学会認定証 指導医",
+                    "en": "Spine Surgery Instructor",
+                    "zh": "日本脊髓外科學會認定證 指導醫師"
                 },
                 {
-                    "ja": "",
-                    "en": "",
-                    "zh": "日本脊髓外科学会認定證 認定醫師"
+                    "ja": "日本脊髄外科学会認定証 認定医",
+                    "en": "Certified Spine Surgeon",
+                    "zh": "日本脊髓外科學會認定證 認定醫師"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "医師免許証",
+                    "en": "Medical License",
                     "zh": "醫師執照"
                 }
             ]
         },
         "access": {
             "title": {
-                "ja": "",
-                "en": "",
+                "ja": "來院方式",
+                "en": "來院方式",
                 "zh": "來院方式"
             },
             "address": {
-                "ja": "",
-                "en": "",
+                "ja": "〒470-0115　愛知県日進市折戸町笠寺山 50-6",
+                "en": "50-6 Kasaderayama, Orito-cho, Nisshin City, Aichi 470-0115, Japan",
                 "zh": "〒470-0115 愛知縣日進市折戶町笠寺山50-6"
             },
             "bulletTrainTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "新幹線のルート",
+                "en": "Shinkansen Route",
                 "zh": "新幹線"
             },
             "bulletTrainRoutes": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "大阪方面：大阪駅から名古屋駅（約60分）",
+                    "en": "From Osaka: Osaka Station → Nagoya Station ( About 60 min)",
                     "zh": "大阪方向：大阪站 → 名古屋站 約60分鐘"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "東京方面：東京駅から名古屋駅（約90分）",
+                    "en": "From Tokyo: Tokyo Station → Nagoya Station (About 90 min)",
                     "zh": "東京方向：東京站 → 名古屋站 約90分鐘"
                 }
             ],
             "metroTitle": {
-                "ja": "",
-                "en": "",
-                "zh": "地鐵（東山線・鶴舞線）的交通方式"
+                "ja": "地下鉄（東山線・鶴舞線）からのアクセス",
+                "en": "From Nagoya Station, take the Higashiyama Line toward Fujigaoka.",
+                "zh": "地鐵（東山線・鶴舞線）的交通方式 "
             },
             "metroText": {
-                "ja": "",
-                "en": "",
-                "zh": "名古屋站搭乘名鐵東山線（藤丘方向）→ 伏見站換乘 搭乘地下鐵鶴舞線（赤池方向）→ 赤池站下車\n乘坐計程車至中京脊柱專科醫院（約10分鐘／約1130日幣）"
+                "ja": "名古屋駅下車、名鉄東山線（藤が丘方面）に乗車後「伏見駅」で乗り換え→地下鉄鶴舞線（赤池方面）に乗換→赤池駅で下車\n中京スパインクリニックまでタクシーのご利用（10分／約1,130円）",
+                "en": "Transfer at Fushimi Station to the Tsurumai Line toward Akaike.Get off at Akaike Station.\nTake a taxi to Chukyo Spine Clinic (About 10 min, ¥1,130).",
+                "zh": "名古屋站搭乘名鐵東山線（藤丘方向）→ 伏見站換乘 搭乘地下鐵鶴舞線（赤池方向）→ 赤池站下車\n乘坐計程車至中京脊柱專科醫院（約10分鐘／約1130日幣） "
             },
             "airportTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "中部国際空港のルート",
+                "en": "Access from Central Japan International Airport (Centrair)",
                 "zh": "中部國際機場"
             },
             "airportMetroTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "名鉄+地下鉄（東山線・鶴舞線）からのアクセス",
+                "en": "Take the Meitetsu Airport Line from Central Japan International Airport to Nagoya Station.",
                 "zh": "名鐵 + 地鐵（東山線・鶴舞線）的交通方式"
             },
             "airportText": {
-                "ja": "",
-                "en": "",
+                "ja": "中部国際空港から名鉄空港線に乗車、名古屋駅で下車\n<span class=\"metro-route\">「地下鉄（東山線・鶴舞線）からのアクセス」</span>をご参考ください。",
+                "en": "From Nagoya Station, follow the Subway directions <span class=\"metro-route\">(Higashiyama & Tsurumai Lines)</span> to Akaike Station.",
                 "zh": "從中部國際機場搭乘名鐵空港線至名古屋站下車，\n之後可參考<span class=\"metro-route\">「地鐵（東山線・鶴舞線）交通方式」</span>前往醫院。"
             },
             "legendTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "周辺情報",
+                "en": "Local Area Information",
                 "zh": "周邊資訊"
             },
             "legend": [{
-                    "ja": "",
-                    "en": "",
+                    "ja": "観光スポット",
+                    "en": "Tourist Spots",
                     "zh": "觀光景點"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "近くの宿泊先",
+                    "en": "Nearby Hotels",
                     "zh": "住宿"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "現在地",
+                    "en": "Your Location",
                     "zh": "所在地"
                 },
                 {
-                    "ja": "",
-                    "en": "",
+                    "ja": "地下鉄鶴舞線",
+                    "en": "Tsurumai Line",
                     "zh": "地鐵鶴舞線"
                 }
             ]
         },
         "hours": {
             "title": {
-                "ja": "",
-                "en": "",
+                "ja": "診療時間",
+                "en": "Consultation Hours",
                 "zh": "診療時間"
             },
             "description": {
-                "ja": "",
-                "en": "",
+                "ja": "完全予約制　AM9:00〜PM5:00",
+                "en": "By Appointment Only: 9:00 AM – 5:00 PM",
                 "zh": "完全預約制 上午 9:00 ～ 下午 5:00"
             }
         }

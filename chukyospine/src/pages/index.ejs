@@ -569,7 +569,7 @@
                                                 <ul class="list_items">
                                                     <% (doctor.qualifications || []).forEach(function(item) { %>
                                                         <li><span><%= pick(item).split(' ')[0] %></span>
-                                                            <%- brText({ ja:'', en:'', zh: pick(item).split(' ').slice(1).join(' ') }) %>
+                                                            <%- brText({ ja:pick(item).split(' ').slice(1).join(' '), en:pick(item).split(' ').slice(1).join(' '), zh: pick(item).split(' ').slice(1).join(' ') }) %>
                                                         </li>
                                                         <% }) %>
                                                 </ul>
