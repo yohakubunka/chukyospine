@@ -1,4 +1,6 @@
 @use "variables" as *;
+@use "mixins" as *;
+
 .header {
     padding: 48px 80px;
     color: $color2;
@@ -7,6 +9,9 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    @include media-max (1400px) {
+        padding: 32px 40px;
+    }
 }
 
 .header_inner {
@@ -22,11 +27,42 @@
         display: block;
         max-width: 211px;
         height: auto;
+        @include media-max(1400px) {
+            max-width: 160px;
+        }
     }
 }
 
 .header_nav {
     flex: 1;
+}
+
+.header_nav_toggle {
+    display: none;
+}
+
+.header_burger {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    span {
+        display: block;
+        width: 28px;
+        height: 2px;
+        background-color: $color2;
+        border-radius: 3px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    span + span {
+        margin-top: 2px;
+    }
+}
+
+.header_overlay {
+    display: none;
 }
 
 .header_nav_list {
@@ -37,12 +73,18 @@
     padding: 0;
     margin: 0;
     list-style: none;
+      @include media-max (1400px) {
+        gap: 16px;
+    }
 }
 
 .header_nav_item a {
     color: $color2;
     text-decoration: none;
     font-size: 2rem;
+    @include media-max (1400px) {
+        font-size: 1.4rem;
+    }
 }
 
 .lang-switcher {
@@ -58,6 +100,9 @@
         z-index: 1;
         bottom: -16px;
         max-width: 290px;
+        @include md {
+            max-width: 160px;
+        }
     }
     .contact_us {
         position: relative;
@@ -67,12 +112,21 @@
         padding: 12px 24px;
         border-radius: 0 40px 40px 0;
         font-size: 1.4rem;
+        @include md {
+            padding: 8px 12px;
+        }
         .contact_title {
             margin-bottom: 10px;
+             @include md {
+                margin-bottom: 4px;
+        }
         }
         .contact_sns_wrap {
             display: flex;
             gap: 16px;
+            @include md {
+                gap: 8px;
+        }
             .contact_sns {
                 display: flex;
                 gap: 8px;
@@ -91,52 +145,131 @@
     right: 80px;
     display: flex;
     gap: 16px;
+    @include lg {
+        display: none;
+    }
     .scroll_down_text {
         font-family: "arial", sans-serif;
         font-size: 1.6rem;
         letter-spacing: 0.05em;
     }
     .scroll_icon {
-        /* 調整しやすいようにカスタムプロパティで定義 */
         --size: 40px;
-        /* 円の直径 */
         --triangle-width: 10px;
-        /* 三角形の横幅 */
         --triangle-height: 6px;
-        /* 三角形の高さ */
         --circle-color: #ffffff;
-        /* 円の色（白）*/
         --triangle-color: #b28b55;
-        /* 三角形の色（黄色） */
         width: var(--size);
         height: var(--size);
         position: relative;
         display: inline-block;
     }
-    /* 丸（背景） */
     .scroll_icon::before {
         content: "";
         position: absolute;
         inset: 0;
-        /* top:0; right:0; bottom:0; left:0; と同等 */
         background: var(--circle-color);
         border-radius: 50%;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-        /* 任意の見た目調整 */
     }
-    /* 下向き三角形（中央に配置） */
     .scroll_icon::after {
         content: "";
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -35%);
-        /* 見た目上少し上寄せ（調整可） */
         width: var(--triangle-width);
         height: var(--triangle-height);
-        /* 三角形を作る：clip-path を使用（高精度で中央に配置しやすい） */
         background: var(--triangle-color);
         clip-path: polygon(0 0, 100% 0, 50% 100%);
-        /* 上辺が平らで下が尖っている -> 下向き三角 */
     }
 }
+
+@include lg {
+.header {
+        padding: 20px 24px;
+    }
+
+    .header_inner {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .header_logo img {
+        max-width: 120px;
+    }
+
+    .header_burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        z-index: 1100;
+    }
+
+    .header_nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 78%;
+        max-width: 320px;
+        background-color: $color1;
+        padding: 120px 24px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.25);
+        flex: 0;
+        z-index: 1100;
+    }
+
+    .header_nav_list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .header_nav_item a {
+        font-size: 1.8rem;
+        display: block;
+    }
+
+    .lang-switcher {
+        margin-left: auto;
+        z-index: 1100;
+    }
+
+    .header_overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1080;
+    }
+
+    .header {
+        &.header--open {
+            .header_nav {
+                transform: translateX(0);
+            }
+            .header_overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .header_burger span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .header_burger span:nth-child(2) {
+                opacity: 0;
+            }
+            .header_burger span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
+    }
+}
+    

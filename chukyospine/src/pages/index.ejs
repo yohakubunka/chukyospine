@@ -436,77 +436,78 @@
                             <h2 class="medium_title">
                                 <%= pick(pricing.title) %>
                             </h2>
-                            <table class="price-table">
-                                <colgroup>
-                                    <col class="price-col-item" />
-                                    <col class="price-col-sub" />
-                                    <col class="price-col-amount" />
-                                    <col class="price-col-desc" />
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th class="price-head head-item" colspan="2">
-                                            <%= pick(pricingHeaders[0]) %>
-                                        </th>
-                                        <th class="price-head price-head-accent head-price">
-                                            <%= pick(pricingHeaders[1]) %>
-                                        </th>
-                                        <th class="price-head price-head-accent head-content">
-                                            <%= pick(pricingHeaders[2]) %>
-                                        </th>
-                                    </tr>
-                                </thead>
+                            <div class="price-table-wrap">
+                                <table class="price-table">
+                                    <colgroup>
+                                        <col class="price-col-item" />
+                                        <col class="price-col-sub" />
+                                        <col class="price-col-amount" />
+                                        <col class="price-col-desc" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="price-head head-item" colspan="2">
+                                                <%= pick(pricingHeaders[0]) %>
+                                            </th>
+                                            <th class="price-head price-head-accent head-price">
+                                                <%= pick(pricingHeaders[1]) %>
+                                            </th>
+                                            <th class="price-head price-head-accent head-content">
+                                                <%= pick(pricingHeaders[2]) %>
+                                            </th>
+                                        </tr>
+                                    </thead>
 
-                                <tbody>
-                                    <% let lastItem='' ; %>
-                                        <% pricingRows.forEach(function(row, idx) { const cols=row.columns || []; const
-                                        isAlt=idx % 2===0 ? 'price-row' : 'price-row price-row-alt' ; const
-                                        subItem=row.subItem; const itemText=row.skipFirstColumn ? lastItem :
-                                        pick(cols[0]); if (!row.skipFirstColumn) { lastItem=itemText; } const
-                                        amountVal=pick(cols[1]); const descVal=pick(cols[2]); %>
-                                            <tr class="<%= isAlt %>">
-                                                <% if (!row.skipFirstColumn) { %>
-                                                    <% if (subItem) { %>
-                                                        <td class="price-item" <% if (row.rowspan) { %> rowspan="
-                                                            <%=
-                                                            row.rowspan %>"
-                                                                <% } %>>
-                                                                    <%= itemText %>
-                                                        </td>
-                                                        <td class="price-item">
-                                                            <%= pick(subItem) %>
-                                                        </td>
-                                                        <% } else { %>
-                                                            <td class="price-item " colspan="2" <% if (row.rowspan) { %>
-                                                                rowspan="
+                                    <tbody>
+                                        <% let lastItem='' ; %>
+                                            <% pricingRows.forEach(function(row, idx) { const cols=row.columns || [];
+                                            const isAlt=idx % 2===0 ? 'price-row' : 'price-row price-row-alt' ; const
+                                            subItem=row.subItem; const itemText=row.skipFirstColumn ? lastItem :
+                                            pick(cols[0]); if (!row.skipFirstColumn) { lastItem=itemText; } const
+                                            amountVal=pick(cols[1]); const descVal=pick(cols[2]); %>
+                                                <tr class="<%= isAlt %>">
+                                                    <% if (!row.skipFirstColumn) { %>
+                                                        <% if (subItem) { %>
+                                                            <td class="price-item" <% if (row.rowspan) { %> rowspan="
                                                                 <%= row.rowspan %>"
                                                                     <% } %>>
                                                                         <%= itemText %>
                                                             </td>
-                                                            <% } %>
+                                                            <td class="price-item">
+                                                                <%= pick(subItem) %>
+                                                            </td>
+                                                            <% } else { %>
+                                                                <td class="price-item " colspan="2" <% if (row.rowspan) { %>
+                                                                    rowspan="
+                                                                    <%= row.rowspan %>"
+                                                                        <% } %>>
+                                                                            <%= itemText %>
+                                                                </td>
                                                                 <% } %>
-                                                                    <% if (row.skipFirstColumn) { %>
-                                                                        <td class="price-item">
-                                                                            <%= subItem ? pick(subItem) : '' %>
-                                                                        </td>
-                                                                        <% } %>
-                                                                            <td class="price-amount">
-                                                                                <span>
-                                                                                  <%- pick(amountVal) %>
-
-                                                                            </span>
+                                                                    <% } %>
+                                                                        <% if (row.skipFirstColumn) { %>
+                                                                            <td class="price-item">
+                                                                                <%= subItem ? pick(subItem) : '' %>
                                                                             </td>
-                                                                            <% if (!row.skipFirstColumn) { %>
-                                                                                <td class="price-desc" <% if (row.rowspan) { %> rowspan="
-                                                                                    <%= row.rowspan %>"
-                                                                                        <% } %>>
-                                                                                            <%- brText(descVal) %>
+                                                                            <% } %>
+                                                                                <td class="price-amount">
+                                                                                    <span>
+                                                                                      <%- pick(amountVal) %>
+
+                                                                                </span>
                                                                                 </td>
-                                                                                <% } %>
-                                            </tr>
-                                            <% }) %>
-                                </tbody>
-                            </table>
+                                                                                <% if (!row.skipFirstColumn) { %>
+                                                                                    <td class="price-desc" <% if (row.rowspan) { %> rowspan="
+                                                                                        <%= row.rowspan %>"
+                                                                                            <% } %>>
+                                                                                                <%- brText(descVal) %>
+                                                                                    </td>
+                                                                                    <% } %>
+                                                </tr>
+                                                <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="price_notes">
                                 <% notes.forEach(function(note) { %>
                                     <p>

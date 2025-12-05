@@ -1,4 +1,5 @@
 @use "variables"as *;
+@use "mixins" as *;
 .lang-switcher {
     display: inline-flex;
     align-items: center;
@@ -20,6 +21,10 @@
     border-bottom: 1px solid $color2;
     width: 97px;
     min-width: 97px;
+    @include md {
+padding: 0 0 4px 0;
+gap: 8px;
+    }
 }
 
 .lang-switcher_icon,
