@@ -94,7 +94,7 @@
     color: $color2;
     text-decoration: none;
     font-size: 2rem;
-    @include media-max (1400px) {
+    @include media-max (1500px) {
         font-size: 1.4rem;
     }
 }

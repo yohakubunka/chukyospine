@@ -2,9 +2,13 @@
 const pick = (obj) => {
     if (obj === null || obj === undefined) return '';
     if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
-    if (Object.prototype.hasOwnProperty.call(obj, lang)) {
-        const val = obj[lang];
-        return val === undefined || val === null ? '' : String(val);
+    const order = [lang, 'ja', 'en', 'zh'];
+    for (let i = 0; i < order.length; i++) {
+        const key = order[i];
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            const val = obj[key];
+            if (val !== undefined && val !== null) return String(val);
+        }
     }
     return '';
 };
@@ -44,7 +48,7 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
         <div class="contact_wrap">
             <img src="/images/doctor.png" alt="院長の写真" class="doctor_image" />
             <div class="contact_us">
-                <p class="contact_title">聯繫我們</p>
+                <p class="contact_title"><%= pick(headerData.contactTitle) %></p>
                 <div class="contact_sns_wrap">
                     <a class="contact_sns" href="##">
                         <img src="/images/line_icon.svg" alt="Line アイコン" />

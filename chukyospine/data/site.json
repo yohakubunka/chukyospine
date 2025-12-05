@@ -70,7 +70,12 @@
                     "zh": "診療時間"
                 }
             }
-        ]
+        ],
+        "contactTitle": {
+            "ja": "",
+            "en": "",
+            "zh": "聯繫我們"
+        }
     },
     "footer": {
         "cta": {
@@ -450,8 +455,8 @@
                             "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（<1%） "
                         },
                         "time": {
-                            "ja": "",
-                            "en": "",
+                            "ja": "治療時間：約45分",
+                            "en": "Treatment time:  About 45 minutes",
                             "zh": "治療時間：約 45 分鐘 "
                         }
                     },
@@ -662,8 +667,8 @@
                         },
                         {
                             "ja": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>",
-                            "en": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>",
-                            "zh": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>"
+                            "en": "1,500<span class=\"unit\"><span class=\"unit\">doller</span></span>",
+                            "zh": "1,500<span class=\"unit\"><span class=\"unit\">美元</span></span>"
                         },
                         {
                             "ja": "診察料・レントゲン・CT・MRI",
@@ -680,8 +685,8 @@
                         },
                         {
                             "ja": "500<span class=\"unit\">ドル</span>",
-                            "en": "500<span class=\"unit\">ドル</span>",
-                            "zh": "500<span class=\"unit\">ドル</span>"
+                            "en": "500<span class=\"unit\">doller</span>",
+                            "zh": "500<span class=\"unit\">美元</span>"
                         },
                         {
                             "ja": "胸部レントゲン・肺機能検査・心電図・採血",
@@ -704,8 +709,8 @@
                         },
                         {
                             "ja": "13,000<span class=\"unit\">ドル</span>",
-                            "en": "13,000<span class=\"unit\">ドル</span>",
-                            "zh": "13,000<span class=\"unit\">ドル</span>"
+                            "en": "13,000<span class=\"unit\">doller</span>",
+                            "zh": "13,000<span class=\"unit\">美元</span>"
                         },
                         {
                             "ja": "手術料・コルセット・翌日の診察料・翌日のMRI・術後紹介状",
@@ -728,8 +733,8 @@
                         },
                         {
                             "ja": "23,000<span class=\"unit\">ドル</span>",
-                            "en": "23,000<span class=\"unit\">ドル</span>",
-                            "zh": "23,000<span class=\"unit\">ドル</span>"
+                            "en": "23,000<span class=\"unit\">doller</span>",
+                            "zh": "23,000<span class=\"unit\">美元</span>"
                         },
                         {
                             "ja": "",
@@ -746,8 +751,8 @@
                         },
                         {
                             "ja": "500<span class=\"unit\">ドル</span>",
-                            "en": "500<span class=\"unit\">ドル</span>",
-                            "zh": "500<span class=\"unit\">ドル</span>"
+                            "en": "500<span class=\"unit\">doller</span>",
+                            "zh": "500<span class=\"unit\">美元</span>"
                         },
                         {
                             "ja": "―",
