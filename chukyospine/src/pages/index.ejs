@@ -70,9 +70,13 @@
                 <% const pick=(obj)=> {
                 if (obj === null || obj === undefined) return '';
                 if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
-                if (Object.prototype.hasOwnProperty.call(obj, lang)) {
-                    const val = obj[lang];
-                    return val === undefined || val === null ? '' : String(val);
+                const order=[lang,'ja','en','zh'];
+                for (let i=0;i<order.length;i++) {
+                    const key=order[i];
+                    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                        const val=obj[key];
+                        if (val !== undefined && val !== null) return String(val);
+                    }
                 }
                 return '';
                 };
@@ -104,6 +108,8 @@
                 const proc1 = procedures[1] || {};
                 const proc2 = procedures[2] || {};
                 const proc3 = procedures[3] || {};
+                const flowImage = lang === 'ja' ? '/images/flow_ja_pc.svg' : '/images/flow_cn_pc.svg';
+                const flowImageSp = lang === 'ja' ? '/images/flow_ja_sp.svg' : '/images/flow_cn_sp.svg';
                 %>
 
                     <section id="section01">
@@ -207,7 +213,9 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <%- brText(treatmentMenu.endoscopyBody) %>
+                                    <p class="endoscopy_body">
+                                        <%- brText(treatmentMenu.endoscopyBody) %>
+                                    </p>
                                 </div>
 
 
@@ -427,7 +435,10 @@
                         <p class="flow_desc">
                             <%= pick(flow.description) %>
                         </p>
-                        <img class="" src="/images/flow_illust.svg" alt="" aria-hidden="true" />
+                        <div class="flow_images">
+                            <img class="flow_image flow_image_pc" src="<%= flowImage %>" alt="" aria-hidden="true" />
+                            <img class="flow_image flow_image_sp" src="<%= flowImageSp %>" alt="" aria-hidden="true" />
+                        </div>
                     </section>
 
 
@@ -570,7 +581,9 @@
                                                 <ul class="list_items">
                                                     <% (doctor.qualifications || []).forEach(function(item) { %>
                                                         <li><span><%= pick(item).split(' ')[0] %></span>
-                                                            <%- brText({ ja:pick(item).split(' ').slice(1).join(' '), en:pick(item).split(' ').slice(1).join(' '), zh: pick(item).split(' ').slice(1).join(' ') }) %>
+                                                            <p>
+                                                                <%- brText({ ja:pick(item).split(' ').slice(1).join(' '), en:pick(item).split(' ').slice(1).join(' '), zh: pick(item).split(' ').slice(1).join(' ') }) %>
+                                                            </p>
                                                         </li>
                                                         <% }) %>
                                                 </ul>
@@ -582,7 +595,9 @@
                                                 <ul class="list_items">
                                                     <% (doctor.memberships || []).forEach(function(item) { %>
                                                         <li class="item_line">
-                                                            <%= pick(item) %>
+                                                            <p>
+                                                                <%= pick(item) %>
+                                                            </p>
                                                         </li>
                                                         <% }) %>
                                                 </ul>

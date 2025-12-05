@@ -2,11 +2,18 @@
 @use "mixins" as *;
 #section01 {
     background-image: url("../images/clinical_back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    @include lg {
+        margin-top: 80px;
+        margin-bottom: 32px;
+    }
     .clinical_wrap {
         display: flex;
         gap: 80px;
         justify-content: space-between;
-        align-items: center;
         @include xl {
             gap: 40px;
         }
@@ -18,7 +25,9 @@
             font-weight: 700;
             font-style: normal;
             font-size: 6.4rem;
-            color: $color4;
+            color: $color10;
+            letter-spacing: 0.08em;
+            padding-top: 16px;
             @include lg {
                 font-size: 4rem;
             }
@@ -30,7 +39,7 @@
                 font-size: 2.4rem;
                 position: relative;
                 display: inline-block;
-                padding-left: 90px;
+                padding-left: 100px;
                 margin-bottom: 16px;
                 @include lg {
                     font-size: 2rem;
@@ -52,7 +61,6 @@
             }
             .clinical_desc_middle {
                 font-size: 3.2rem;
-                font-weight: 500;
                 margin-bottom: 32px;
                 @include lg {
                     font-size: 2.4rem;
@@ -73,7 +81,6 @@
             }
             .clinical_approach {
                 font-size: 1.8rem;
-                font-weight: 500;
                 margin-bottom: 24px;
                 @include lg {
                     margin-bottom: 16px;
@@ -81,7 +88,6 @@
             }
             .clinical_services {
                 .clinical_services_title {
-                    font-weight: 600;
                     margin-bottom: 16px;
                 }
                 .clinical_services_list {
@@ -121,7 +127,7 @@
         max-width: 1654px;
         width: 100%;
         display: flex;
-        gap: 40px;
+        gap: 48px;
         align-items: center;
         margin-bottom: 48px;
         @include lg {
@@ -212,7 +218,6 @@
                     }
                     .approach_item_title {
                         font-size: 2.4rem;
-                        font-weight: 500;
                         margin-bottom: 8px;
                         letter-spacing: 0.05em;
                         @include lg {
@@ -221,7 +226,6 @@
                     }
                     .approach_item_body {
                         font-size: 1.8rem;
-                        font-weight: 500;
                         letter-spacing: 0.05em;
                         @include lg {
                             font-size: 1.6rem;
@@ -235,7 +239,7 @@
 
 #section03 {
     .treatment_menu_wrap {
-        .meddium_title {
+        .medium_title {
             margin-bottom: 64px;
         }
         .treatment_menu_content {
@@ -256,6 +260,10 @@
                     gap: 24px;
                 }
             }
+            .endoscopy_body {
+                font-size: 1.8rem;
+                line-height: 1.6;
+            }
             .spine_img {
                 @include media-max(1500px) {
                     max-width: 500px;
@@ -273,8 +281,8 @@
             margin-bottom: 56px;
             .treatment_benefits_title {
                 font-size: 3.2rem;
-                font-weight: 500;
                 margin-bottom: 32px;
+                letter-spacing: 0.05em;
                 text-align: center;
                 @include lg {
                     font-size: 2.4rem;
@@ -332,6 +340,7 @@
                     .title {
                         font-size: 1.8rem;
                         text-align: center;
+                        letter-spacing: 0.05em;
                     }
                     .caution {
                         margin-top: 8px;
@@ -355,7 +364,7 @@
                         flex-direction: column;
                         .procedure_approach_title {
                             font-size: 3.2rem;
-                            font-weight: 500;
+                            letter-spacing: 0.05em;
                             margin-bottom: 8px;
                             text-align: center;
                             @include md {
@@ -370,13 +379,15 @@
                             }
                         }
                         .procedure_approach_img {
-                            margin-bottom: 32px;
+                            margin-bottom: 24px;
                             @include md {
-                                margin-bottom: 24px;
+                                margin-bottom: 16px;
                             }
                         }
                         .procedure_approach_desc {
                             margin-bottom: 16px;
+                            font-size: 2rem;
+                            letter-spacing: 0.05em;
                         }
                         .procedure_approach_time {
                             display: flex;
@@ -400,7 +411,6 @@
                 }
                 .procedures_single_title {
                     font-size: 3.2rem;
-                    font-weight: 500;
                     margin-bottom: 8px;
                     @include md {
                         font-size: 2.4rem;
@@ -446,7 +456,6 @@
         }
         p {
             font-size: 1.8rem;
-            font-weight: 500;
             letter-spacing: 0.05em;
             line-height: 1.6;
             @include lg {
@@ -466,7 +475,6 @@
     .syringe_types {
         h3 {
             font-size: 3.2rem;
-            font-weight: 500;
             margin-bottom: 32px;
             text-align: center;
             @include lg {
@@ -537,12 +545,31 @@
         text-align: center;
         margin-bottom: 40px;
         text-align: center;
+        font-weight: 700;
         @include lg {
             margin-bottom: 24px;
         }
     }
-    img {
-        margin: 0 auto;
+    .flow_images {
+        text-align: center;
+        .flow_image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        .flow_image_sp {
+            display: none;
+        }
+    }
+    @include md {
+        .flow_images {
+            .flow_image_pc {
+                display: none;
+            }
+            .flow_image_sp {
+                display: block;
+            }
+        }
     }
 }
 
@@ -626,7 +653,8 @@
     .price_notes {
         p {
             font-size: 1.4rem;
-            color: $color3;
+            color: $color2;
+            margin-bottom: 8px;
             &:last-of-type {
                 margin-bottom: 0;
             }
@@ -648,7 +676,6 @@
         font-size: 3.2rem;
         margin-bottom: 8px;
         text-align: center;
-        font-weight: 500;
         @include lg {
             font-size: 2.4rem;
         }
@@ -668,7 +695,7 @@
             font-size: 3.2rem;
             font-weight: 600;
             color: $color2;
-            background-color: $color4;
+            background-color: $color11;
             @include xl {
                 font-size: 2.4rem;
                 padding: 4px;
@@ -709,7 +736,6 @@
                 }
             }
             p {
-                font-weight: 500;
                 font-size: 1.6rem;
                 text-align: center;
             }
@@ -727,7 +753,6 @@
             }
             .list_title {
                 font-size: 2.4rem;
-                font-weight: 500;
                 margin-bottom: 16px;
                 position: relative;
                 padding-left: 24px;
@@ -778,6 +803,9 @@
                             transform: translateY(-50%);
                         }
                     }
+                    p {
+                        font-size: 1.4rem;
+                    }
                 }
             }
             .doctor_career {
@@ -824,7 +852,6 @@
             p {
                 margin-top: 16px;
                 font-size: 1.4rem;
-                font-weight: 500;
             }
         }
     }
@@ -837,7 +864,6 @@
             margin-bottom: 16px;
         }
         .access_address {
-            font-weight: 500;
             text-align: center;
             margin-bottom: 40px;
         }
@@ -930,7 +956,6 @@
             }
             .legend_title {
                 font-size: 4rem;
-                font-weight: 500;
                 margin-bottom: 40px;
                 @include xl {
                     font-size: 2.8rem;
@@ -942,7 +967,6 @@
                 align-items: center;
                 gap: 16px;
                 margin-bottom: 16px;
-                font-weight: 500;
                 @include lg {
                     margin-bottom: 0;
                 }
@@ -974,7 +998,6 @@
         align-items: center;
         .hours_title {
             font-size: 3.2rem;
-            font-weight: 500;
             color: $color2;
             background-color: $color3;
             padding: 16px 54px;
@@ -986,7 +1009,6 @@
         }
         .hours_subtitle {
             font-size: 1.8rem;
-            font-weight: 500;
             color: $color2;
             letter-spacing: 0.05em;
         }

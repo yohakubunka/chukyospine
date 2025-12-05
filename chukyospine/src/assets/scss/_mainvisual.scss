@@ -6,6 +6,8 @@
     align-items: center;
     height: 100vh;
     max-height: 1080px;
+    font-style: normal;
+    font-family: "source-han-sans-simplified-c", sans-serif;
     .mainvisual_left {
         background-image: url("../images/white_back.png");
         background-size: cover;
@@ -19,6 +21,7 @@
             font-size: 4rem;
             font-weight: 500;
             margin-bottom: 16px;
+            letter-spacing: 0.05em;
         }
         .mainvisual_text {
             margin-bottom: 48px;
@@ -31,7 +34,7 @@
                 .mainvisual_panel_title {
                     font-size: 1.4rem;
                     font-weight: 500;
-                    padding: 8px 0;
+                    padding: 8px 8px;
                     background-color: $color2;
                     border-radius: 100px;
                     display: flex;
@@ -82,11 +85,13 @@
             color: $color2;
             .mainvisual_main_sub {
                 font-size: 1.8rem;
+                font-weight: 500;
             }
             .mainvisual_main_tltle {
-                font-size: 4.8rem;
+                font-size: 5.6rem;
                 font-weight: 700;
                 letter-spacing: 0.08em;
+                font-family: "noto-sans-cjk-jp", sans-serif;
             }
         }
     }

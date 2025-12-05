@@ -19,7 +19,8 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
                 <img src="/images/logo.svg" alt="<%= pick(headerData.logoAlt) %>" />
             </a>
             </h1>
-            <nav class="header_nav">
+
+            <nav class="header_nav header__nav">
                 <ul class="header_nav_list">
                     <% navItems.forEach(function(item, index) { const href = navAnchors[index] || '#'; %>
                         <li class="header_nav_item">
@@ -31,7 +32,14 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
                 </ul>
             </nav>
             <%- include('./language-switcher', { lang }) %>
+
+                <button class="header_burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+        <div class="header_overlay"></div>
 
         <div class="contact_wrap">
             <img src="/images/doctor.png" alt="院長の写真" class="doctor_image" />

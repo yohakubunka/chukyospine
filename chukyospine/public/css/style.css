@@ -468,12 +468,13 @@ body {
   position: relative;
   background-color: #0B143F;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
-  font-family: "Noto Sans TC", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  font-family: "noto-sans-cjk-jp", sans-serif;
+  font-style: normal;
 }
 
 main {
@@ -500,7 +501,7 @@ section {
   padding: 60px 0;
 }
 section:first-of-type {
-  padding: 120px 0 60px 0;
+  padding: 196px 0;
 }
 
 .medium_title {
@@ -517,7 +518,7 @@ section:first-of-type {
 }
 
 .back_icon {
-  background-color: #B69863;
+  background-color: #A4945E;
   width: 120px;
   height: 120px;
   display: flex;
@@ -557,7 +558,7 @@ section:first-of-type {
 }
 .icon_title_wrap .icon_title_text .icon_subtitle {
   font-weight: 600;
-  color: #B69863;
+  color: #BFB592;
 }
 
 .number_title {
@@ -593,6 +594,7 @@ section:first-of-type {
 .number_title p {
   font-size: 4rem;
   font-weight: 500;
+  letter-spacing: 0.05em;
 }
 @media screen and (max-width: 1024px) {
   .number_title p {
@@ -628,6 +630,11 @@ section:first-of-type {
     gap: 8px;
   }
 }
+.lang-switcher_box .lang-switcher_wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .lang-switcher_icon,
 .lang-switcher_arrow {
@@ -636,11 +643,18 @@ section:first-of-type {
   flex-shrink: 0;
 }
 
+.lang-switcher_arrow {
+  margin-left: auto;
+}
+
 .lang-switcher_value {
   flex: 1;
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.08em;
+  font-family: "kozuka-gothic-pr6n", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .lang-switcher_select {
@@ -653,8 +667,8 @@ section:first-of-type {
 }
 
 .lang-switcher_select option {
-  color: #B69863;
-  background: #fff;
+  color: #0B143F;
+  background: #ffffff;
 }
 
 .header {
@@ -664,7 +678,12 @@ section:first-of-type {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1200;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+.header.header--solid {
+  background-color: rgba(11, 20, 63, 0.3);
 }
 @media screen and (max-width: 1400px) {
   .header {
@@ -676,6 +695,8 @@ section:first-of-type {
   display: flex;
   align-items: center;
   gap: 24px;
+  position: relative;
+  z-index: 1201;
 }
 
 .header_logo {
@@ -695,6 +716,7 @@ section:first-of-type {
 
 .header_nav {
   flex: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .header_nav_toggle {
@@ -723,6 +745,11 @@ section:first-of-type {
 
 .header_overlay {
   display: none;
+  z-index: 1100;
+}
+.header_overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .header_nav_list {
@@ -755,10 +782,16 @@ section:first-of-type {
   margin-left: auto;
 }
 
+.header__menu-btn {
+  display: none;
+}
+
 .contact_wrap {
   position: fixed;
   bottom: 16px;
   left: 0;
+  z-index: 500;
+  pointer-events: none;
 }
 .contact_wrap .doctor_image {
   position: absolute;
@@ -773,12 +806,13 @@ section:first-of-type {
 }
 .contact_wrap .contact_us {
   position: relative;
-  z-index: 10;
+  z-index: 510;
   background-color: #B69863;
   color: #ffffff;
   padding: 12px 24px;
   border-radius: 0 40px 40px 0;
   font-size: 1.4rem;
+  pointer-events: auto;
 }
 @media screen and (max-width: 768px) {
   .contact_wrap .contact_us {
@@ -817,6 +851,8 @@ section:first-of-type {
   right: 80px;
   display: flex;
   gap: 16px;
+  z-index: 500;
+  z-index: 1;
 }
 @media screen and (max-width: 1024px) {
   .scroll_down_wrap {
@@ -939,6 +975,8 @@ section:first-of-type {
   align-items: center;
   height: 100vh;
   max-height: 1080px;
+  font-style: normal;
+  font-family: "source-han-sans-simplified-c", sans-serif;
 }
 .mainvisual .mainvisual_left {
   background-image: url("../images/white_back.png");
@@ -954,6 +992,7 @@ section:first-of-type {
   font-size: 4rem;
   font-weight: 500;
   margin-bottom: 16px;
+  letter-spacing: 0.05em;
 }
 .mainvisual .mainvisual_left .mainvisual_text {
   margin-bottom: 48px;
@@ -968,7 +1007,7 @@ section:first-of-type {
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title {
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 8px 0;
+  padding: 8px 8px;
   background-color: #ffffff;
   border-radius: 100px;
   display: flex;
@@ -1018,21 +1057,32 @@ section:first-of-type {
 }
 .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_sub {
   font-size: 1.8rem;
+  font-weight: 500;
 }
 .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_tltle {
-  font-size: 4.8rem;
+  font-size: 5.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  font-family: "noto-sans-cjk-jp", sans-serif;
 }
 
 #section01 {
   background-image: url("../images/clinical_back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 1024px) {
+  #section01 {
+    margin-top: 80px;
+    margin-bottom: 32px;
+  }
 }
 #section01 .clinical_wrap {
   display: flex;
   gap: 80px;
   justify-content: space-between;
-  align-items: center;
 }
 @media screen and (max-width: 1200px) {
   #section01 .clinical_wrap {
@@ -1049,7 +1099,9 @@ section:first-of-type {
   font-weight: 700;
   font-style: normal;
   font-size: 6.4rem;
-  color: #B69863;
+  color: #BFB592;
+  letter-spacing: 0.08em;
+  padding-top: 16px;
 }
 @media screen and (max-width: 1024px) {
   #section01 .clinical_wrap .clinical_title {
@@ -1064,7 +1116,7 @@ section:first-of-type {
   font-size: 2.4rem;
   position: relative;
   display: inline-block;
-  padding-left: 90px;
+  padding-left: 100px;
   margin-bottom: 16px;
 }
 @media screen and (max-width: 1024px) {
@@ -1090,7 +1142,6 @@ section:first-of-type {
 }
 #section01 .clinical_wrap .clinical_desc .clinical_desc_middle {
   font-size: 3.2rem;
-  font-weight: 500;
   margin-bottom: 32px;
 }
 @media screen and (max-width: 1024px) {
@@ -1115,7 +1166,6 @@ section:first-of-type {
 }
 #section01 .clinical_wrap .clinical_desc .clinical_approach {
   font-size: 1.8rem;
-  font-weight: 500;
   margin-bottom: 24px;
 }
 @media screen and (max-width: 1024px) {
@@ -1124,7 +1174,6 @@ section:first-of-type {
   }
 }
 #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_title {
-  font-weight: 600;
   margin-bottom: 16px;
 }
 #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list {
@@ -1169,7 +1218,7 @@ section:first-of-type {
   max-width: 1654px;
   width: 100%;
   display: flex;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
   margin-bottom: 48px;
 }
@@ -1282,7 +1331,6 @@ section:first-of-type {
 }
 #section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_title {
   font-size: 2.4rem;
-  font-weight: 500;
   margin-bottom: 8px;
   letter-spacing: 0.05em;
 }
@@ -1293,7 +1341,6 @@ section:first-of-type {
 }
 #section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_body {
   font-size: 1.8rem;
-  font-weight: 500;
   letter-spacing: 0.05em;
 }
 @media screen and (max-width: 1024px) {
@@ -1302,7 +1349,7 @@ section:first-of-type {
   }
 }
 
-#section03 .treatment_menu_wrap .meddium_title {
+#section03 .treatment_menu_wrap .medium_title {
   margin-bottom: 64px;
 }
 #section03 .treatment_menu_wrap .treatment_menu_content {
@@ -1328,6 +1375,10 @@ section:first-of-type {
     gap: 24px;
   }
 }
+#section03 .treatment_menu_wrap .treatment_menu_content .endoscopy_body {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
 @media screen and (max-width: 1500px) {
   #section03 .treatment_menu_wrap .treatment_menu_content .spine_img {
     max-width: 500px;
@@ -1349,8 +1400,8 @@ section:first-of-type {
 }
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_title {
   font-size: 3.2rem;
-  font-weight: 500;
   margin-bottom: 32px;
+  letter-spacing: 0.05em;
   text-align: center;
 }
 @media screen and (max-width: 1024px) {
@@ -1414,6 +1465,7 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item .title {
   font-size: 1.8rem;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item .caution {
   margin-top: 8px;
@@ -1438,7 +1490,7 @@ section:first-of-type {
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_title {
   font-size: 3.2rem;
-  font-weight: 500;
+  letter-spacing: 0.05em;
   margin-bottom: 8px;
   text-align: center;
 }
@@ -1457,15 +1509,17 @@ section:first-of-type {
   }
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_desc {
   margin-bottom: 16px;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_time {
   display: flex;
@@ -1489,7 +1543,6 @@ section:first-of-type {
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_title {
   font-size: 3.2rem;
-  font-weight: 500;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 768px) {
@@ -1539,7 +1592,6 @@ section:first-of-type {
 }
 #section04 .syringe_content p {
   font-size: 1.8rem;
-  font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 1.6;
 }
@@ -1561,7 +1613,6 @@ section:first-of-type {
 }
 #section04 .syringe_types h3 {
   font-size: 3.2rem;
-  font-weight: 500;
   margin-bottom: 32px;
   text-align: center;
 }
@@ -1639,14 +1690,31 @@ section:first-of-type {
   text-align: center;
   margin-bottom: 40px;
   text-align: center;
+  font-weight: 700;
 }
 @media screen and (max-width: 1024px) {
   #section05 .flow_desc {
     margin-bottom: 24px;
   }
 }
-#section05 img {
+#section05 .flow_images {
+  text-align: center;
+}
+#section05 .flow_images .flow_image {
+  display: block;
   margin: 0 auto;
+  max-width: 100%;
+}
+#section05 .flow_images .flow_image_sp {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #section05 .flow_images .flow_image_pc {
+    display: none;
+  }
+  #section05 .flow_images .flow_image_sp {
+    display: block;
+  }
 }
 
 #section06 {
@@ -1727,7 +1795,8 @@ section:first-of-type {
 }
 #section06 .price_notes p {
   font-size: 1.4rem;
-  color: #0B143F;
+  color: #ffffff;
+  margin-bottom: 8px;
 }
 #section06 .price_notes p:last-of-type {
   margin-bottom: 0;
@@ -1750,7 +1819,6 @@ section:first-of-type {
   font-size: 3.2rem;
   margin-bottom: 8px;
   text-align: center;
-  font-weight: 500;
 }
 @media screen and (max-width: 1024px) {
   #section07 .doctor_lead {
@@ -1775,7 +1843,7 @@ section:first-of-type {
   font-size: 3.2rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #B69863;
+  background-color: #A4945E;
 }
 @media screen and (max-width: 1200px) {
   #section07 .philosophy_text p {
@@ -1827,7 +1895,6 @@ section:first-of-type {
   }
 }
 #section07 .doctor_content .doctor_profile p {
-  font-weight: 500;
   font-size: 1.6rem;
   text-align: center;
 }
@@ -1845,7 +1912,6 @@ section:first-of-type {
 }
 #section07 .doctor_content .doctor_details .list_title {
   font-size: 2.4rem;
-  font-weight: 500;
   margin-bottom: 16px;
   position: relative;
   padding-left: 24px;
@@ -1897,6 +1963,9 @@ section:first-of-type {
   height: 1px;
   background-color: #A5ADBE;
   transform: translateY(-50%);
+}
+#section07 .doctor_content .doctor_details .list_items li p {
+  font-size: 1.4rem;
 }
 #section07 .doctor_content .doctor_details .doctor_career {
   padding-bottom: 32px;
@@ -1950,7 +2019,6 @@ section:first-of-type {
 #section07 .doctor_certificates .doctor_certificate_item p {
   margin-top: 16px;
   font-size: 1.4rem;
-  font-weight: 500;
 }
 
 #section08 {
@@ -1960,7 +2028,6 @@ section:first-of-type {
   margin-bottom: 16px;
 }
 #section08 .access_wrap .access_address {
-  font-weight: 500;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -2068,7 +2135,6 @@ section:first-of-type {
 }
 #section08 .access_map_legend .access_map_legend_items .legend_title {
   font-size: 4rem;
-  font-weight: 500;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 1200px) {
@@ -2082,7 +2148,6 @@ section:first-of-type {
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
-  font-weight: 500;
 }
 @media screen and (max-width: 1024px) {
   #section08 .access_map_legend .access_map_legend_items .access_map_legend_item {
@@ -2115,7 +2180,6 @@ section:first-of-type {
 }
 #section09 .hours_wrap .hours_title {
   font-size: 3.2rem;
-  font-weight: 500;
   color: #ffffff;
   background-color: #0B143F;
   padding: 16px 54px;
@@ -2127,13 +2191,13 @@ section:first-of-type {
 }
 #section09 .hours_wrap .hours_subtitle {
   font-size: 1.8rem;
-  font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.05em;
 }
 
 footer {
   padding: 64px 80px;
+  background-color: #11244F;
 }
 @media screen and (max-width: 768px) {
   footer {

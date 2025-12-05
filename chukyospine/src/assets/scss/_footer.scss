@@ -2,6 +2,7 @@
 @use "mixins" as *;
 footer {
     padding: 64px 80px;
+    background-color: $color12;
     @include md {
         padding: 64px 24px;
     }

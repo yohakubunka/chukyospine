@@ -29,8 +29,7 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
                     <% footerNav.forEach(function(item, index) { const href = navAnchors[index] || '#'; %>
                         <li class="footer_nav_item">
                             <a href="<%= href %>">
-href="##">
-) %>
+                                <%= pick(item.label) %>
                             </a>
                         </li>
                         <% }) %>
@@ -49,6 +48,6 @@ href="##">
                     <%= pick(footerData.copyright) %>
                 </p>
 
+
             </div>
-        </div>
     </footer>

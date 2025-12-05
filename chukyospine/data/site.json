@@ -389,14 +389,14 @@
             },
             "benefits": [{
                     "title": {
-                        "ja": "治療時間はが短く",
-                        "en": "Shorter Treatment Time",
-                        "zh": "手術時間短"
+                        "ja": "治療時間はが短く\n切る部分が6～8mmで最小限",
+                        "en": "Shorter Treatment Time\nMinimal Incision (6–8 mm)",
+                        "zh": "手術時間短\n切口僅 6～8mm"
                     },
                     "lines": [{
-                            "ja": "切る部分が6～8mmで最小限",
-                            "en": "Minimal Incision (6–8 mm)",
-                            "zh": "切口僅 6～8mm"
+                            "ja": "",
+                            "en": "",
+                            "zh": ""
                         },
                         {
                             "ja": "※抜糸が不要",
@@ -765,12 +765,12 @@
                 {
                     "ja": "交通費、宿泊費は含みません。",
                     "en": "Excludes transportation and accommodation.",
-                    "zh": "不含交通費與住宿費"
+                    "zh": "※　不含交通費與住宿費"
                 },
                 {
                     "ja": "現金（日本円）払いも可能　（当日のレート換算になります）",
                     "en": "Cash payment (JPY) accepted at the day’s exchange rate.",
-                    "zh": "現金（日本日幣）亦可支付（依當日匯率換算）"
+                    "zh": "※　現金（日本日幣）亦可支付（依當日匯率換算）"
                 }
             ]
         },
