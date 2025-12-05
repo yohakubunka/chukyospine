@@ -5,13 +5,17 @@
             "en": "Chukyo Spine Clinic",
             "zh": "中京脊柱專科醫院"
         },
-        "description": "",
+        "description": {
+            "ja": "",
+            "en": "",
+            "zh": ""
+        },
         "url": "https://example.com"
     },
     "header": {
         "logoAlt": {
-            "ja": "",
-            "en": "",
+            "ja": "ロゴ",
+            "en": "logo",
             "zh": "ロゴ"
         },
         "navItems": [{

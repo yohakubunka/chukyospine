@@ -108,8 +108,18 @@
                 const proc1 = procedures[1] || {};
                 const proc2 = procedures[2] || {};
                 const proc3 = procedures[3] || {};
-                const flowImage = lang === 'ja' ? '/images/flow_ja_pc.svg' : '/images/flow_cn_pc.svg';
-                const flowImageSp = lang === 'ja' ? '/images/flow_ja_sp.svg' : '/images/flow_cn_sp.svg';
+                const flowImageMap = {
+                    ja: '/images/flow_ja_pc.svg',
+                    zh: '/images/flow_cn_pc.svg',
+                    en: '/images/flow_cn_pc.svg'
+                };
+                const flowImageSpMap = {
+                    ja: '/images/flow_ja_sp.svg',
+                    zh: '/images/flow_cn_sp.svg',
+                    en: '/images/flow_cn_sp.svg'
+                };
+                const flowImage = flowImageMap[lang] || flowImageMap.zh;
+                const flowImageSp = flowImageSpMap[lang] || flowImageSpMap.zh;
                 %>
 
                     <section id="section01">
@@ -685,7 +695,9 @@
                                         </p>
                                     </div>
                                 </div>
-                                <img class="" src="/images/youtube.png" alt="" aria-hidden="true" />
+                                <div class="access_video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
                             </div>
 
                             <div class="access_map_legend">
