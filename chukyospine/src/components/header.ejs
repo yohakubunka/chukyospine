@@ -25,6 +25,19 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
             </h1>
 
             <nav class="header_nav header__nav">
+                <div class="contact_sp">
+                    <p class="contact_sp_title">お問い合わせ</p>
+                    <div>
+                        <a class="contact_sns" href="##">
+                            <img src="/images/line_icon.svg" alt="Line アイコン" />
+                            <p>LINE</p>
+                        </a>
+                        <a class="contact_sns" href="##">
+                            <img src="/images/wechat_icon.svg" alt="WeChat アイコン" />
+                            <p>WeChat</p>
+                        </a>
+                    </div>
+                </div>
                 <ul class="header_nav_list">
                     <% navItems.forEach(function(item, index) { const href = navAnchors[index] || '#'; %>
                         <li class="header_nav_item">
@@ -34,10 +47,12 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
                         </li>
                         <% }) %>
                 </ul>
+                <div class="header_nav_lang">
+                    <%- include('./language-switcher', { lang }) %>
+                </div>
             </nav>
-            <%- include('./language-switcher', { lang }) %>
 
-                <button class="header_burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <button class="header_burger" type="button" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -48,7 +63,9 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
         <div class="contact_wrap">
             <img src="/images/doctor.png" alt="院長の写真" class="doctor_image" />
             <div class="contact_us">
-                <p class="contact_title"><%= pick(headerData.contactTitle) %></p>
+                <p class="contact_title">
+                    <%= pick(headerData.contactTitle) %>
+                </p>
                 <div class="contact_sns_wrap">
                     <a class="contact_sns" href="##">
                         <img src="/images/line_icon.svg" alt="Line アイコン" />

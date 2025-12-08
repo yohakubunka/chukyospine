@@ -24,11 +24,17 @@
     @include md {
         padding: 0 0 4px 0;
         gap: 8px;
+        width: 60px;
+        min-width: 60px;
     }
     .lang-switcher_wrap {
         display: flex;
         align-items: center;
         gap: 10px;
+        @include md {
+            font-size: 1rem;
+            gap: 8px;
+        }
     }
 }
 
@@ -37,6 +43,10 @@
     width: 16px;
     height: 16px;
     flex-shrink: 0;
+    @include md {
+        width: 12px;
+        height: 13px;
+    }
 }
 
 .lang-switcher_arrow {
