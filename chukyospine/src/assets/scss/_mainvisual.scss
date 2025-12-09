@@ -8,6 +8,17 @@
     max-height: 1080px;
     font-style: normal;
     font-family: "source-han-sans-simplified-c", sans-serif;
+    @include media-max (1919px) {
+        gap: 40px;
+    }
+    @include xl {
+        flex-direction: column-reverse;
+    }
+    @include md {
+        gap: 24px;
+        justify-content: flex-end;
+        max-height: 700px;
+    }
     .mainvisual_left {
         background-image: url("../images/white_back.png");
         background-size: cover;
@@ -17,20 +28,53 @@
         max-width: 640px;
         width: 100%;
         margin-left: 124px;
+        @include media-max(1500px) {
+            margin-left: 64px;
+            padding: 24px;
+            background-color: $color2;
+            border-radius: 8px;
+        }
+        @include xl {
+            margin-left: 0;
+            background-color: $color3;
+            background-image: none;
+            color: $color2;
+        }
+        @include md {
+            padding: 0 16px;
+        }
         .mainvisual_subtitle {
             font-size: 4rem;
             font-weight: 500;
             margin-bottom: 16px;
             letter-spacing: 0.05em;
+            @include md {
+                font-size: 2rem;
+            }
         }
         .mainvisual_text {
             margin-bottom: 48px;
+            @include xl {
+                margin-bottom: 32px;
+            }
+            @include md {
+                margin-bottom: 16px;
+                font-size: 1.2rem;
+            }
         }
         .mainvisual_panels {
             display: flex;
             gap: 24px;
+            @include xl {
+                justify-content: center;
+                gap: 16px;
+            }
             .mainvisual_panel {
                 position: relative;
+                @include xl {
+                    max-width: 200px;
+                    width: 100%;
+                }
                 .mainvisual_panel_title {
                     font-size: 1.4rem;
                     font-weight: 500;
@@ -48,10 +92,31 @@
                     &.mainvisual_panel_title_left {
                         color: $color3;
                         border: solid 1px $color3;
+                        @include xl {
+                            color: $color2;
+                            border: solid 1px $color2;
+                            background-color: $color12;
+                        }
                     }
                     &.mainvisual_panel_title_right {
                         color: $color4;
                         border: solid 1px $color4;
+                        @include xl {
+                            color: $color2;
+                            border: solid 1px $color2;
+                            background-color: $color4;
+                        }
+                    }
+                    @include xl {
+                        position: relative;
+                        left: auto;
+                        top: auto;
+                        transform: none;
+                        padding: 16px 8px;
+                        max-width: 100%;
+                        @include xs {
+                            font-size: 1.2rem;
+                        }
                     }
                 }
                 .mainvisual_panel_text {
@@ -67,6 +132,9 @@
                     &.mainvisual_panel_text_right {
                         background-color: $color4;
                     }
+                    @include xl {
+                        display: none;
+                    }
                 }
             }
         }
@@ -78,20 +146,45 @@
         background-repeat: no-repeat;
         background-position: right;
         position: relative;
+        @include xl {
+            background-image: url("../images/mainvisual_sp.png");
+            background-size: cover;
+        }
+        @include md {
+            max-height: 800px;
+        }
+        @include sp {
+            max-height: 400px;
+        }
         .mainvisual_text_wrap {
             position: absolute;
             right: clamp(24px, 8vw, 80px);
             bottom: clamp(40px, 20vh, 240px);
             color: $color2;
+            @include xl {
+                left: 40px;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
             .mainvisual_main_sub {
                 font-size: 1.8rem;
                 font-weight: 500;
+                @include md {
+                    font-size: 1.2rem;
+                    margin-bottom: 10px;
+                }
             }
             .mainvisual_main_tltle {
                 font-size: 5.6rem;
                 font-weight: 700;
                 letter-spacing: 0.08em;
                 font-family: "noto-sans-cjk-jp", sans-serif;
+                @include media-max(1500px) {
+                    font-size: 4rem;
+                }
+                @include md {
+                    font-size: 2rem;
+                }
             }
         }
     }

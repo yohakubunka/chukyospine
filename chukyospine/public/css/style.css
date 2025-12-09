@@ -500,8 +500,18 @@ img {
 section {
   padding: 60px 0;
 }
+@media screen and (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}
 section:first-of-type {
   padding: 196px 0;
+}
+@media screen and (max-width: 1024px) {
+  section:first-of-type {
+    padding: 0 0 80px 0;
+  }
 }
 
 .medium_title {
@@ -524,12 +534,23 @@ section:first-of-type {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 @media screen and (max-width: 1024px) {
   .back_icon {
     width: 80px;
     height: 80px;
   }
+}
+@media screen and (max-width: 768px) {
+  .back_icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+.back_icon img {
+  max-width: 24px;
+  width: 100%;
 }
 
 .icon_title_wrap {
@@ -889,7 +910,13 @@ section:first-of-type {
 }
 @media screen and (max-width: 1024px) {
   .scroll_down_wrap {
-    display: none;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .scroll_down_wrap {
+    gap: 8px;
   }
 }
 .scroll_down_wrap .scroll_down_text {
@@ -897,16 +924,28 @@ section:first-of-type {
   font-size: 1.6rem;
   letter-spacing: 0.05em;
 }
+@media screen and (max-width: 768px) {
+  .scroll_down_wrap .scroll_down_text {
+    font-size: 1rem;
+  }
+}
 .scroll_down_wrap .scroll_icon {
   --size: 40px;
   --triangle-width: 10px;
   --triangle-height: 6px;
-  --circle-color: #ffffff;
+  --circle-color: #fff;
   --triangle-color: #b28b55;
   width: var(--size);
   height: var(--size);
   position: relative;
   display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .scroll_down_wrap .scroll_icon {
+    --size: 24px;
+    --triangle-width: 8px;
+    --triangle-height: 4px;
+  }
 }
 .scroll_down_wrap .scroll_icon::before {
   content: "";
@@ -1047,6 +1086,23 @@ section:first-of-type {
   font-style: normal;
   font-family: "source-han-sans-simplified-c", sans-serif;
 }
+@media screen and (max-width: 1919px) {
+  .mainvisual {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual {
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual {
+    gap: 24px;
+    justify-content: flex-end;
+    max-height: 700px;
+  }
+}
 .mainvisual .mainvisual_left {
   background-image: url("../images/white_back.png");
   background-size: cover;
@@ -1057,21 +1113,70 @@ section:first-of-type {
   width: 100%;
   margin-left: 124px;
 }
+@media screen and (max-width: 1500px) {
+  .mainvisual .mainvisual_left {
+    margin-left: 64px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left {
+    margin-left: 0;
+    background-color: #0B143F;
+    background-image: none;
+    color: #ffffff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_left {
+    padding: 0 16px;
+  }
+}
 .mainvisual .mainvisual_left .mainvisual_subtitle {
   font-size: 4rem;
   font-weight: 500;
   margin-bottom: 16px;
   letter-spacing: 0.05em;
 }
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_left .mainvisual_subtitle {
+    font-size: 2rem;
+  }
+}
 .mainvisual .mainvisual_left .mainvisual_text {
   margin-bottom: 48px;
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_text {
+    margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_left .mainvisual_text {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
 }
 .mainvisual .mainvisual_left .mainvisual_panels {
   display: flex;
   gap: 24px;
 }
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels {
+    justify-content: center;
+    gap: 16px;
+  }
+}
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel {
   position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel {
+    max-width: 200px;
+    width: 100%;
+  }
 }
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title {
   font-size: 1.4rem;
@@ -1092,9 +1197,38 @@ section:first-of-type {
   color: #0B143F;
   border: solid 1px #0B143F;
 }
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_left {
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    background-color: #11244F;
+  }
+}
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_right {
   color: #B69863;
   border: solid 1px #B69863;
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_right {
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    background-color: #B69863;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    padding: 16px 8px;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 375px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title {
+    font-size: 1.2rem;
+  }
 }
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text {
   padding: 27px 16px 16px 16px;
@@ -1110,6 +1244,11 @@ section:first-of-type {
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text.mainvisual_panel_text_right {
   background-color: #B69863;
 }
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text {
+    display: none;
+  }
+}
 .mainvisual .mainvisual_right {
   background-image: url("../images/mainvisual.png");
   width: 100%;
@@ -1118,21 +1257,60 @@ section:first-of-type {
   background-position: right;
   position: relative;
 }
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_right {
+    background-image: url("../images/mainvisual_sp.png");
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_right {
+    max-height: 800px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .mainvisual .mainvisual_right {
+    max-height: 400px;
+  }
+}
 .mainvisual .mainvisual_right .mainvisual_text_wrap {
   position: absolute;
   right: clamp(24px, 8vw, 80px);
   bottom: clamp(40px, 20vh, 240px);
   color: #ffffff;
 }
+@media screen and (max-width: 1200px) {
+  .mainvisual .mainvisual_right .mainvisual_text_wrap {
+    left: 40px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
 .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_sub {
   font-size: 1.8rem;
   font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_sub {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
 }
 .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_tltle {
   font-size: 5.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   font-family: "noto-sans-cjk-jp", sans-serif;
+}
+@media screen and (max-width: 1500px) {
+  .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_tltle {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_right .mainvisual_text_wrap .mainvisual_main_tltle {
+    font-size: 2rem;
+  }
 }
 
 #section01 {
@@ -1146,6 +1324,11 @@ section:first-of-type {
   #section01 {
     margin-top: 80px;
     margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section01 {
+    margin-top: 0;
   }
 }
 #section01 .clinical_wrap {
@@ -1789,6 +1972,11 @@ section:first-of-type {
 #section06 {
   padding-bottom: 120px;
 }
+@media screen and (max-width: 768px) {
+  #section06 {
+    padding-bottom: 60px;
+  }
+}
 #section06 .price-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -1875,6 +2063,11 @@ section:first-of-type {
   background-color: #ffffff;
   color: #0B143F;
   padding: 120px 0;
+}
+@media screen and (max-width: 768px) {
+  #section07 {
+    padding: 60px 0;
+  }
 }
 #section07 .medium_title {
   margin-bottom: 72px;
@@ -2092,6 +2285,11 @@ section:first-of-type {
 
 #section08 {
   padding: 120px 0;
+}
+@media screen and (max-width: 768px) {
+  #section08 {
+    padding: 60px 0;
+  }
 }
 #section08 .access_wrap .medium_title {
   margin-bottom: 16px;

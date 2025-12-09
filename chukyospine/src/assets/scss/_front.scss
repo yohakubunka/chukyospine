@@ -10,6 +10,9 @@
         margin-top: 80px;
         margin-bottom: 32px;
     }
+    @include md {
+        margin-top: 0;
+    }
     .clinical_wrap {
         display: flex;
         gap: 80px;
@@ -575,6 +578,9 @@
 
 #section06 {
     padding-bottom: 120px;
+    @include md {
+        padding-bottom: 60px;
+    }
     .price-table-wrap {
         width: 100%;
         overflow-x: auto;
@@ -666,6 +672,9 @@
     background-color: $color2;
     color: $color3;
     padding: 120px 0;
+    @include md {
+        padding: 60px 0;
+    }
     .medium_title {
         margin-bottom: 72px;
         @include lg {
@@ -859,6 +868,9 @@
 
 #section08 {
     padding: 120px 0;
+    @include md {
+        padding: 60px 0;
+    }
     .access_wrap {
         .medium_title {
             margin-bottom: 16px;

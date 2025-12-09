@@ -181,23 +181,35 @@
     z-index: 500;
     z-index: 1;
     @include lg {
-        display: none;
+        bottom: 16px;
+        right: 16px;
+    }
+    @include md {
+        gap: 8px;
     }
     .scroll_down_text {
         font-family: "arial", sans-serif;
         font-size: 1.6rem;
         letter-spacing: 0.05em;
+        @include md {
+            font-size: 1rem;
+        }
     }
     .scroll_icon {
         --size: 40px;
         --triangle-width: 10px;
         --triangle-height: 6px;
-        --circle-color: #ffffff;
+        --circle-color: #fff;
         --triangle-color: #b28b55;
         width: var(--size);
         height: var(--size);
         position: relative;
         display: inline-block;
+        @include md {
+            --size: 24px;
+            --triangle-width: 8px;
+            --triangle-height: 4px;
+        }
     }
     .scroll_icon::before {
         content: "";
