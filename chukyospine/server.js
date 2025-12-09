@@ -21,6 +21,8 @@ app.set('views', path.join(__dirname, 'src/pages'));
 // 静的ファイルの配信
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
+// 画像は src/assets/images を優先しつつ、従来の public/images もフォールバック
+app.use('/images', express.static(path.join(__dirname, 'src/assets/images')));
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // JSONデータを読み込む関数

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g id="meijo_metro" transform="translate(-1012 -16576)">
-    <g id="楕円形_25" data-name="楕円形 25" transform="translate(1012 16576)" fill="#fff" stroke="#9f7db8" stroke-width="2">
-      <circle cx="12" cy="12" r="12" stroke="none"/>
-      <circle cx="12" cy="12" r="11" fill="none"/>
-    </g>
-    <text id="M" transform="translate(1018 16593)" fill="#0b143f" font-size="14" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">M</tspan></text>
-  </g>
-</svg>
