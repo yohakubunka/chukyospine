@@ -88,8 +88,10 @@ section {
         height: 64px;
     }
     img {
+        @include md {
         max-width: 24px;
         width: 100%;
+        }
     }
 }
 

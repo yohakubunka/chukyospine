@@ -548,9 +548,11 @@ section:first-of-type {
     height: 64px;
   }
 }
-.back_icon img {
-  max-width: 24px;
-  width: 100%;
+@media screen and (max-width: 768px) {
+  .back_icon img {
+    max-width: 24px;
+    width: 100%;
+  }
 }
 
 .icon_title_wrap {
