@@ -60,7 +60,7 @@
                                 })(document);
                             </script>
 
-                            <link rel="stylesheet" href="/css/style.css" />
+                            <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
@@ -110,27 +110,27 @@
                 const proc2 = procedures[2] || {};
                 const proc3 = procedures[3] || {};
                 const flowImageMap = {
-                    ja: '/images/flow_ja_pc.svg',
-                    zh: '/images/flow_cn_pc.svg',
-                    en: '/images/flow_cn_pc.svg'
+                    ja: './images/flow_ja_pc.svg',
+                    zh: './images/flow_cn_pc.svg',
+                    en: './images/flow_cn_pc.svg'
                 };
                 const flowImageSpMap = {
-                    ja: '/images/flow_ja_sp.svg',
-                    zh: '/images/flow_cn_sp.svg',
-                    en: '/images/flow_cn_sp.svg'
+                    ja: './images/flow_ja_sp.svg',
+                    zh: './images/flow_cn_sp.svg',
+                    en: './images/flow_cn_sp.svg'
                 };
                 const flowImage = flowImageMap[lang] || flowImageMap.zh;
                 const flowImageSp = flowImageSpMap[lang] || flowImageSpMap.zh;
                 const mapIllustMap = {
-                    ja: '/images/map_illust_ja.svg',
-                    zh: '/images/map_illust_ch.svg',
-                    en: '/images/map_illust_en.svg'
+                    ja: './images/map_illust_ja.svg',
+                    zh: './images/map_illust_ch.svg',
+                    en: './images/map_illust_en.svg'
                 };
                 const mapIllust = mapIllustMap[lang] || mapIllustMap.zh;
                 const detailsImgMap = {
-                    ja: '/images/details_ja.svg',
-                    zh: '/images/details_ch.svg',
-                    en: '/images/details_en.svg'
+                    ja: './images/details_ja.svg',
+                    zh: './images/details_ch.svg',
+                    en: './images/details_en.svg'
                 };
                 const detailsImg = detailsImgMap[lang] || detailsImgMap.zh;
                 %>
@@ -173,7 +173,7 @@
 
                     <section id="section02">
                         <div class="policy_wrap">
-                            <img class="" src="/images/facility.png" alt="<%= pick(policy.imageAlt) %>" aria-hidden="true" />
+                            <img class="" src="./images/facility.png" alt="<%= pick(policy.imageAlt) %>" aria-hidden="true" />
                             <div class="policy_text">
                                 <h2>
                                     <%= pick(policy.title) %>
@@ -197,12 +197,12 @@
                                 <%= pick(idx.approachTitle) %>
                             </h2>
                             <div class="approach_items">
-                                <img class="" src="/images/treatment-main.svg" alt="" aria-hidden="true" />
+                                <img class="" src="./images/treatment-main.svg" alt="" aria-hidden="true" />
                                 <div class="approach_item_list">
                                     <% approaches.forEach(function(item, i) { const iconNum=String(i + 1).padStart(2, '0' );
                                     %>
                                         <div class="approach_item">
-                                            <img class="" src="/images/treatment-icon<%= iconNum %>.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/treatment-icon<%= iconNum %>.svg" alt="" aria-hidden="true" />
                                             <p class="approach_item_title">
                                                 <%= pick(item.title) %>
                                             </p>
@@ -225,7 +225,7 @@
                                 <div class="endoscopy_section">
                                     <div class="icon_title_wrap">
                                         <div class="back_icon">
-                                            <img class="" src="/images/details_icon.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/details_icon.svg" alt="" aria-hidden="true" />
                                         </div>
                                         <div class="icon_title_text">
                                             <h3>
@@ -254,7 +254,7 @@
                                     || 'time' ; const itemClass=`treatment_benefit_item
                                     treatment_benefit_item_${iconNum}`; %>
                                         <div class="<%= itemClass %>">
-                                            <img class="" src="/images/<%= iconNum %>-icon.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/<%= iconNum %>-icon.svg" alt="" aria-hidden="true" />
                                             <p class="title">
                                                 <%- brText(benefit.title) %>
                                             </p>
@@ -271,8 +271,8 @@
                             <div class="procedures_section">
                                 <div class="procedures_wrap">
                                     <div class="number_title">
-                                        <img class="num_img" src="/images/num_01.svg" alt="" aria-hidden="true" />
-                                        <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                        <img class="num_img" src="./images/num_01.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="./images/line.svg" alt="" aria-hidden="true" />
                                         <p>
                                             <%= pick(proc0.title) %>
                                         </p>
@@ -287,12 +287,12 @@
                                                 <p class="procedure_approach_method">
                                                     <%= pick(app.method) %>
                                                 </p>
-                                                <img class="procedure_approach_img" src="/images/number_image_<%= imgNum %>.svg" alt="" aria-hidden="true" />
+                                                <img class="procedure_approach_img" src="./images/number_image_<%= imgNum %>.svg" alt="" aria-hidden="true" />
                                                 <p class="procedure_approach_desc">
                                                     <%- brText(app.description) %>
                                                 </p>
                                                 <div class="procedure_approach_time">
-                                                    <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                    <img class="" src="./images/clock.svg" alt="" aria-hidden="true" />
                                                     <p>
                                                         <%= pick(app.time) %>
                                                     </p>
@@ -305,8 +305,8 @@
                                 <div class="procedures_wrap procedures_wrap_single">
                                     <div>
                                         <div class="number_title">
-                                            <img class="num_img" src="/images/num_02.svg" alt="" aria-hidden="true" />
-                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                            <img class="num_img" src="./images/num_02.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/line.svg" alt="" aria-hidden="true" />
                                             <p>
                                                 <%= pick(proc1.title) %>
                                             </p>
@@ -324,7 +324,7 @@
                                                 <%- brText(app.description) %>
                                             </p>
                                             <div class="procedures_single_time">
-                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/clock.svg" alt="" aria-hidden="true" />
                                                 <p>
                                                     <%= pick(app.time) %>
                                                 </p>
@@ -333,15 +333,15 @@
                                     </div>
 
                                     <div>
-                                        <img class="" src="/images/number_image_03.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="./images/number_image_03.svg" alt="" aria-hidden="true" />
                                     </div>
                                 </div>
 
                                 <div class="procedures_wrap procedures_wrap_single">
                                     <div class="">
                                         <div class="number_title">
-                                            <img class="num_img" src="/images/num_03.svg" alt="" aria-hidden="true" />
-                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                            <img class="num_img" src="./images/num_03.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/line.svg" alt="" aria-hidden="true" />
                                             <p>
                                                 <%- brText(proc2.title) %>
                                             </p>
@@ -359,7 +359,7 @@
                                                 <%- brText(app.description) %>
                                             </p>
                                             <div class="procedures_single_time">
-                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/clock.svg" alt="" aria-hidden="true" />
                                                 <p>
                                                     <%= pick(app.time) %>
                                                 </p>
@@ -367,15 +367,15 @@
                                             <% }) %>
                                     </div>
                                     <div>
-                                        <img class="" src="/images/number_image_04.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="./images/number_image_04.svg" alt="" aria-hidden="true" />
                                     </div>
                                 </div>
 
                                 <div class="procedures_wrap procedures_wrap_single">
                                     <div>
                                         <div class="number_title">
-                                            <img class="num_img" src="/images/num_04.svg" alt="" aria-hidden="true" />
-                                            <img class="" src="/images/line.svg" alt="" aria-hidden="true" />
+                                            <img class="num_img" src="./images/num_04.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/line.svg" alt="" aria-hidden="true" />
                                             <p>
                                                 <%= pick(proc3.title) %>
                                             </p>
@@ -393,7 +393,7 @@
                                                 <%- brText(app.description) %>
                                             </p>
                                             <div class="procedures_single_time">
-                                                <img class="" src="/images/clock.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/clock.svg" alt="" aria-hidden="true" />
                                                 <p>
                                                     <%= pick(app.time) %>
                                                 </p>
@@ -401,7 +401,7 @@
                                             <% }) %>
                                     </div>
                                     <div>
-                                        <img class="" src="/images/number_image_05.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="./images/number_image_05.svg" alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                             </div>
@@ -414,7 +414,7 @@
                         <div class="page-width">
                             <div class="icon_title_wrap">
                                 <div class="back_icon">
-                                    <img class="" src="/images/syringe.svg" alt="" aria-hidden="true" />
+                                    <img class="" src="./images/syringe.svg" alt="" aria-hidden="true" />
                                 </div>
                                 <div class="icon_title_text">
                                     <h3>
@@ -427,7 +427,7 @@
                                 <p>
                                     <%- brText(block.description) %>
                                 </p>
-                                <img class="" src="/images/syringe_illust.svg" alt="" aria-hidden="true" />
+                                <img class="" src="./images/syringe_illust.svg" alt="" aria-hidden="true" />
                             </div>
                             <div class="syringe_types">
                                 <h3>
@@ -437,7 +437,7 @@
                                     <% blockTypes.forEach(function(item, i) { const num=String(i + 1).padStart(2, '0' );
                                     const altClass=i % 2===0 ? 'syringe_type_item_even' : 'syringe_type_item_odd' ; %>
                                         <div class="syringe_type_item <%= altClass %>">
-                                            <img class="" src="/images/nerve_icon_<%= num %>.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/nerve_icon_<%= num %>.svg" alt="" aria-hidden="true" />
                                             <p>
                                                 <%- brText(item) %>
                                             </p>
@@ -569,7 +569,7 @@
 
                                 <div class="doctor_content">
                                     <div class="doctor_profile">
-                                        <img class="" src="/images/master.png" alt="" aria-hidden="true" />
+                                        <img class="" src="./images/master.png" alt="" aria-hidden="true" />
                                         <p>
                                             <%= pick(doctor.name) %>
                                         </p>
@@ -632,7 +632,7 @@
                                 <div class="doctor_certificates">
                                     <% (doctor.certificates || []).forEach(function(item, i) { const num = String(i + 1).padStart(2, '0'); %>
                                         <div class="doctor_certificate_item">
-                                            <img class="" src="/images/certificate_<%= num %>.png" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/certificate_<%= num %>.png" alt="" aria-hidden="true" />
                                             <p>
                                                 <%= pick(item) %>
                                             </p>
@@ -660,7 +660,7 @@
                                 <div class="access_details">
                                     <div class="access_detail_item">
                                         <p class="access_detail_title">
-                                            <img class="" src="/images/bullet_train.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/bullet_train.svg" alt="" aria-hidden="true" />
                                             <%= pick(access.bulletTrainTitle) %>
                                         </p>
                                         <p>
@@ -674,9 +674,9 @@
                                     <div class="access_detail_item">
                                         <div class="access_detail_train">
                                             <div class="train_icons">
-                                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/meijo_metro.svg" alt="" aria-hidden="true" />
                                             </div>
                                             <p>
                                                 <%= pick(access.metroTitle) %>
@@ -688,16 +688,16 @@
                                     </div>
                                     <div class="access_detail_item">
                                         <p class="access_detail_title">
-                                            <img class="" src="/images/plane.svg" alt="" aria-hidden="true" />
+                                            <img class="" src="./images/plane.svg" alt="" aria-hidden="true" />
                                             <%= pick(access.airportTitle) %>
                                         </p>
                                         <div class="access_detail_train">
                                             <div class="train_icons">
-                                                <img class="" src="/images/meitethu_train.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/higasiyama_metro.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/border.svg" alt="" aria-hidden="true" />
-                                                <img class="" src="/images/meijo_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/meitethu_train.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/higasiyama_metro.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/border.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/meijo_metro.svg" alt="" aria-hidden="true" />
                                             </div>
                                             <p>
                                                 <%= pick(access.airportMetroTitle) %>
@@ -709,7 +709,10 @@
                                     </div>
                                 </div>
                                 <div class="access_video">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jNQXAC9IVRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                                    <noscript>
+                                        <p><a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" target="_blank" rel="noopener">Watch on YouTube</a></p>
+                                    </noscript>
                                 </div>
                             </div>
 
@@ -723,7 +726,7 @@
                                         <% legendItems.forEach(function(item, i) { const names=['ping','hotel','location','metro_line']; const
                 icon=names[i] || 'ping' ; %>
                                             <div class="access_map_legend_item">
-                                                <img class="" src="/images/<%= icon %>.svg" alt="" aria-hidden="true" />
+                                                <img class="" src="./images/<%= icon %>.svg" alt="" aria-hidden="true" />
                                                 <p>
                                                     <%= pick(item) %>
                                                 </p>
@@ -751,9 +754,9 @@
 
         </main>
         <%- include('../components/footer') %>
-            <script src="/js/jquery-3.7.1.min.js" defer></script>
-            <script src="/js/gsap.min.js" defer></script>
-            <script src="/js/main.js" defer></script>
+            <script src="./js/jquery-3.7.1.min.js" defer></script>
+            <script src="./js/gsap.min.js" defer></script>
+            <script src="./js/main.js" defer></script>
 </body>
 
 </html>

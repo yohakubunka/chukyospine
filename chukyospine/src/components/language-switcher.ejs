@@ -1,39 +1,39 @@
-<% const langLabelMap = { ja: 'JP', en: 'EN', zh: 'CN' }; %>
-    <% const langLabel = langLabelMap[lang] || 'JP'; %>
+﻿<% const langLabelMap = { ja: 'JP', en: 'EN', zh: 'CN' }; %>
+<% const langLabel = langLabelMap[lang] || 'JP'; %>
 
-        <div class="lang-switcher">
-            <div class="lang-switcher_box">
-                <div class="lang-switcher_wrap">
-
-                    <img class="lang-switcher_icon" src="/images/language.svg" alt="" aria-hidden="true" />
-                    <span class="lang-switcher_value">
-            <%= langLabel %>
-        </span>
-                </div>
-                <img class="lang-switcher_arrow" src="/images/bottom-arrow.svg" alt="" aria-hidden="true" />
-                <select id="lang-select" class="lang-switcher_select" name="lang" data-current-lang="<%= lang %>" aria-label="Language">
-            <option value="ja" <%=lang==='ja' ? 'selected' : '' %>>日本語</option>
-            <option value="en" <%=lang==='en' ? 'selected' : '' %>>English</option>
-            <option value="zh" <%=lang==='zh' ? 'selected' : '' %>>繁體中文</option>
-        </select>
-            </div>
+<div class="lang-switcher">
+    <div class="lang-switcher_box">
+        <div class="lang-switcher_wrap">
+            <img class="lang-switcher_icon" src="./images/language.svg" alt="" aria-hidden="true" />
+            <span class="lang-switcher_value"><%= langLabel %></span>
         </div>
-        <script>
-            (function() {
-                const select = document.getElementById('lang-select');
-                if (!select) return;
+        <img class="lang-switcher_arrow" src="./images/bottom-arrow.svg" alt="" aria-hidden="true" />
+        <select id="lang-select" class="lang-switcher_select" name="lang" data-current-lang="<%= lang %>" aria-label="Language">
+            <option value="ja" <%= lang === 'ja' ? 'selected' : '' %>>日本語</option>
+            <option value="en" <%= lang === 'en' ? 'selected' : '' %>>English</option>
+            <option value="zh" <%= lang === 'zh' ? 'selected' : '' %>>中文</option>
+        </select>
+    </div>
+</div>
+<script>
+    (function() {
+        const select = document.getElementById('lang-select');
+        if (!select) return;
 
-                const currentLang = select.dataset.currentLang || 'zh';
-                select.value = currentLang;
+        const currentLang = select.dataset.currentLang || 'zh';
+        select.value = currentLang;
 
-                select.addEventListener('change', (event) => {
-                    const lang = event.target.value;
-                    const basePath = window.location.pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
-                    const suffix = basePath === '/' ? '' : basePath;
-                    const nextPath = lang === 'zh' ?
-                        (basePath || '/') :
-                        `/${lang}${suffix}`;
-                    window.location.href = nextPath;
-                });
-            })();
-        </script>
+        select.addEventListener('change', (event) => {
+            const lang = event.target.value;
+            const langPathMap = {
+                zh: 'index.html',
+                ja: 'index-ja.html',
+                en: 'index-en.html',
+            };
+            const fileName = langPathMap[lang] || langPathMap.zh;
+            const href = window.location.href;
+            const base = href.slice(0, href.lastIndexOf('/') + 1);
+            window.location.href = base + fileName;
+        });
+    })();
+</script>

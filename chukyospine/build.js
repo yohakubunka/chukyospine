@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+﻿const fs = require('fs-extra');
 const path = require('path');
 const ejs = require('ejs');
 const sass = require('sass');
@@ -7,16 +7,39 @@ const sass = require('sass');
 const BUILD_DIR = 'dist';
 const SRC_DIR = 'src';
 const DATA_DIR = 'data';
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // ディレクトリをクリーンアップ
 async function cleanBuildDir() {
-  try {
-    await fs.remove(BUILD_DIR);
-    await fs.ensureDir(BUILD_DIR);
-    console.log('✓ Build directory cleaned');
-  } catch (error) {
-    console.error('Error cleaning build directory:', error);
-    process.exit(1);
+  const maxRetries = 5;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      await fs.remove(BUILD_DIR);
+      await fs.ensureDir(BUILD_DIR);
+      console.log('✓ Build directory cleaned');
+      return;
+    } catch (error) {
+      const isBusy = error && (error.code === 'EBUSY' || error.code === 'EPERM');
+      if (isBusy && attempt < maxRetries) {
+        const wait = 200 * attempt;
+        console.warn(`! Build dir locked (attempt ${attempt}/${maxRetries}), retrying in ${wait}ms...`);
+        await sleep(wait);
+        continue;
+      }
+      if (isBusy) {
+        console.warn('! Build dir still locked; attempting to empty contents instead of full remove...');
+        try {
+          await fs.ensureDir(BUILD_DIR);
+          await fs.emptyDir(BUILD_DIR);
+          console.log('✓ Build directory emptied');
+          return;
+        } catch (emptyErr) {
+          console.error('Error emptying build directory:', emptyErr);
+        }
+      }
+      console.error('Error cleaning build directory:', error);
+      process.exit(1);
+    }
   }
 }
 
@@ -24,7 +47,7 @@ async function cleanBuildDir() {
 function loadSiteData() {
   try {
     let data = fs.readFileSync(path.join(DATA_DIR, 'site.json'), 'utf8');
-    // BOM除去（エディタがUTF-8 BOMで保存する場合に備える）
+    // BOM除去（データがUTF-8 BOMで保存する場合に備える）
     data = data.replace(/^\uFEFF/, '');
     return JSON.parse(data);
   } catch (error) {
@@ -33,27 +56,35 @@ function loadSiteData() {
   }
 }
 
-// EJSファイルをHTMLにコンパイル
+// EJSファイルをHTMLにコンパイル（多言語で複数生成）
 async function compileEJS() {
   try {
     const siteData = loadSiteData();
-    const defaultLang = 'zh';
+    const languages = [
+      { code: 'zh', suffix: '' },   // default
+      { code: 'ja', suffix: '-ja' },
+      { code: 'en', suffix: '-en' },
+    ];
     const pagesDir = path.join(SRC_DIR, 'pages');
     const pages = await fs.readdir(pagesDir);
     
     for (const page of pages) {
       if (path.extname(page) === '.ejs') {
         const pagePath = path.join(pagesDir, page);
-        const outputName = path.basename(page, '.ejs') + '.html';
-        const outputPath = path.join(BUILD_DIR, outputName);
-        
-        // EJSファイルをレンダリング
-        const html = await ejs.renderFile(pagePath, { site: siteData, lang: defaultLang }, {
-          views: [path.join(SRC_DIR, 'components'), pagesDir]
-        });
-        
-        await fs.writeFile(outputPath, html);
-        console.log(`✓ Compiled ${page} -> ${outputName}`);
+        const baseName = path.basename(page, '.ejs');
+
+        for (const { code, suffix } of languages) {
+          const outputName = `${baseName}${suffix}.html`;
+          const outputPath = path.join(BUILD_DIR, outputName);
+
+          // EJSファイルをレンダリング
+          const html = await ejs.renderFile(pagePath, { site: siteData, lang: code }, {
+            views: [path.join(SRC_DIR, 'components'), pagesDir]
+          });
+
+          await fs.writeFile(outputPath, html);
+          console.log(`✓ Compiled ${page} (${code}) -> ${outputName}`);
+        }
       }
     }
   } catch (error) {
@@ -113,7 +144,7 @@ async function copyImages() {
   }
 }
 
-// その他の静的ファイルをコピー（favicon、robots.txtなど）
+// その他静的ファイルをコピー（favicon、robots.txtなど）
 async function copyStaticFiles() {
   try {
     const staticFiles = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
@@ -132,7 +163,7 @@ async function copyStaticFiles() {
   }
 }
 
-// ビルド情報を出力
+// ビルド情報を書き出し
 function outputBuildInfo() {
   const buildInfo = {
     buildDate: new Date().toISOString(),
@@ -166,7 +197,7 @@ async function build() {
     console.log('💡 You can now upload the contents of the dist folder to your server');
     
   } catch (error) {
-    console.error('\n❌ Build failed:', error);
+    console.error('\n❁ Build failed:', error);
     process.exit(1);
   }
 }
