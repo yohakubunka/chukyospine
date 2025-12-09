@@ -146,6 +146,17 @@
         background-repeat: no-repeat;
         background-position: right;
         position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-top: 80px solid $color12;
+            pointer-events: none;
+        }
         @include xl {
             background-image: url("../images/mainvisual_sp.png");
             background-size: cover;
