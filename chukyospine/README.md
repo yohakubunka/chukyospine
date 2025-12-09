@@ -91,7 +91,3 @@ npm run build
 ```
 
 EJSファイル内で `<%= site.title %>` のように使用できます。
-
-## 担当
-
-古田
