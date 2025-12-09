@@ -1795,6 +1795,7 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
   margin-bottom: 24px;
   max-width: 654px;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
