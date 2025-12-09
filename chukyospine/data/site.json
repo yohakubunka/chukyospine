@@ -1,4 +1,4 @@
-{
+﻿{
     "site": {
         "title": {
             "ja": "中京スパインクリニック",
@@ -23,8 +23,7 @@
             "en": "Contact Us",
             "zh": "聯繫我們"
         },
-        "navItems": [
-            {
+        "navItems": [{
                 "label": {
                     "ja": "実績",
                     "en": "Achievements",
@@ -82,8 +81,8 @@
             }
         ],
         "contactTitle": {
-            "ja": "",
-            "en": "",
+            "ja": "聯繫我們",
+            "en": "聯繫我們",
             "zh": "聯繫我們"
         }
     },
@@ -93,8 +92,7 @@
             "en": "Contact Us Anytime",
             "zh": "歡迎隨時諮詢"
         },
-        "navItems": [
-            {
+        "navItems": [{
                 "label": {
                     "ja": "実績",
                     "en": "Achievements",
@@ -238,12 +236,11 @@
                 "zh": "一直以來，我們始終以真誠面對每一位患者的疼痛， 不斷追求最合適、最有效的治療方案。"
             },
             "servicesTitle": {
-                "ja": "",
-                "en": "",
+                "ja": "診療内容",
+                "en": "SERVICES",
                 "zh": "診療內容"
             },
-            "services": [
-                {
+            "services": [{
                     "ja": "腰椎椎間板ヘルニア",
                     "en": "Lumbar Disc Herniation",
                     "zh": "腰椎間盤突出"
@@ -329,8 +326,7 @@
             "en": "Our Policy",
             "zh": "診療方針"
         },
-        "approachItems": [
-            {
+        "approachItems": [{
                 "title": {
                     "ja": "寄り添う",
                     "en": "Support",
@@ -405,15 +401,13 @@
                 "en": "Benefits of Same-Day Endoscopic Treatment",
                 "zh": "日間內視鏡治療的優點"
             },
-            "benefits": [
-                {
+            "benefits": [{
                     "title": {
                         "ja": "治療時間はが短く\n切る部分が6～8mmで最小限",
                         "en": "Shorter Treatment Time\nMinimal Incision (6–8 mm)",
                         "zh": "手術時間短\n切口僅 6～8mm"
                     },
-                    "lines": [
-                        {
+                    "lines": [{
                             "ja": "",
                             "en": "",
                             "zh": ""
@@ -431,13 +425,11 @@
                         "en": "Minimal Blood Loss",
                         "zh": "出血量少"
                     },
-                    "lines": [
-                        {
-                            "ja": "（ヤクルト1／3本程度）",
-                            "en": "(Equivalent to about 1/3 of a Yakult bottle)",
-                            "zh": "（約為養樂多 1/3）"
-                        }
-                    ]
+                    "lines": [{
+                        "ja": "（ヤクルト1／3本程度）",
+                        "en": "(Equivalent to about 1/3 of a Yakult bottle)",
+                        "zh": "（約為養樂多 1/3）"
+                    }]
                 },
                 {
                     "title": {
@@ -449,15 +441,13 @@
                 }
             ]
         },
-        "procedures": [
-            {
+        "procedures": [{
                 "title": {
                     "ja": "腰椎椎間板ヘルニア",
                     "en": "Lumbar Disc Herniation",
                     "zh": "腰椎間盤突出"
                 },
-                "approaches": [
-                    {
+                "approaches": [{
                         "title": {
                             "ja": "経椎弓間アプローチ",
                             "en": "Trans-Laminar Approach ",
@@ -509,30 +499,28 @@
                     "en": "Lumbar Spinal Stenosis",
                     "zh": "腰椎管狹窄症"
                 },
-                "approaches": [
-                    {
-                        "title": {
-                            "ja": "内視鏡下椎弓形成術",
-                            "en": "Endoscopic Laminotomy",
-                            "zh": "內視鏡下椎弓形成術"
-                        },
-                        "method": {
-                            "ja": "PEL法、FEL法",
-                            "en": "PEL / FEL Methods",
-                            "zh": "（PELV法／FEL法） "
-                        },
-                        "description": {
-                            "ja": "背中の真後ろから内視鏡を入れて、ヘルニアを摘出する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
-                            "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
-                            "zh": "從背部正後方進入內視鏡，摘除壓迫神經的組織\n風險：術後血腫或短暫神經障礙（<1%） "
-                        },
-                        "time": {
-                            "ja": "治療時間：約60分",
-                            "en": "Treatment time: About 60 minutes",
-                            "zh": "治療時間：約 60 分鐘 "
-                        }
+                "approaches": [{
+                    "title": {
+                        "ja": "内視鏡下椎弓形成術",
+                        "en": "Endoscopic Laminotomy",
+                        "zh": "內視鏡下椎弓形成術"
+                    },
+                    "method": {
+                        "ja": "PEL法、FEL法",
+                        "en": "PEL / FEL Methods",
+                        "zh": "（PELV法／FEL法） "
+                    },
+                    "description": {
+                        "ja": "背中の真後ろから内視鏡を入れて、ヘルニアを摘出する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "從背部正後方進入內視鏡，摘除壓迫神經的組織\n風險：術後血腫或短暫神經障礙（<1%） "
+                    },
+                    "time": {
+                        "ja": "治療時間：約60分",
+                        "en": "Treatment time: About 60 minutes",
+                        "zh": "治療時間：約 60 分鐘 "
                     }
-                ]
+                }]
             },
             {
                 "title": {
@@ -540,30 +528,28 @@
                     "en": "Cervical Disc Herniation and \nCervical Foraminal Stenosis",
                     "zh": "頸椎間盤突出\n頸椎椎間孔狹窄症 "
                 },
-                "approaches": [
-                    {
-                        "title": {
-                            "ja": "頚椎内視鏡下ヘルニア摘出・除圧術",
-                            "en": "Cervical Endoscopic Discectomy and Decompression",
-                            "zh": "頸椎內視鏡下椎間盤摘除及減壓術"
-                        },
-                        "method": {
-                            "ja": "FECF",
-                            "en": "FECF",
-                            "zh": "（FECF）"
-                        },
-                        "description": {
-                            "ja": "背中の真後ろから内視鏡を入れて、神経の圧迫を解放する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
-                            "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
-                            "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（<1%）  "
-                        },
-                        "time": {
-                            "ja": "治療時間：約45分",
-                            "en": "Treatment time: About 45 minutes",
-                            "zh": "治療時間：約 45 分鐘"
-                        }
+                "approaches": [{
+                    "title": {
+                        "ja": "頚椎内視鏡下ヘルニア摘出・除圧術",
+                        "en": "Cervical Endoscopic Discectomy and Decompression",
+                        "zh": "頸椎內視鏡下椎間盤摘除及減壓術"
+                    },
+                    "method": {
+                        "ja": "FECF",
+                        "en": "FECF",
+                        "zh": "（FECF）"
+                    },
+                    "description": {
+                        "ja": "背中の真後ろから内視鏡を入れて、神経の圧迫を解放する方法です。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "從背部正後方進入內視鏡，解除神經壓迫 \n風險：術後血腫或短暫神經障礙（<1%）  "
+                    },
+                    "time": {
+                        "ja": "治療時間：約45分",
+                        "en": "Treatment time: About 45 minutes",
+                        "zh": "治療時間：約 45 分鐘"
                     }
-                ]
+                }]
             },
             {
                 "title": {
@@ -571,30 +557,28 @@
                     "en": "Vertebral Compression Fracture",
                     "zh": "壓迫性骨折 "
                 },
-                "approaches": [
-                    {
-                        "title": {
-                            "ja": "",
-                            "en": "",
-                            "zh": "經皮椎體成形術"
-                        },
-                        "method": {
-                            "ja": "",
-                            "en": "",
-                            "zh": ""
-                        },
-                        "description": {
-                            "ja": "皮膚は骨折している骨の左右2カ所（もしくは1カ所）に約6mmの皮膚切開を設けます。そこから、骨セメントを注入します。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
-                            "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
-                            "zh": "於骨折位置左右各開一個約 6mm 小切口，注入骨水泥 \n風險：術後血腫或短暫神經障礙（<1%） "
-                        },
-                        "time": {
-                            "ja": "治療時間：約30分",
-                            "en": "Treatment time: About 30 minutes",
-                            "zh": "治療時間：約 30 分鐘"
-                        }
+                "approaches": [{
+                    "title": {
+                        "ja": "",
+                        "en": "",
+                        "zh": "經皮椎體成形術"
+                    },
+                    "method": {
+                        "ja": "",
+                        "en": "",
+                        "zh": ""
+                    },
+                    "description": {
+                        "ja": "皮膚は骨折している骨の左右2カ所（もしくは1カ所）に約6mmの皮膚切開を設けます。そこから、骨セメントを注入します。\nリスクは治療後の⾎腫や⼀過性神経障害などです。（1％ 未満）",
+                        "en": "Minor complications such as bruising (hematoma)\n or temporary nerve symptoms are very rare (under 1%).",
+                        "zh": "於骨折位置左右各開一個約 6mm 小切口，注入骨水泥 \n風險：術後血腫或短暫神經障礙（<1%） "
+                    },
+                    "time": {
+                        "ja": "治療時間：約30分",
+                        "en": "Treatment time: About 30 minutes",
+                        "zh": "治療時間：約 30 分鐘"
                     }
-                ]
+                }]
             }
         ],
         "blockInjection": {
@@ -610,11 +594,10 @@
             },
             "typesTitle": {
                 "ja": "神経ブロック注射の種類",
-                "en": "神経ブロック注射の種類",
+                "en": "Nerve Block Injection",
                 "zh": "神経ブロック注射の種類"
             },
-            "types": [
-                {
+            "types": [{
                     "ja": "超音波ガイド下超\n選択的神経根ブロック",
                     "en": "Ultrasound-Guided Selective Nerve Root Block",
                     "zh": "超音波引導下選擇性神經根阻滯"
@@ -669,8 +652,7 @@
                 "en": "Treatment fee",
                 "zh": "治療料金"
             },
-            "headers": [
-                {
+            "headers": [{
                     "ja": "項目",
                     "en": "Item",
                     "zh": "項目"
@@ -686,10 +668,8 @@
                     "zh": "內容"
                 }
             ],
-            "rows": [
-                {
-                    "columns": [
-                        {
+            "rows": [{
+                    "columns": [{
                             "ja": "初診料",
                             "en": "Initial Consultation Fee",
                             "zh": "初診費"
@@ -707,8 +687,7 @@
                     ]
                 },
                 {
-                    "columns": [
-                        {
+                    "columns": [{
                             "ja": "手術前検査",
                             "en": "Pre-Operative Tests",
                             "zh": "手術前檢查"
@@ -732,8 +711,7 @@
                         "en": "Single Level (1 Vertebra)",
                         "zh": "1椎間"
                     },
-                    "columns": [
-                        {
+                    "columns": [{
                             "ja": "内視鏡下後方除圧術",
                             "en": "Endoscopic Posterior Decompression",
                             "zh": "內視鏡下後方減壓術"
@@ -757,8 +735,7 @@
                         "en": "Two Levels (2 Vertebrae)",
                         "zh": "2椎間"
                     },
-                    "columns": [
-                        {
+                    "columns": [{
                             "ja": "",
                             "en": "",
                             "zh": ""
@@ -776,8 +753,7 @@
                     ]
                 },
                 {
-                    "columns": [
-                        {
+                    "columns": [{
                             "ja": "神経根ブロック注射",
                             "en": "Nerve Root Block Injection",
                             "zh": "神經根阻滯注射"
@@ -795,8 +771,7 @@
                     ]
                 }
             ],
-            "notes": [
-                {
+            "notes": [{
                     "ja": "クレジットカードにてお支払いください。VISA・MASTERのみ",
                     "en": "Credit card payment for injections: VISA/Mastercard only.",
                     "zh": "※　可使用信用卡（VISA、MASTER）付款"
@@ -821,7 +796,7 @@
             },
             "philosophyTitle": {
                 "ja": "我們的理念",
-                "en": "我們的理念",
+                "en": "",
                 "zh": "我們的理念"
             },
             "philosophyText": {
@@ -844,8 +819,7 @@
                 "en": "Profile",
                 "zh": "簡歷"
             },
-            "career": [
-                {
+            "career": [{
                     "ja": "1994.03 兵庫県立龍野高校卒業",
                     "en": "1994.03 Graduated from Hyogo Prefectural Tatsuno High School.",
                     "zh": "1994.03 兵庫縣立龍野高中畢業"
@@ -896,8 +870,7 @@
                 "en": "Qualifications",
                 "zh": "資格"
             },
-            "qualifications": [
-                {
+            "qualifications": [{
                     "ja": "2008.03 医学博士（富山大学）甲第451号",
                     "en": "2008.03 Ph.D. in Medicine – University of Toyama (No. 451)",
                     "zh": "2008.03 醫學博士（富山大學）甲第451號"
@@ -933,8 +906,7 @@
                 "en": "Professional Societies",
                 "zh": "所屬學會"
             },
-            "memberships": [
-                {
+            "memberships": [{
                     "ja": "日本脳神経外科学会",
                     "en": "The Japan Neurosurgical Society",
                     "zh": "日本腦神經外科學會"
@@ -965,8 +937,7 @@
                     "zh": "日本整形外科超音波學會"
                 }
             ],
-            "certificates": [
-                {
+            "certificates": [{
                     "ja": "日本脊髄外科学会認定証 指導医",
                     "en": "Spine Surgery Instructor",
                     "zh": "日本脊髓外科學會認定證 指導醫師"
@@ -999,8 +970,7 @@
                 "en": "Shinkansen Route",
                 "zh": "新幹線"
             },
-            "bulletTrainRoutes": [
-                {
+            "bulletTrainRoutes": [{
                     "ja": "大阪方面：大阪駅から名古屋駅（約60分）",
                     "en": "From Osaka: Osaka Station → Nagoya Station ( About 60 min)",
                     "zh": "大阪方向：大阪站 → 名古屋站 約60分鐘"
@@ -1041,8 +1011,7 @@
                 "en": "Local Area Information",
                 "zh": "周邊資訊"
             },
-            "legend": [
-                {
+            "legend": [{
                     "ja": "観光スポット",
                     "en": "Tourist Spots",
                     "zh": "觀光景點"

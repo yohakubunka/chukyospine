@@ -11,10 +11,16 @@ const pick = (obj) => {
 const footerData = site.footer || {};
 const footerNav = footerData.navItems || [];
 const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#section06', '#section07', '#section08'];
+const footerLogoMap = {
+    ja: '/images/footer_logo_ja.svg',
+    en: '/images/footer_logo_en.svg',
+    zh: '/images/footer_logo_ch.svg',
+};
+const footerLogo = footerLogoMap[lang] || '/images/footer_logo.svg';
 %>
     <footer class="footer">
         <div class="page-width">
-            <img class="footer_logo" src="/images/footer_logo.svg" alt="" aria-hidden="true" />
+            <img class="footer_logo" src="<%= footerLogo %>" alt="" aria-hidden="true" />
             <div class="footer_cta">
                 <div class="footer_social_icons">
                     <a href="##" aria-label="LINE">

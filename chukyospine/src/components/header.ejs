@@ -15,12 +15,18 @@ const pick = (obj) => {
 const headerData = site.header || {};
 const navItems = headerData.navItems || [];
 const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#section06', '#section07', '#section08', '#section09'];
+const headerLogoMap = {
+    ja: '/images/header_logo_ja.svg',
+    en: '/images/header_logo_en.svg',
+    zh: '/images/header_logo_ch.svg',
+};
+const headerLogo = headerLogoMap[lang] || '/images/logo.svg';
 %>
     <header class="header">
         <div class="header_inner">
             <h1 class="header_logo">
                 <a href="/">
-                <img src="/images/logo.svg" alt="<%= pick(headerData.logoAlt) %>" />
+                <img src="<%= headerLogo %>" alt="<%= pick(headerData.logoAlt) %>" />
             </a>
             </h1>
 

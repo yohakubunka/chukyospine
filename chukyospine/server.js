@@ -26,7 +26,9 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')));
 // JSONデータを読み込む関数
 function loadSiteData() {
   try {
-    const data = fs.readFileSync(path.join(__dirname, 'data/site.json'), 'utf8');
+    let data = fs.readFileSync(path.join(__dirname, 'data/site.json'), 'utf8');
+    // エディタがBOM付きで保存しても読めるように先頭のBOMを除去
+    data = data.replace(/^\uFEFF/, '');
     return JSON.parse(data);
   } catch (error) {
     console.error('Error loading site data:', error);
@@ -142,7 +144,7 @@ app.use((req, res, next) => {
 });
 
 // サイト共通データを読み込む（例: URLやテキスト）
-const siteData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'site.json'), 'utf-8'));
+const siteData = loadSiteData();
 
 // 言語ルート
 const langs = ['ja', 'en', 'zh'];

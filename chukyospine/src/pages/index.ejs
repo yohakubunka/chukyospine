@@ -127,6 +127,12 @@
                     en: '/images/map_illust_en.svg'
                 };
                 const mapIllust = mapIllustMap[lang] || mapIllustMap.zh;
+                const detailsImgMap = {
+                    ja: '/images/details_ja.svg',
+                    zh: '/images/details_ch.svg',
+                    en: '/images/details_en.svg'
+                };
+                const detailsImg = detailsImgMap[lang] || detailsImgMap.zh;
                 %>
 
                     <section id="section01">
@@ -236,7 +242,7 @@
                                 </div>
 
 
-                                <img class="spine_img" src="/images/details.svg" alt="" aria-hidden="true" />
+                                <img class="spine_img" src="<%= detailsImg %>" alt="" aria-hidden="true" />
                             </div>
 
                             <div class="treatment_benefits">
