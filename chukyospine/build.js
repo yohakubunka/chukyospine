@@ -23,7 +23,9 @@ async function cleanBuildDir() {
 // JSONデータを読み込み
 function loadSiteData() {
   try {
-    const data = fs.readFileSync(path.join(DATA_DIR, 'site.json'), 'utf8');
+    let data = fs.readFileSync(path.join(DATA_DIR, 'site.json'), 'utf8');
+    // BOM除去（エディタがUTF-8 BOMで保存する場合に備える）
+    data = data.replace(/^\uFEFF/, '');
     return JSON.parse(data);
   } catch (error) {
     console.error('Error loading site data:', error);
@@ -35,6 +37,7 @@ function loadSiteData() {
 async function compileEJS() {
   try {
     const siteData = loadSiteData();
+    const defaultLang = 'zh';
     const pagesDir = path.join(SRC_DIR, 'pages');
     const pages = await fs.readdir(pagesDir);
     
@@ -45,7 +48,7 @@ async function compileEJS() {
         const outputPath = path.join(BUILD_DIR, outputName);
         
         // EJSファイルをレンダリング
-        const html = await ejs.renderFile(pagePath, siteData, {
+        const html = await ejs.renderFile(pagePath, { site: siteData, lang: defaultLang }, {
           views: [path.join(SRC_DIR, 'components'), pagesDir]
         });
         
