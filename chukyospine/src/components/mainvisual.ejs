@@ -12,30 +12,34 @@
     const leftTitle = pickText(site.mainVisualTextLeftTitle);
     const leftText = pickText(site.mainVisualTextLeftText);
     const mainTitleSub = pickText(site.mainVisualMainTitleSub);
-    const mainTitle = withBr(site.mainVisualMainTitle); %>
+    const mainTitle = withBr(site.mainVisualMainTitle);
+    const subtitleClass = `mainvisual_subtitle mainvisual_subtitle_${lang}`;
+    const textClass = `mainvisual_text${lang === 'en' ? ' mainvisual_text_en' : ''}`;
+    const panelTitleClass = `mainvisual_panel_title${lang === 'en' ? ' mainvisual_panel_title_en' : ''}`;
+    const panelTextClass = `mainvisual_panel_text${lang === 'en' ? ' mainvisual_panel_text_en' : ''}`; %>
 
     <div class="mainvisual">
         <div class="mainvisual_left">
-            <p class="mainvisual_subtitle">
+            <p class="<%= subtitleClass %>">
                 <%- head %>
             </p>
-            <p class="mainvisual_text">
+            <p class="<%= textClass %>">
                 <%- text %>
             </p>
             <div class="mainvisual_panels">
                 <div class="mainvisual_panel ">
-                    <p class="mainvisual_panel_title mainvisual_panel_title_left">
+                    <p class="<%= panelTitleClass %> mainvisual_panel_title_left">
                         <%= rightTitle %>
                     </p>
-                    <p class="mainvisual_panel_text mainvisual_panel_text_left">
+                    <p class="<%= panelTextClass %> mainvisual_panel_text_left">
                         <%= rightText %>
                     </p>
                 </div>
                 <div class="mainvisual_panel ">
-                    <p class="mainvisual_panel_title mainvisual_panel_title_right">
+                    <p class="<%= panelTitleClass %> mainvisual_panel_title_right">
                         <%= leftTitle %>
                     </p>
-                    <p class="mainvisual_panel_text mainvisual_panel_text_right">
+                    <p class="<%= panelTextClass %> mainvisual_panel_text_right">
                         <%= leftText %>
                     </p>
                 </div>

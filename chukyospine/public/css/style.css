@@ -510,7 +510,7 @@ section:first-of-type {
 }
 @media screen and (max-width: 1024px) {
   section:first-of-type {
-    padding: 0 0 80px 0;
+    padding: 80px 0 80px 0;
   }
 }
 
@@ -905,12 +905,17 @@ section:first-of-type {
   display: flex;
   gap: 16px;
   z-index: 500;
-  z-index: 1;
+  transition: opacity 0.2s ease;
+}
+.scroll_down_wrap.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 @media screen and (max-width: 1024px) {
   .scroll_down_wrap {
     bottom: 16px;
     right: 16px;
+    align-items: center;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1118,6 +1123,7 @@ section:first-of-type {
     padding: 24px;
     background-color: #ffffff;
     border-radius: 8px;
+    max-width: 495px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1144,6 +1150,12 @@ section:first-of-type {
     font-size: 2rem;
   }
 }
+.mainvisual .mainvisual_left .mainvisual_subtitle_en {
+  font-size: 2.4rem;
+}
+.mainvisual .mainvisual_left .mainvisual_subtitle_ja {
+  font-size: 2.8rem;
+}
 .mainvisual .mainvisual_left .mainvisual_text {
   margin-bottom: 48px;
 }
@@ -1157,6 +1169,9 @@ section:first-of-type {
     margin-bottom: 16px;
     font-size: 1.2rem;
   }
+}
+.mainvisual .mainvisual_left .mainvisual_text_en {
+  font-size: 1.4rem;
 }
 .mainvisual .mainvisual_left .mainvisual_panels {
   display: flex;
@@ -1191,6 +1206,7 @@ section:first-of-type {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title.mainvisual_panel_title_left {
   color: #0B143F;
@@ -1229,6 +1245,9 @@ section:first-of-type {
     font-size: 1.2rem;
   }
 }
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_title_en {
+  font-size: 1rem;
+}
 .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text {
   padding: 27px 16px 16px 16px;
   color: #ffffff;
@@ -1247,6 +1266,9 @@ section:first-of-type {
   .mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text {
     display: none;
   }
+}
+.mainvisual .mainvisual_left .mainvisual_panels .mainvisual_panel .mainvisual_panel_text_en {
+  font-size: 1rem;
 }
 .mainvisual .mainvisual_right {
   background-image: url("../images/mainvisual.png");
@@ -1772,10 +1794,12 @@ section:first-of-type {
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
   margin-bottom: 24px;
+  max-width: 654px;
 }
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_img {
     margin-bottom: 16px;
+    max-width: 100%;
   }
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_desc {
@@ -2007,11 +2031,21 @@ section:first-of-type {
   font-weight: 600;
   border: 2px solid #0B143F;
 }
+@media screen and (max-width: 768px) {
+  #section06 .price-table th {
+    padding: 24px;
+  }
+}
 #section06 .price-table td {
   border: 2px solid #0B143F;
   text-align: left;
   vertical-align: middle;
   padding: 24px;
+}
+@media screen and (max-width: 768px) {
+  #section06 .price-table td {
+    padding: 16px;
+  }
 }
 #section06 .price-table .price-head {
   background-color: #333F69;
@@ -2486,6 +2520,12 @@ section:first-of-type {
   justify-content: center;
   max-width: 240px;
   margin-bottom: 40px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #section09 .hours_wrap .hours_title {
+    font-size: 2.4rem;
+  }
 }
 #section09 .hours_wrap .hours_subtitle {
   font-size: 1.8rem;

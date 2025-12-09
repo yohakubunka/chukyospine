@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const overlay = document.querySelector('.header_overlay');
   const header = document.querySelector('.header');
   const mainvisual = document.querySelector('.mainvisual');
+  const footer = document.querySelector('.footer');
+  const scrollDown = document.querySelector('.scroll_down_wrap');
 
   const closeNav = () => {
     if (!header || !menuBtn) return;
@@ -77,6 +79,21 @@ document.addEventListener('DOMContentLoaded', function() {
   updateHeaderBg();
   window.addEventListener('scroll', updateHeaderBg, { passive: true });
   window.addEventListener('resize', updateHeaderBg);
+
+  const updateScrollDown = () => {
+    if (!scrollDown || !footer) return;
+    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+    const viewportBottom = window.scrollY + window.innerHeight;
+    if (viewportBottom >= footerTop) {
+      scrollDown.classList.add('is-hidden');
+    } else {
+      scrollDown.classList.remove('is-hidden');
+    }
+  };
+
+  updateScrollDown();
+  window.addEventListener('scroll', updateScrollDown, { passive: true });
+  window.addEventListener('resize', updateScrollDown);
 
   // ページ読み込み時のアニメーション
   const observer = new IntersectionObserver((entries) => {

@@ -53,7 +53,7 @@ section {
     &:first-of-type {
         padding: 196px 0;
         @include lg {
-            padding: 0 0 80px 0;
+            padding: 80px 0 80px 0;
         }
     }
 }

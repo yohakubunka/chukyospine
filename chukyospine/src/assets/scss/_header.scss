@@ -1,4 +1,4 @@
-@use "variables" as *;
+﻿@use "variables" as *;
 @use "mixins" as *;
 .header {
     padding: 48px 80px;
@@ -178,10 +178,15 @@
     display: flex;
     gap: 16px;
     z-index: 500;
-    z-index: 1;
+    transition: opacity 0.2s ease;
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
     @include lg {
         bottom: 16px;
         right: 16px;
+        align-items: center;
     }
     @include md {
         gap: 8px;

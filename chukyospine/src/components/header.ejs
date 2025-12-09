@@ -26,7 +26,9 @@ const navAnchors = ['#section01', '#section02', '#section03', '#section05', '#se
 
             <nav class="header_nav header__nav">
                 <div class="contact_sp">
-                    <p class="contact_sp_title">お問い合わせ</p>
+                    <p class="contact_sp_title">
+                        <%= pick(headerData.contactSpTitle) %>
+                    </p>
                     <div>
                         <a class="contact_sns" href="##">
                             <img src="/images/line_icon.svg" alt="Line アイコン" />

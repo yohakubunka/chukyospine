@@ -383,8 +383,10 @@
                         }
                         .procedure_approach_img {
                             margin-bottom: 24px;
+                            max-width: 654px;
                             @include md {
                                 margin-bottom: 16px;
+                                max-width: 100%;
                             }
                         }
                         .procedure_approach_desc {
@@ -599,12 +601,18 @@
             font-size: 2rem;
             font-weight: 600;
             border: 2px solid $color3;
+            @include md {
+                padding: 24px;
+            }
         }
         td {
             border: 2px solid $color3;
             text-align: left;
             vertical-align: middle;
             padding: 24px;
+            @include md {
+                padding: 16px;
+            }
         }
         .price-head {
             background-color: $color5;
@@ -1037,6 +1045,10 @@
             justify-content: center;
             max-width: 240px;
             margin-bottom: 40px;
+            text-align: center;
+            @include md {
+                font-size: 2.4rem;
+            }
         }
         .hours_subtitle {
             font-size: 1.8rem;

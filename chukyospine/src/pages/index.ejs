@@ -121,6 +121,12 @@
                 };
                 const flowImage = flowImageMap[lang] || flowImageMap.zh;
                 const flowImageSp = flowImageSpMap[lang] || flowImageSpMap.zh;
+                const mapIllustMap = {
+                    ja: '/images/map_illust_ja.svg',
+                    zh: '/images/map_illust_ch.svg',
+                    en: '/images/map_illust_en.svg'
+                };
+                const mapIllust = mapIllustMap[lang] || mapIllustMap.zh;
                 %>
 
                     <section id="section01">
@@ -720,7 +726,7 @@
                                     </div>
 
                                 </div>
-                                <img class="map_illust" src="/images/map_illust.svg" alt="" />
+                                <img class="map_illust" src="<%= mapIllust %>" alt="" />
                             </div>
                         </div>
                     </section>
