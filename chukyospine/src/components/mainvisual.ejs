@@ -16,9 +16,31 @@
     const subtitleClass = `mainvisual_subtitle mainvisual_subtitle_${lang}`;
     const textClass = `mainvisual_text${lang === 'en' ? ' mainvisual_text_en' : ''}`;
     const panelTitleClass = `mainvisual_panel_title${lang === 'en' ? ' mainvisual_panel_title_en' : ''}`;
-    const panelTextClass = `mainvisual_panel_text${lang === 'en' ? ' mainvisual_panel_text_en' : ''}`; %>
+    const panelTextClass = `mainvisual_panel_text${lang === 'en' ? ' mainvisual_panel_text_en' : ''}`;
+    %>
 
     <div class="mainvisual">
+
+        <div class="contact_wrap">
+            <img src="./images/doctor.png" alt="院長の写真" class="doctor_image" />
+            <div class="contact_us">
+                <p class="contact_title">
+                    聯繫我們
+                </p>
+                <div class="contact_sns_wrap">
+                    <a class="contact_sns" href="https://chukyospine.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="./images/line_icon.svg" alt="Line アイコン" />
+                        <p>LINE</p>
+                    </a>
+                    <img src="./images/sns_line.svg" alt="" />
+                    <a class="contact_sns" href="https://chukyospine.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="./images/wechat_icon.svg" alt="WeChat アイコン" />
+                        <p>WeChat</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="mainvisual_left">
             <p class="<%= subtitleClass %>">
                 <%- head %>
@@ -44,6 +66,9 @@
                     </p>
                 </div>
             </div>
+
+
+
         </div>
         <div class="mainvisual_right">
             <div class="mainvisual_text_wrap">
@@ -54,6 +79,11 @@
                     <%- mainTitle %>
 
                 </p>
+            </div>
+
+            <div class="scroll_down_wrap">
+                <p class="scroll_down_text">SCROLL<br>DOWN</p>
+                <div class="scroll_icon"></div>
             </div>
 
         </div>

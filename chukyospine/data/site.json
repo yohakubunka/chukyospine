@@ -1,4 +1,4 @@
-{
+﻿{
     "site": {
         "title": {
             "ja": "中京スパインクリニック",
@@ -676,8 +676,8 @@
                         },
                         {
                             "ja": "1,500<span class=\"unit\"><span class=\"unit\">ドル</span></span>",
-                            "en": "1,500<span class=\"unit\"><span class=\"unit\">doller</span></span>",
-                            "zh": "1,500<span class=\"unit\"><span class=\"unit\">美元</span></span>"
+                            "en": "1,500<span class=\"unit\"><span class=\"unit\">$</span></span>",
+                            "zh": "1,500<span class=\"unit\"><span class=\"unit\">$</span></span>"
                         },
                         {
                             "ja": "診察料・レントゲン・CT・MRI",
@@ -694,8 +694,8 @@
                         },
                         {
                             "ja": "500<span class=\"unit\">ドル</span>",
-                            "en": "500<span class=\"unit\">doller</span>",
-                            "zh": "500<span class=\"unit\">美元</span>"
+                            "en": "500<span class=\"unit\">$</span>",
+                            "zh": "500<span class=\"unit\">$</span>"
                         },
                         {
                             "ja": "胸部レントゲン・肺機能検査・心電図・採血",
@@ -718,8 +718,8 @@
                         },
                         {
                             "ja": "13,000<span class=\"unit\">ドル</span>",
-                            "en": "13,000<span class=\"unit\">doller</span>",
-                            "zh": "13,000<span class=\"unit\">美元</span>"
+                            "en": "13,000<span class=\"unit\">$</span>",
+                            "zh": "13,000<span class=\"unit\">$</span>"
                         },
                         {
                             "ja": "手術料・コルセット・翌日の診察料・翌日のMRI・術後紹介状",
@@ -742,8 +742,8 @@
                         },
                         {
                             "ja": "23,000<span class=\"unit\">ドル</span>",
-                            "en": "23,000<span class=\"unit\">doller</span>",
-                            "zh": "23,000<span class=\"unit\">美元</span>"
+                            "en": "23,000<span class=\"unit\">$</span>",
+                            "zh": "23,000<span class=\"unit\">$</span>"
                         },
                         {
                             "ja": "",
@@ -760,8 +760,8 @@
                         },
                         {
                             "ja": "500<span class=\"unit\">ドル</span>",
-                            "en": "500<span class=\"unit\">doller</span>",
-                            "zh": "500<span class=\"unit\">美元</span>"
+                            "en": "500<span class=\"unit\">$</span>",
+                            "zh": "500<span class=\"unit\">$</span>"
                         },
                         {
                             "ja": "―",
