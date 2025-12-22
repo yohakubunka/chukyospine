@@ -1,4 +1,4 @@
-@use "variables" as *;
+﻿@use "variables" as *;
 @use "mixins" as *;
 #section01 {
     background-image: url("../images/clinical_back.png");
@@ -296,6 +296,10 @@
             .treatment_benefits_items {
                 display: flex;
                 flex-wrap: wrap;
+                @include md {
+                    flex-direction: column;
+                    align-items: center;
+                }
                 .treatment_benefit_item {
                     max-width: calc(100% / 3);
                     width: 100%;
@@ -306,7 +310,7 @@
                     padding: 48px 0;
                     position: relative;
                     @include md {
-                        max-width: 100%;
+                        max-width: 270px;
                     }
                     &::before {
                         content: "";
@@ -587,6 +591,21 @@
         padding-bottom: 60px;
     }
     .price-table-wrap {
+        // スクロールバーを強調
+        &::-webkit-scrollbar {
+            height: 14px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $color8;
+            border-radius: 999px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color4;
+            border-radius: 999px;
+            border: 3px solid $color8;
+        }
+        scrollbar-color: $color4 $color8;
+        scrollbar-width: thin;
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;

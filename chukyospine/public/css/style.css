@@ -845,7 +845,7 @@ section:first-of-type {
     gap: 12px;
   }
   .header_logo img {
-    max-width: 120px;
+    max-width: 100%;
   }
   .header_burger {
     display: flex;
@@ -990,6 +990,11 @@ section:first-of-type {
   z-index: 1;
   bottom: -16px;
   max-width: 290px;
+}
+@media screen and (max-width: 1200px) {
+  .mainvisual .contact_wrap .doctor_image {
+    max-width: 200px;
+  }
 }
 @media screen and (max-width: 768px) {
   .mainvisual .contact_wrap .doctor_image {
@@ -1701,6 +1706,12 @@ section:first-of-type {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 768px) {
+  #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
   max-width: 33.3333333333%;
   width: 100%;
@@ -1713,7 +1724,7 @@ section:first-of-type {
 }
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
-    max-width: 100%;
+    max-width: 270px;
   }
 }
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item::before {
@@ -2016,7 +2027,21 @@ section:first-of-type {
     padding-bottom: 60px;
   }
 }
+#section06 .price-table-wrap::-webkit-scrollbar {
+  height: 14px;
+}
+#section06 .price-table-wrap::-webkit-scrollbar-track {
+  background: #EEEEEE;
+  border-radius: 999px;
+}
+#section06 .price-table-wrap::-webkit-scrollbar-thumb {
+  background: #B69863;
+  border-radius: 999px;
+  border: 3px solid #EEEEEE;
+}
 #section06 .price-table-wrap {
+  scrollbar-color: #B69863 #EEEEEE;
+  scrollbar-width: thin;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
