@@ -1098,6 +1098,11 @@ section:first-of-type {
 .mainvisual .mainvisual_left .mainvisual_subtitle_en {
   font-size: 2.4rem;
 }
+@media screen and (max-width: 1500px) {
+  .mainvisual .mainvisual_left .mainvisual_subtitle_en {
+    font-size: 2rem;
+  }
+}
 .mainvisual .mainvisual_left .mainvisual_subtitle_ja {
   font-size: 2.8rem;
 }
@@ -1117,6 +1122,11 @@ section:first-of-type {
 }
 .mainvisual .mainvisual_left .mainvisual_text_en {
   font-size: 1.4rem;
+}
+@media screen and (max-width: 1500px) {
+  .mainvisual .mainvisual_left .mainvisual_text_en {
+    font-size: 1.2rem;
+  }
 }
 .mainvisual .mainvisual_left .mainvisual_panels {
   display: flex;
@@ -1801,7 +1811,7 @@ section:first-of-type {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 0;
+  padding: 48px 16px;
   position: relative;
 }
 @media screen and (max-width: 1024px) {
@@ -1819,6 +1829,7 @@ section:first-of-type {
 @media screen and (max-width: 540px) {
   #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
     max-width: 70%;
+    min-height: auto;
     aspect-ratio: 1/1;
   }
 }
@@ -1880,6 +1891,13 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item {
   display: flex;
   flex-direction: column;
+  max-width: calc(50% - 12px);
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item {
+    max-width: 100%;
+  }
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_title {
   font-size: 3.2rem;
@@ -2107,6 +2125,7 @@ section:first-of-type {
 @media screen and (max-width: 540px) {
   #section04 .syringe_types .syringe_type_items .syringe_type_item {
     max-width: 70%;
+    min-height: auto;
     aspect-ratio: 1/1;
     gap: 24px;
   }

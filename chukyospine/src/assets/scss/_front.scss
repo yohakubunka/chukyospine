@@ -411,6 +411,11 @@
                     .procedure_approach_item {
                         display: flex;
                         flex-direction: column;
+                        max-width: calc(100% / 2 - 12px);
+                        width: 100%;
+                          @include md {
+                                max-width: 100%;
+                            }
                         .procedure_approach_title {
                             font-size: 3.2rem;
                             letter-spacing: 0.05em;
@@ -772,7 +777,7 @@
             color: $color3;
             background-color: $color2;
             span {
-                font-size: 2.8rem
+                font-size: 2.8rem;
             }
             .unit {
                 font-size: 2rem;
@@ -1037,7 +1042,7 @@
                 padding: 40px;
                 color: $color3;
                 flex: 1;
-                @include media-max (1500px) {
+                @include media-max(1500px) {
                     padding: 24px;
                 }
                 @include xl {
@@ -1108,7 +1113,7 @@
         .map_illust {
             max-width: 1072px;
             width: 100%;
-            @include media-max (1500px) {
+            @include media-max(1500px) {
                 max-width: 800px;
             }
             @include lg {
