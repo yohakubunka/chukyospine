@@ -15,19 +15,16 @@
     @include media-max (1919px) {
         gap: 40px;
     }
-    @include media-max (1400px) {
-        background-position: 40%;
-    }
     @include xl {
         flex-direction: column-reverse;
         background-image: none;
         background-color: $color12;
-        padding-bottom: 40px;
+        padding-bottom: 80px;
+        justify-content: flex-end;
+        height: 100%;
     }
     @include md {
         gap: 24px;
-        justify-content: flex-end;
-        padding-bottom: 0;
     }
     .contact_wrap {
         position: absolute;
@@ -253,6 +250,13 @@
         @include xl {
             background-image: url("../images/mainvisual_sp.png");
             background-size: cover;
+            background-repeat: no-repeat;
+        }
+        @include md {
+            max-height: 800px;
+        }
+        @include sp {
+            min-height: 400px;
         }
         &::before {
             content: "";
@@ -264,12 +268,6 @@
             border-left: 100px solid transparent;
             border-top: 80px solid $color12;
             pointer-events: none;
-        }
-        @include md {
-            max-height: 800px;
-        }
-        @include sp {
-            max-height: 400px;
         }
         .mainvisual_text_wrap {
             position: absolute;
@@ -302,69 +300,69 @@
                 }
             }
         }
-        .scroll_down_wrap {
-            position: absolute;
-            bottom: 80px;
-            right: 80px;
-            display: flex;
-            gap: 16px;
-            z-index: 500;
-            transition: opacity 0.2s ease;
-            &.is-hidden {
-                opacity: 0;
-                pointer-events: none;
-            }
-            @include lg {
-                bottom: 16px;
-                right: 16px;
-                align-items: center;
-            }
+    }
+    .scroll_down_wrap {
+        position: absolute;
+        bottom: 80px;
+        right: 80px;
+        display: flex;
+        gap: 16px;
+        z-index: 500;
+        transition: opacity 0.2s ease;
+        &.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        @include lg {
+            bottom: 16px;
+            right: 16px;
+            align-items: center;
+        }
+        @include md {
+            gap: 8px;
+        }
+        .scroll_down_text {
+            font-family: "arial", sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.05em;
             @include md {
-                gap: 8px;
+                font-size: 1rem;
             }
-            .scroll_down_text {
-                font-family: "arial", sans-serif;
-                font-size: 1.6rem;
-                letter-spacing: 0.05em;
-                @include md {
-                    font-size: 1rem;
-                }
+        }
+        .scroll_icon {
+            --size: 40px;
+            --triangle-width: 10px;
+            --triangle-height: 6px;
+            --circle-color: #fff;
+            --triangle-color: #b28b55;
+            width: var(--size);
+            height: var(--size);
+            position: relative;
+            display: inline-block;
+            @include md {
+                --size: 24px;
+                --triangle-width: 8px;
+                --triangle-height: 4px;
             }
-            .scroll_icon {
-                --size: 40px;
-                --triangle-width: 10px;
-                --triangle-height: 6px;
-                --circle-color: #fff;
-                --triangle-color: #b28b55;
-                width: var(--size);
-                height: var(--size);
-                position: relative;
-                display: inline-block;
-                @include md {
-                    --size: 24px;
-                    --triangle-width: 8px;
-                    --triangle-height: 4px;
-                }
-            }
-            .scroll_icon::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: var(--circle-color);
-                border-radius: 50%;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-            }
-            .scroll_icon::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -35%);
-                width: var(--triangle-width);
-                height: var(--triangle-height);
-                background: var(--triangle-color);
-                clip-path: polygon(0 0, 100% 0, 50% 100%);
-            }
+        }
+        .scroll_icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--circle-color);
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+        .scroll_icon::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -35%);
+            width: var(--triangle-width);
+            height: var(--triangle-height);
+            background: var(--triangle-color);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
         }
     }
 }

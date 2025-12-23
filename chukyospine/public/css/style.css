@@ -964,24 +964,19 @@ section:first-of-type {
     gap: 40px;
   }
 }
-@media screen and (max-width: 1400px) {
-  .mainvisual {
-    background-position: 40%;
-  }
-}
 @media screen and (max-width: 1200px) {
   .mainvisual {
     flex-direction: column-reverse;
     background-image: none;
     background-color: #11244F;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
+    justify-content: flex-end;
+    height: 100%;
   }
 }
 @media screen and (max-width: 768px) {
   .mainvisual {
     gap: 24px;
-    justify-content: flex-end;
-    padding-bottom: 0;
   }
 }
 .mainvisual .contact_wrap {
@@ -1260,6 +1255,17 @@ section:first-of-type {
   .mainvisual .mainvisual_right {
     background-image: url("../images/mainvisual_sp.png");
     background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainvisual .mainvisual_right {
+    max-height: 800px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .mainvisual .mainvisual_right {
+    min-height: 400px;
   }
 }
 .mainvisual .mainvisual_right::before {
@@ -1272,16 +1278,6 @@ section:first-of-type {
   border-left: 100px solid transparent;
   border-top: 80px solid #11244F;
   pointer-events: none;
-}
-@media screen and (max-width: 768px) {
-  .mainvisual .mainvisual_right {
-    max-height: 800px;
-  }
-}
-@media screen and (max-width: 540px) {
-  .mainvisual .mainvisual_right {
-    max-height: 400px;
-  }
 }
 .mainvisual .mainvisual_right .mainvisual_text_wrap {
   position: absolute;
@@ -1322,7 +1318,7 @@ section:first-of-type {
     font-size: 2rem;
   }
 }
-.mainvisual .mainvisual_right .scroll_down_wrap {
+.mainvisual .scroll_down_wrap {
   position: absolute;
   bottom: 80px;
   right: 80px;
@@ -1331,33 +1327,33 @@ section:first-of-type {
   z-index: 500;
   transition: opacity 0.2s ease;
 }
-.mainvisual .mainvisual_right .scroll_down_wrap.is-hidden {
+.mainvisual .scroll_down_wrap.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 @media screen and (max-width: 1024px) {
-  .mainvisual .mainvisual_right .scroll_down_wrap {
+  .mainvisual .scroll_down_wrap {
     bottom: 16px;
     right: 16px;
     align-items: center;
   }
 }
 @media screen and (max-width: 768px) {
-  .mainvisual .mainvisual_right .scroll_down_wrap {
+  .mainvisual .scroll_down_wrap {
     gap: 8px;
   }
 }
-.mainvisual .mainvisual_right .scroll_down_wrap .scroll_down_text {
+.mainvisual .scroll_down_wrap .scroll_down_text {
   font-family: "arial", sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.05em;
 }
 @media screen and (max-width: 768px) {
-  .mainvisual .mainvisual_right .scroll_down_wrap .scroll_down_text {
+  .mainvisual .scroll_down_wrap .scroll_down_text {
     font-size: 1rem;
   }
 }
-.mainvisual .mainvisual_right .scroll_down_wrap .scroll_icon {
+.mainvisual .scroll_down_wrap .scroll_icon {
   --size: 40px;
   --triangle-width: 10px;
   --triangle-height: 6px;
@@ -1369,13 +1365,13 @@ section:first-of-type {
   display: inline-block;
 }
 @media screen and (max-width: 768px) {
-  .mainvisual .mainvisual_right .scroll_down_wrap .scroll_icon {
+  .mainvisual .scroll_down_wrap .scroll_icon {
     --size: 24px;
     --triangle-width: 8px;
     --triangle-height: 4px;
   }
 }
-.mainvisual .mainvisual_right .scroll_down_wrap .scroll_icon::before {
+.mainvisual .scroll_down_wrap .scroll_icon::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1383,7 +1379,7 @@ section:first-of-type {
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
-.mainvisual .mainvisual_right .scroll_down_wrap .scroll_icon::after {
+.mainvisual .scroll_down_wrap .scroll_icon::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -1532,8 +1528,21 @@ section:first-of-type {
   border-radius: 4px;
   font-size: 1.2rem;
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   width: calc(25% - 6px);
+}
+@media screen and (max-width: 768px) {
+  #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item {
+    width: calc(33.3333333333% - 6px);
+  }
+}
+@media screen and (max-width: 540px) {
+  #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item {
+    width: calc(50% - 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item.clinical_service_item_en {
   min-height: 32px;
@@ -1557,16 +1566,6 @@ section:first-of-type {
   #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item.clinical_service_item_en {
     white-space: wrap;
     min-height: 50px;
-  }
-}
-@media screen and (max-width: 768px) {
-  #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item {
-    width: calc(33.3333333333% - 6px);
-  }
-}
-@media screen and (max-width: 540px) {
-  #section01 .clinical_wrap .clinical_desc .clinical_services .clinical_services_list .clinical_service_item {
-    width: calc(50% - 6px);
   }
 }
 
@@ -1977,6 +1976,11 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_time p {
   font-size: 1.8rem;
 }
+#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_image_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 #section04 .syringe_content {
   display: flex;
@@ -2200,24 +2204,11 @@ section:first-of-type {
     padding-bottom: 60px;
   }
 }
-#section06 .price-table-wrap::-webkit-scrollbar {
-  height: 14px;
-}
-#section06 .price-table-wrap::-webkit-scrollbar-track {
-  background: #EEEEEE;
-  border-radius: 999px;
-}
-#section06 .price-table-wrap::-webkit-scrollbar-thumb {
-  background: #B69863;
-  border-radius: 999px;
-  border: 3px solid #EEEEEE;
-}
 #section06 .price-table-wrap {
-  scrollbar-color: #B69863 #EEEEEE;
-  scrollbar-width: thin;
-  width: 100%;
+  position: relative;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  width: 100%;
   margin-bottom: 24px;
 }
 #section06 .price-table {
@@ -2370,6 +2361,11 @@ section:first-of-type {
   #section07 .philosophy_text p {
     font-size: 2.4rem;
     padding: 4px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section07 .philosophy_text p {
+    display: block;
   }
 }
 #section07 .philosophy_text .philosophy_highlight {

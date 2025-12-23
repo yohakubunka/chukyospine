@@ -110,8 +110,17 @@
                         border-radius: 4px;
                         font-size: 1.2rem;
                         text-align: center;
-                        font-weight: 200;
+                        font-weight: 300;
                         width: calc(100% / 4 - 6px);
+                        @include md {
+                            width: calc(100% / 3 - 6px);
+                        }
+                        @include sp {
+                            width: calc(100% / 2 - 6px);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
                         &.clinical_service_item_en {
                             min-height: 32px;
                             display: flex;
@@ -129,12 +138,6 @@
                                 white-space: wrap;
                                 min-height: 50px;
                             }
-                        }
-                        @include md {
-                            width: calc(100% / 3 - 6px);
-                        }
-                        @include sp {
-                            width: calc(100% / 2 - 6px);
                         }
                     }
                 }
@@ -488,6 +491,11 @@
                         font-size: 1.8rem;
                     }
                 }
+                .procedures_single_image_wrap {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
             }
         }
     }
@@ -684,23 +692,10 @@
     }
     .price-table-wrap {
         // スクロールバーを強調
-        &::-webkit-scrollbar {
-            height: 14px;
-        }
-        &::-webkit-scrollbar-track {
-            background: $color8;
-            border-radius: 999px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: $color4;
-            border-radius: 999px;
-            border: 3px solid $color8;
-        }
-        scrollbar-color: $color4 $color8;
-        scrollbar-width: thin;
-        width: 100%;
+        position: relative;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-y: hidden;
+        width: 100%;
         margin-bottom: 24px;
     }
     .price-table {
@@ -838,6 +833,9 @@
             @include xl {
                 font-size: 2.4rem;
                 padding: 4px;
+            }
+            @include md {
+                display: block;
             }
         }
         .philosophy_highlight {
