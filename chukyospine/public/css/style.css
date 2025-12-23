@@ -1976,6 +1976,17 @@ section:first-of-type {
     gap: 16px;
   }
 }
+@media screen and (max-width: 768px) {
+  #section04 .syringe_types .syringe_type_items {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 496px;
+    gap: 16px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 16px;
+  }
+}
 #section04 .syringe_types .syringe_type_items .syringe_type_item {
   max-width: 14.2857142857%;
   width: 100%;
@@ -1992,6 +2003,12 @@ section:first-of-type {
   #section04 .syringe_types .syringe_type_items .syringe_type_item {
     max-width: 100%;
     width: 190px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item {
+    max-width: 220px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1024px) {

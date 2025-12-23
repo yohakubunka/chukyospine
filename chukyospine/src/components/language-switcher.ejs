@@ -25,15 +25,18 @@
 
         select.addEventListener('change', (event) => {
             const lang = event.target.value;
-            const langPathMap = {
-                zh: 'index.html',
-                ja: 'index-ja.html',
-                en: 'index-en.html',
-            };
-            const fileName = langPathMap[lang] || langPathMap.zh;
-            const href = window.location.href;
-            const base = href.slice(0, href.lastIndexOf('/') + 1);
-            window.location.href = base + fileName;
+            // 日本語は別タブで外部サイトへ
+            if (lang === 'ja') {
+                window.open('https://chukyospine.com/', '_blank', 'noopener,noreferrer');
+                select.value = currentLang;
+                return;
+            }
+            // 既存のパスから /ja /en /zh を除去してベースを作成
+            const basePath = window.location.pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
+            const suffix = basePath === '/' ? '' : basePath;
+            const nextPath = lang === 'zh' ? (basePath || '/') : `/${lang}${suffix}`;
+            const nextUrl = window.location.origin + nextPath + window.location.search + window.location.hash;
+            window.location.href = nextUrl;
         });
     })();
 </script>

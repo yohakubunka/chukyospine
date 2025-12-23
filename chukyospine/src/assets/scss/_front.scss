@@ -527,6 +527,15 @@
             @include lg {
                 gap: 16px;
             }
+            @include md {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                max-width: calc(240px * 2 + 16px);
+                gap: 16px;
+                margin: 0 auto;
+                width: 100%;
+                gap: 16px;
+            }
             .syringe_type_item {
                 max-width: calc(100% / 7);
                 width: 100%;
@@ -541,6 +550,10 @@
                 @include xl {
                     max-width: 100%;
                     width: 190px;
+                }
+                @include md {
+                    max-width: 220px;
+                    width: 100%;
                 }
                 @include lg {
                     max-width: calc(100% / 4 - 12px);
