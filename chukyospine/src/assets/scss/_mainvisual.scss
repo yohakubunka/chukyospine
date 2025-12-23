@@ -121,6 +121,9 @@
         }
         .mainvisual_subtitle_en {
             font-size: 2.4rem;
+            @include media-max(1500px) {
+                font-size:2rem;
+            }
         }
         .mainvisual_subtitle_ja {
             font-size: 2.8rem;
@@ -137,6 +140,9 @@
         }
         .mainvisual_text_en {
             font-size: 1.4rem;
+            @include media-max(1500px) {
+                font-size: 1.2rem;
+            }
         }
         .mainvisual_panels {
             display: flex;

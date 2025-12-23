@@ -350,6 +350,7 @@
                     }
                     @include sp {
                         max-width: 70%;
+                        min-height: auto;
                         aspect-ratio: 1 / 1;
                     }
                     &::before {
@@ -599,6 +600,7 @@
                 }
                 @include sp {
                     max-width: 70%;
+                    min-height: auto;
                     aspect-ratio: 1 / 1;
                     gap: 24px;
                 }
