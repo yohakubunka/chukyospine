@@ -112,6 +112,24 @@
                         text-align: center;
                         font-weight: 200;
                         width: calc(100% / 4 - 6px);
+                        &.clinical_service_item_en {
+                            min-height: 32px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 8px 8px;
+                            white-space: nowrap;
+                            @include xl {
+                                font-size: 1rem;
+                            }
+                            @include lg {
+                                font-size: 1.2rem;
+                            }
+                            @include sp {
+                                white-space: wrap;
+                                min-height: 50px;
+                            }
+                        }
                         @include md {
                             width: calc(100% / 3 - 6px);
                         }

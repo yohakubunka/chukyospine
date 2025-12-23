@@ -137,6 +137,10 @@
                 justify-content: center;
                 gap: 16px;
             }
+            @include xs {
+                flex-direction: column;
+                align-items: center;
+            }
             .mainvisual_panel {
                 position: relative;
                 @include xl {
@@ -158,6 +162,7 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                     text-align: center;
+                    min-height: 40px;
                     &.mainvisual_panel_title_left {
                         color: $color3;
                         border: solid 1px $color3;
@@ -183,6 +188,7 @@
                         transform: none;
                         padding: 16px 8px;
                         max-width: 100%;
+                        min-height: 44px;
                         @include xs {
                             font-size: 1.2rem;
                         }
@@ -190,6 +196,10 @@
                 }
                 .mainvisual_panel_title_en {
                     font-size: 1rem;
+                    min-height: 44px; // ENテキストで高さが不足しないよう固定
+                    @include xl {
+                        min-height: 62px;
+                    }
                 }
                 .mainvisual_panel_text {
                     padding: 27px 16px 16px 16px;
