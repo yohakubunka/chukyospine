@@ -36,8 +36,11 @@
 
             if (isStaticHtml) {
                 // dist ビルドの静的ファイル（index.html / index-en.html）に対応
+                const pathParts = pathname.split('/');
+                const baseDir = pathParts.slice(0, -1).join('/') || '/';
+                const normalizedBase = baseDir.endsWith('/') ? baseDir : `${baseDir}/`;
                 const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
-                const nextUrl = `${origin}/${targetFile}${search}${hash}`;
+                const nextUrl = `${origin}${normalizedBase}${targetFile}${search}${hash}`;
                 window.location.href = nextUrl;
                 return;
             }
