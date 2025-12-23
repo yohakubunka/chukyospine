@@ -1053,7 +1053,7 @@ section:first-of-type {
   background-repeat: no-repeat;
   color: #0B143F;
   padding: 30px 64px 30px 104px;
-  max-width: 640px;
+  max-width: 646px;
   width: 100%;
   margin-left: 124px;
   position: relative;
@@ -1818,7 +1818,7 @@ section:first-of-type {
 }
 @media screen and (max-width: 540px) {
   #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
-    max-width: 100%;
+    max-width: 70%;
     aspect-ratio: 1/1;
   }
 }
@@ -2060,6 +2060,11 @@ section:first-of-type {
     gap: 16px;
   }
 }
+@media screen and (max-width: 540px) {
+  #section04 .syringe_types .syringe_type_items {
+    justify-content: center;
+  }
+}
 #section04 .syringe_types .syringe_type_items .syringe_type_item {
   max-width: 14.2857142857%;
   width: 100%;
@@ -2101,7 +2106,7 @@ section:first-of-type {
 }
 @media screen and (max-width: 540px) {
   #section04 .syringe_types .syringe_type_items .syringe_type_item {
-    max-width: 100%;
+    max-width: 70%;
     aspect-ratio: 1/1;
     gap: 24px;
   }

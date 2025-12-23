@@ -349,7 +349,7 @@
                         justify-content: center;
                     }
                     @include sp {
-                        max-width: 100%;
+                        max-width: 70%;
                         aspect-ratio: 1 / 1;
                     }
                     &::before {
@@ -564,6 +564,9 @@
                 width: 100%;
                 gap: 16px;
             }
+            @include sp {
+                justify-content: center;
+            }
             .syringe_type_item {
                 max-width: calc(100% / 7);
                 width: 100%;
@@ -595,7 +598,7 @@
                     min-height: 240px;
                 }
                 @include sp {
-                    max-width: 100%;
+                    max-width: 70%;
                     aspect-ratio: 1 / 1;
                     gap: 24px;
                 }
