@@ -31,11 +31,22 @@
                 select.value = currentLang;
                 return;
             }
-            // 既存のパスから /ja /en /zh を除去してベースを作成
-            const basePath = window.location.pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
+            const { pathname, search, hash, origin } = window.location;
+            const isStaticHtml = /\.html?$/.test(pathname);
+
+            if (isStaticHtml) {
+                // dist ビルドの静的ファイル（index.html / index-en.html）に対応
+                const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
+                const nextUrl = `${origin}/${targetFile}${search}${hash}`;
+                window.location.href = nextUrl;
+                return;
+            }
+
+            // 開発サーバーなど言語プレフィックスを使う場合のパス切り替え
+            const basePath = pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
             const suffix = basePath === '/' ? '' : basePath;
             const nextPath = lang === 'zh' ? (basePath || '/') : `/${lang}${suffix}`;
-            const nextUrl = window.location.origin + nextPath + window.location.search + window.location.hash;
+            const nextUrl = origin + nextPath + search + hash;
             window.location.href = nextUrl;
         });
     })();
