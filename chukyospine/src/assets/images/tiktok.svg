@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
   <defs>
     <clipPath id="clip-path">
-      <rect id="長方形_520" data-name="長方形 520" width="32" height="32" transform="translate(0 -0.114)" fill="#fff"/>
+      <path id="パス_2528" data-name="パス 2528" d="M0,0H32V32H0Z" transform="translate(0 -0.114)" fill="#fff"/>
     </clipPath>
   </defs>
-  <g id="マスクグループ_77" data-name="マスクグループ 77" transform="translate(0 0.114)" clip-path="url(#clip-path)">
-    <text id="_" data-name="" transform="translate(2 27.887)" fill="#fff" font-size="32" font-family="FontAwesome5Brands-Regular, 'Font Awesome \35  Brands'" letter-spacing="0.05em"><tspan x="0" y="0"></tspan></text>
+  <g id="マスクグループ_80" data-name="マスクグループ 80" transform="translate(0 0.114)" clip-path="url(#clip-path)">
+    <path id="パス_2530" data-name="パス 2530" d="M28-14.875h-.062a12.883,12.883,0,0,1-7.625-2.437V-6.187a9.826,9.826,0,0,1-2.969,7.219A9.79,9.79,0,0,1,10.156,4,9.79,9.79,0,0,1,2.969,1.031,9.79,9.79,0,0,1,0-6.156a9.79,9.79,0,0,1,2.969-7.187,9.826,9.826,0,0,1,7.219-2.969q.687,0,1.375.063v5.625a5.206,5.206,0,0,0-1.375-.187A4.515,4.515,0,0,0,6.875-9.437,4.479,4.479,0,0,0,5.5-6.156,4.479,4.479,0,0,0,6.875-2.875,4.479,4.479,0,0,0,10.156-1.5a4.479,4.479,0,0,0,3.281-1.375,4.515,4.515,0,0,0,1.375-3.312V-28h5.5v.063a6.681,6.681,0,0,0,.125,1.313,7.322,7.322,0,0,0,3.375,5A7.383,7.383,0,0,0,28-20.375v5.5Z" transform="translate(2 27.887)" fill="#fff"/>
   </g>
 </svg>

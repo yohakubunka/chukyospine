@@ -492,9 +492,11 @@
                     }
                 }
                 .procedures_single_image_wrap {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
+                    @include md {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
             }
         }

@@ -1,5 +1,5 @@
 // メニューボタンの処理
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.querySelector('.header_burger');
   const nav = document.querySelector('.header_nav');
   const overlay = document.querySelector('.header_overlay');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   if (menuBtn && nav && header) {
-    menuBtn.addEventListener('click', function () {
+    menuBtn.addEventListener('click', function() {
       const isOpen = header.classList.contains('header--open');
       if (isOpen) {
         closeNav();
@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // スムーススクロール
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-
+      
       if (targetElement) {
         const headerHeight = header ? header.offsetHeight : 0;
         const targetPosition = targetElement.offsetTop - headerHeight;
-
+        
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth'

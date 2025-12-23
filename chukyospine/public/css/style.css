@@ -1976,10 +1976,12 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_time p {
   font-size: 1.8rem;
 }
-#section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_image_wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 768px) {
+  #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_image_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 #section04 .syringe_content {
