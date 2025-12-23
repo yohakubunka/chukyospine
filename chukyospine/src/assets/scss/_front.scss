@@ -48,6 +48,9 @@
                     font-size: 2rem;
                     padding-left: 40px;
                 }
+                @include md {
+                    font-size: 1.8rem;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -227,6 +230,9 @@
                         @include lg {
                             font-size: 2rem;
                         }
+                        @include md {
+                            font-size: 1.8rem;
+                        }
                     }
                     .approach_item_body {
                         font-size: 1.8rem;
@@ -296,6 +302,10 @@
             .treatment_benefits_items {
                 display: flex;
                 flex-wrap: wrap;
+                @include lg {
+                    gap: 16px;
+                    justify-content: center;
+                }
                 @include md {
                     flex-direction: column;
                     align-items: center;
@@ -309,8 +319,17 @@
                     align-items: center;
                     padding: 48px 0;
                     position: relative;
+                    @include lg {
+                        max-width: calc(100% / 3 - 16px);
+                    }
                     @include md {
                         max-width: 270px;
+                        min-height: 270px;
+                        justify-content: center;
+                    }
+                    @include sp {
+                        max-width: 100%;
+                        aspect-ratio: 1 / 1;
                     }
                     &::before {
                         content: "";
@@ -399,6 +418,9 @@
                             margin-bottom: 16px;
                             font-size: 2rem;
                             letter-spacing: 0.05em;
+                            @include md {
+                                font-size: 1.8rem;
+                            }
                         }
                         .procedure_approach_time {
                             display: flex;
@@ -436,6 +458,9 @@
                 .procedures_single_desc {
                     font-size: 2rem;
                     margin-bottom: 16px;
+                    @include md {
+                        font-size: 1.8rem;
+                    }
                 }
                 .procedures_single_time {
                     display: flex;
@@ -499,6 +524,9 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            @include lg {
+                gap: 16px;
+            }
             .syringe_type_item {
                 max-width: calc(100% / 7);
                 width: 100%;
@@ -514,6 +542,22 @@
                     max-width: 100%;
                     width: 190px;
                 }
+                @include lg {
+                    max-width: calc(100% / 4 - 12px);
+                    width: 100%;
+                    aspect-ratio: 1;
+                    justify-content: center;
+                }
+                @include md {
+                    max-width: 240px;
+                    width: 100%;
+                    min-height: 240px;
+                }
+                @include sp {
+                    max-width: 100%;
+                    aspect-ratio: 1 / 1;
+                    gap: 24px;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -527,6 +571,10 @@
                     &::before {
                         border-top: 40px solid $color6;
                         border-right: 40px solid transparent;
+                        @include sp {
+                            border-top: 64px solid $color6;
+                            border-right: 64px solid transparent;
+                        }
                     }
                 }
                 &.syringe_type_item_odd {
@@ -534,6 +582,16 @@
                     &::before {
                         border-top: 40px solid $color3;
                         border-right: 40px solid transparent;
+                        @include sp {
+                            border-top: 64px solid $color6;
+                            border-right: 64px solid transparent;
+                        }
+                    }
+                }
+                img {
+                    @include sp {
+                        max-width: 64px;
+                        width: 100%;
                     }
                 }
             }
@@ -559,6 +617,9 @@
         font-weight: 700;
         @include lg {
             margin-bottom: 24px;
+        }
+        @include md {
+            font-size: 1.8rem;
         }
     }
     .flow_images {
@@ -624,6 +685,9 @@
             font-weight: 600;
             border: 2px solid $color3;
             @include md {
+                font-size: 1.8rem;
+            }
+            @include md {
                 padding: 24px;
             }
         }
@@ -679,6 +743,9 @@
             }
             .unit {
                 font-size: 2rem;
+                @include md {
+                    font-size: 1.8rem;
+                }
             }
         }
         .price-desc {
@@ -953,6 +1020,9 @@
                         font-size: 2rem;
                         font-weight: 600;
                         color: $color4;
+                        @include md {
+                            font-size: 1.8rem;
+                        }
                     }
                     .access_detail_train {
                         display: flex;

@@ -1416,6 +1416,11 @@ section:first-of-type {
     padding-left: 40px;
   }
 }
+@media screen and (max-width: 768px) {
+  #section01 .clinical_wrap .clinical_desc .clinical_desc_top {
+    font-size: 1.8rem;
+  }
+}
 #section01 .clinical_wrap .clinical_desc .clinical_desc_top::before {
   content: "";
   position: absolute;
@@ -1631,6 +1636,11 @@ section:first-of-type {
     font-size: 2rem;
   }
 }
+@media screen and (max-width: 768px) {
+  #section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_title {
+    font-size: 1.8rem;
+  }
+}
 #section02 .approach_wrap .approach_items .approach_item_list .approach_item .approach_item_body {
   font-size: 1.8rem;
   letter-spacing: 0.05em;
@@ -1706,6 +1716,12 @@ section:first-of-type {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 1024px) {
+  #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items {
+    gap: 16px;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items {
     flex-direction: column;
@@ -1722,9 +1738,22 @@ section:first-of-type {
   padding: 48px 0;
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
+    max-width: calc(33.3333333333% - 16px);
+  }
+}
 @media screen and (max-width: 768px) {
   #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
     max-width: 270px;
+    min-height: 270px;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 540px) {
+  #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item {
+    max-width: 100%;
+    aspect-ratio: 1/1;
   }
 }
 #section03 .treatment_menu_wrap .treatment_benefits .treatment_benefits_items .treatment_benefit_item::before {
@@ -1822,6 +1851,11 @@ section:first-of-type {
   font-size: 2rem;
   letter-spacing: 0.05em;
 }
+@media screen and (max-width: 768px) {
+  #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_desc {
+    font-size: 1.8rem;
+  }
+}
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap .procedure_approaches .procedure_approach_item .procedure_approach_time {
   display: flex;
   align-items: center;
@@ -1862,6 +1896,11 @@ section:first-of-type {
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_desc {
   font-size: 2rem;
   margin-bottom: 16px;
+}
+@media screen and (max-width: 768px) {
+  #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_desc {
+    font-size: 1.8rem;
+  }
 }
 #section03 .treatment_menu_wrap .procedures_section .procedures_wrap_single .procedures_single_time {
   display: flex;
@@ -1932,6 +1971,11 @@ section:first-of-type {
     justify-content: center;
   }
 }
+@media screen and (max-width: 1024px) {
+  #section04 .syringe_types .syringe_type_items {
+    gap: 16px;
+  }
+}
 #section04 .syringe_types .syringe_type_items .syringe_type_item {
   max-width: 14.2857142857%;
   width: 100%;
@@ -1950,6 +1994,28 @@ section:first-of-type {
     width: 190px;
   }
 }
+@media screen and (max-width: 1024px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item {
+    max-width: calc(25% - 12px);
+    width: 100%;
+    aspect-ratio: 1;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item {
+    max-width: 240px;
+    width: 100%;
+    min-height: 240px;
+  }
+}
+@media screen and (max-width: 540px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item {
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    gap: 24px;
+  }
+}
 #section04 .syringe_types .syringe_type_items .syringe_type_item::before {
   content: "";
   position: absolute;
@@ -1965,12 +2031,30 @@ section:first-of-type {
   border-top: 40px solid #DFD3C6;
   border-right: 40px solid transparent;
 }
+@media screen and (max-width: 540px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_even::before {
+    border-top: 64px solid #DFD3C6;
+    border-right: 64px solid transparent;
+  }
+}
 #section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_odd {
   background-color: #333F69;
 }
 #section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_odd::before {
   border-top: 40px solid #0B143F;
   border-right: 40px solid transparent;
+}
+@media screen and (max-width: 540px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item.syringe_type_item_odd::before {
+    border-top: 64px solid #DFD3C6;
+    border-right: 64px solid transparent;
+  }
+}
+@media screen and (max-width: 540px) {
+  #section04 .syringe_types .syringe_type_items .syringe_type_item img {
+    max-width: 64px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1996,6 +2080,11 @@ section:first-of-type {
 @media screen and (max-width: 1024px) {
   #section05 .flow_desc {
     margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section05 .flow_desc {
+    font-size: 1.8rem;
   }
 }
 #section05 .flow_images {
@@ -2063,6 +2152,11 @@ section:first-of-type {
 }
 @media screen and (max-width: 768px) {
   #section06 .price-table th {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section06 .price-table th {
     padding: 24px;
   }
 }
@@ -2119,6 +2213,11 @@ section:first-of-type {
 }
 #section06 .price-table .price-amount .unit {
   font-size: 2rem;
+}
+@media screen and (max-width: 768px) {
+  #section06 .price-table .price-amount .unit {
+    font-size: 1.8rem;
+  }
 }
 #section06 .price-table .price-desc {
   font-weight: 400;
@@ -2425,6 +2524,11 @@ section:first-of-type {
   font-size: 2rem;
   font-weight: 600;
   color: #B69863;
+}
+@media screen and (max-width: 768px) {
+  #section08 .access_wrap .access_details_wrap .access_details .access_detail_item .access_detail_title {
+    font-size: 1.8rem;
+  }
 }
 #section08 .access_wrap .access_details_wrap .access_details .access_detail_item .access_detail_train {
   display: flex;
