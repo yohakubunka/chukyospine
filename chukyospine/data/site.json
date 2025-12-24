@@ -637,7 +637,7 @@
         "flow": {
             "title": {
                 "ja": "治療的流程",
-                "en": "治療的流程",
+                "en": "PROCESS",
                 "zh": "治療的流程"
             },
             "description": {
@@ -956,8 +956,8 @@
         },
         "access": {
             "title": {
-                "ja": "來院方式",
-                "en": "來院方式",
+                "ja": "アクセス",
+                "en": "Access",
                 "zh": "來院方式"
             },
             "address": {
