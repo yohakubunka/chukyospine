@@ -142,6 +142,7 @@
                     en: './images/details_en.svg'
                 };
                 const detailsImg = detailsImgMap[lang] || detailsImgMap.zh;
+                const numberImage05 = lang === 'en' ? './images/number_image_05_en.svg' : './images/number_image_05.svg';
                 %>
 
                     <section id="section01">
@@ -410,7 +411,7 @@
                                             <% }) %>
                                     </div>
                                     <div class="procedures_single_image_wrap">
-                                        <img class="" src="./images/number_image_05.svg" alt="" aria-hidden="true" />
+                                        <img class="" src="<%= numberImage05 %>" alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                             </div>

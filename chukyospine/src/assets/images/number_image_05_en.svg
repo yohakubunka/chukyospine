@@ -142,7 +142,8 @@
       <g id="グループ_307" data-name="グループ 307" transform="translate(-15)">
         <path id="パス_172" data-name="パス 172" d="M987.346,1378.032l1.9-7.185a.157.157,0,0,0-.265-.15l-9.575,9.858,4.674,1.236-1.968,7.448a.157.157,0,0,0,.264.15l9.893-10.056Z" transform="translate(-640.837 -934.604)" fill="#bfb592"/>
         <circle id="楕円形_39" data-name="楕円形 39" cx="5" cy="5" r="5" transform="translate(330 457.343)" fill="#fff"/>
-        <text id="Fracture_location" data-name="Fracture location" transform="translate(413 468.343)" fill="#fff" font-size="14" font-family="NotoSansCJKjp-Medium, Noto Sans CJK JP" font-weight="500" letter-spacing="0.05em"><tspan x="-62.349" y="0">Fracture location</tspan></text>
+        <text id="Fracture_location" data-name="Fracture 
+location" transform="translate(393 458.343)" fill="#fff" font-size="14" font-family="NotoSansCJKjp-Medium, Noto Sans CJK JP" font-weight="500" letter-spacing="0.05em"><tspan x="-32.27" y="0">Fracture </tspan><tspan x="-29.729" y="21">location</tspan></text>
       </g>
     </g>
   </g>
