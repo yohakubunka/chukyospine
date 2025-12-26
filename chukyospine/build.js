@@ -119,6 +119,22 @@ async function compileSCSS() {
   }
 }
 
+async function copyAdditionalCSS() {
+  try {
+    const cssDir = path.join(SRC_DIR, 'assets/css');
+    const outputCssDir = path.join(BUILD_DIR, 'css');
+
+    if (await fs.pathExists(cssDir)) {
+      await fs.ensureDir(outputCssDir);
+      await fs.copy(cssDir, outputCssDir);
+      console.log('? Additional CSS files copied');
+    }
+  } catch (error) {
+    console.error('Error copying additional CSS files:', error);
+    process.exit(1);
+  }
+}
+
 // JavaScriptファイルをコピー
 async function copyJavaScript() {
   try {
@@ -217,6 +233,7 @@ async function build() {
     await cleanBuildDir();
     await compileEJS();
     await compileSCSS();
+    await copyAdditionalCSS();
     await copyJavaScript();
     await copyImages();
     await copyAssetsToLanguageDirs();
