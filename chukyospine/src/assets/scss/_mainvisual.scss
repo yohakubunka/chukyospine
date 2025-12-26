@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 .mainvisual {
-    background-image: url("../images/main-visual.png");
+    background-image: url("../images/main-visual.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -254,7 +254,7 @@
             min-height: 680px;
         }
         @include xl {
-            background-image: url("../images/mainvisual_sp.png");
+            background-image: url("../images/mainvisual_sp.webp");
             background-size: cover;
             background-repeat: no-repeat;
         }

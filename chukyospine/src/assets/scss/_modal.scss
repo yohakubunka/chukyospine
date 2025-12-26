@@ -1,3 +1,5 @@
+@use "variables" as *;
+@use "mixins" as *;
 .modal-toggle {
   display: none;
 }
@@ -23,9 +25,13 @@
   background: #fff;
   padding: 30px;
   border-radius: 8px;
+  max-width: 440px;
+  min-width: 440px;
+  text-align: right;
+  @include md {
   max-width: 300px;
   min-width: 300px;
-  text-align: right;
+  }
 }
 
 .modal-open-btn,
