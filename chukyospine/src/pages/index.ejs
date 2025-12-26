@@ -773,6 +773,47 @@
             <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
 
             <script src="./js/main.js" defer></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var modal = document.querySelector('.wechat-modal');
+                    var modalToggle = document.getElementById('wechat-modal');
+                    var openers = document.querySelectorAll('.wechat_modal_open');
+                    var closeEls = document.querySelectorAll('.modal-bg, .close-btn');
+
+                    var setModalState = function(open) {
+                        if (modalToggle) modalToggle.checked = open;
+                        if (modal) {
+                            modal.classList.toggle('is-open', open);
+                            modal.style.opacity = open ? '1' : '';
+                            modal.style.pointerEvents = open ? 'auto' : '';
+                        }
+                        document.body.classList.toggle('modal-open', open);
+                    };
+
+                    openers.forEach(function(btn) {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            setModalState(true);
+                        });
+                    });
+                    closeEls.forEach(function(el) {
+                        el.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            setModalState(false);
+                        });
+                    });
+                    if (modalToggle) {
+                        modalToggle.addEventListener('change', function() {
+                            setModalState(modalToggle.checked);
+                        });
+                    }
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape') {
+                            setModalState(false);
+                        }
+                    });
+                });
+            </script>
             <script defer>
                 document.addEventListener('DOMContentLoaded', function() {
                     new ScrollHint('.js-scrollable', {

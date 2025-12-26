@@ -2918,11 +2918,18 @@ footer .footer_info .footer_copyright {
 .modal {
   position: fixed;
   inset: 0;
-  place-items: center;
+  display: flex;
+  justify-content: center; /* 横中央 */
+  align-items: center; /* 縦中央 */
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
+  z-index: 2000;
+}
+.modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
@@ -2931,7 +2938,7 @@ footer .footer_info .footer_copyright {
   border-radius: 8px;
   max-width: 300px;
   min-width: 300px;
-  text-align: center;
+  text-align: right;
 }
 
 .modal-open-btn,
@@ -2941,10 +2948,10 @@ footer .footer_info .footer_copyright {
   background: #333;
   color: #fff;
   border-radius: 6px;
+  margin-left: auto;
   cursor: pointer;
 }
 
-/* チェック入ったら表示 */
 .modal-toggle:checked + .modal {
   opacity: 1;
   pointer-events: auto;
@@ -2958,6 +2965,10 @@ footer .footer_info .footer_copyright {
 }
 
 .wechat-btn img {
-  width: 40px; /* 好きな大きさに */
+  width: 40px;
   height: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
