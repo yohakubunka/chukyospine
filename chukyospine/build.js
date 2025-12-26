@@ -7,6 +7,7 @@ const sass = require('sass');
 const BUILD_DIR = 'dist';
 const SRC_DIR = 'src';
 const DATA_DIR = 'data';
+const LANGUAGE_DIR_MAP = { en: 'en', zh: 'zh' };
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // ディレクトリをクリーンアップ
@@ -84,6 +85,14 @@ async function compileEJS() {
 
           await fs.writeFile(outputPath, html);
           console.log(`✓ Compiled ${page} (${code}) -> ${outputName}`);
+
+          const langDir = LANGUAGE_DIR_MAP[code];
+          if (langDir) {
+            const dirPath = path.join(BUILD_DIR, langDir);
+            await fs.ensureDir(dirPath);
+            await fs.writeFile(path.join(dirPath, 'index.html'), html);
+            console.log(`✓ Placed ${code} page at /${langDir}/index.html`);
+          }
         }
       }
     }
@@ -144,6 +153,27 @@ async function copyImages() {
   }
 }
 
+// 言語別ディレクトリにもアセットを複製（サブディレクトリ配信の安全策）
+async function copyAssetsToLanguageDirs() {
+  try {
+    const assetDirs = ['css', 'js', 'images'];
+    for (const langDir of Object.values(LANGUAGE_DIR_MAP)) {
+      for (const asset of assetDirs) {
+        const srcDir = path.join(BUILD_DIR, asset);
+        const destDir = path.join(BUILD_DIR, langDir, asset);
+        if (await fs.pathExists(srcDir)) {
+          await fs.ensureDir(destDir);
+          await fs.copy(srcDir, destDir);
+        }
+      }
+    }
+    console.log('? Assets copied into language-prefixed directories');
+  } catch (error) {
+    console.error('Error copying assets to language directories:', error);
+    process.exit(1);
+  }
+}
+
 // その他静的ファイルをコピー（favicon、robots.txtなど）
 async function copyStaticFiles() {
   try {
@@ -189,6 +219,7 @@ async function build() {
     await compileSCSS();
     await copyJavaScript();
     await copyImages();
+    await copyAssetsToLanguageDirs();
     await copyStaticFiles();
     outputBuildInfo();
     

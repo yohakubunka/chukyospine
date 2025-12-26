@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="<%= lang %>">
 
 <head>
@@ -207,7 +207,8 @@
                                 <%= pick(idx.approachTitle) %>
                             </h2>
                             <div class="approach_items">
-                                <img class="" src="./images/treatment-main.svg" alt="" aria-hidden="true" />
+                                <% const treatmentMainImg = lang === 'en' ? './images/treatment-main_en.svg' : './images/treatment-main.svg'; %>
+                                <img class="" src="<%= treatmentMainImg %>" alt="" aria-hidden="true" />
                                 <div class="approach_item_list">
                                     <% approaches.forEach(function(item, i) { const iconNum=String(i + 1).padStart(2, '0' );
                                     %>
@@ -784,3 +785,4 @@
 </body>
 
 </html>
+

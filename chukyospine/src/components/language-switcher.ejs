@@ -25,10 +25,9 @@
 
         select.addEventListener('change', (event) => {
             const lang = event.target.value;
-            // 日本語は別タブで外部サイトへ
+            // 日本語は同一タブで外部サイトへ（モバイルでのポップアップブロック回避）
             if (lang === 'ja') {
-                window.open('https://chukyospine.com/', '_blank', 'noopener,noreferrer');
-                select.value = currentLang;
+                window.location.href = 'https://chukyospine.com/';
                 return;
             }
             const { pathname, search, hash, origin } = window.location;
@@ -54,3 +53,4 @@
         });
     })();
 </script>
+
