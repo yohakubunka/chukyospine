@@ -108,6 +108,7 @@
 
 .header_nav_lang {
     margin-left: auto;
+    max-width: 100px;
     @include lg {
         margin-left: 0;
     }

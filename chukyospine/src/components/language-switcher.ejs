@@ -1,56 +1,87 @@
-﻿<% const langLabelMap = { ja: 'JP', en: 'EN', zh: 'CN' }; %>
+<% const langLabelMap = { ja: 'JP', en: 'EN', zh: 'CN' }; %>
 <% const langLabel = langLabelMap[lang] || 'JP'; %>
 
 <div class="lang-switcher">
-    <div class="lang-switcher_box">
-        <div class="lang-switcher_wrap">
-            <img class="lang-switcher_icon" src="./images/language.svg" alt="" aria-hidden="true" />
-            <span class="lang-switcher_value"><%= langLabel %></span>
+    <div class="lang-switcher_box" data-open="false">
+        <button type="button" class="lang-switcher_toggle" aria-haspopup="listbox" aria-expanded="false">
+            <div class="lang-switcher_wrap">
+                <img class="lang-switcher_icon" src="./images/language.svg" alt="" aria-hidden="true" />
+                <span class="lang-switcher_value"><%= langLabel %></span>
+            </div>
+            <img class="lang-switcher_arrow" src="./images/bottom-arrow.svg" alt="" aria-hidden="true" />
+        </button>
+        <div class="lang-switcher_dropdown" role="listbox" aria-label="Language">
+            <a class="lang-switcher_link <%= lang === 'ja' ? 'is-active' : '' %>" data-lang="ja" href="https://chukyospine.com/" target="_blank" rel="noopener noreferrer" role="option">日本語</a>
+            <a class="lang-switcher_link <%= lang === 'en' ? 'is-active' : '' %>" data-lang="en" href="#" role="option">English</a>
+            <a class="lang-switcher_link <%= lang === 'zh' ? 'is-active' : '' %>" data-lang="zh" href="#" role="option">中文</a>
         </div>
-        <img class="lang-switcher_arrow" src="./images/bottom-arrow.svg" alt="" aria-hidden="true" />
-        <select id="lang-select" class="lang-switcher_select" name="lang" data-current-lang="<%= lang %>" aria-label="Language">
-            <option value="ja" <%= lang === 'ja' ? 'selected' : '' %>>日本語</option>
-            <option value="en" <%= lang === 'en' ? 'selected' : '' %>>English</option>
-            <option value="zh" <%= lang === 'zh' ? 'selected' : '' %>>中文</option>
-        </select>
     </div>
 </div>
 <script>
     (function() {
-        const select = document.getElementById('lang-select');
-        if (!select) return;
+        const box = document.querySelector('.lang-switcher_box');
+        if (!box) return;
 
-        const currentLang = select.dataset.currentLang || 'zh';
-        select.value = currentLang;
+        const toggleBtn = box.querySelector('.lang-switcher_toggle');
+        const dropdown = box.querySelector('.lang-switcher_dropdown');
+        const links = box.querySelectorAll('.lang-switcher_link');
 
-        select.addEventListener('change', (event) => {
-            const lang = event.target.value;
-            // 日本語は同一タブで外部サイトへ（モバイルでのポップアップブロック回避）
-            if (lang === 'ja') {
-                window.location.href = 'https://chukyospine.com/';
-                return;
+        const closeDropdown = () => {
+            box.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+        };
+
+        const openDropdown = () => {
+            box.classList.add('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+        };
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (box.classList.contains('is-open')) {
+                closeDropdown();
+            } else {
+                openDropdown();
             }
-            const { pathname, search, hash, origin } = window.location;
-            const isStaticHtml = /\.html?$/.test(pathname);
+        });
 
-            if (isStaticHtml) {
-                // dist ビルドの静的ファイル（index.html / index-en.html）に対応
-                const pathParts = pathname.split('/');
-                const baseDir = pathParts.slice(0, -1).join('/') || '/';
-                const normalizedBase = baseDir.endsWith('/') ? baseDir : `${baseDir}/`;
-                const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
-                const nextUrl = `${origin}${normalizedBase}${targetFile}${search}${hash}`;
+        document.addEventListener('click', () => closeDropdown());
+
+        dropdown.addEventListener('click', (e) => e.stopPropagation());
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const lang = link.dataset.lang;
+
+                if (lang === 'ja') {
+                    event.preventDefault();
+                    const opened = window.open(link.href, '_blank', 'noopener,noreferrer');
+                    // ポップアップブロックされた場合は何もしない（元ページは維持）
+                    closeDropdown();
+                    event.preventDefault();
+                    return;
+                }
+
+                event.preventDefault();
+                const { pathname, search, hash, origin } = window.location;
+                const isStaticHtml = /\.html?$/.test(pathname);
+
+                if (isStaticHtml) {
+                    const pathParts = pathname.split('/');
+                    const baseDir = pathParts.slice(0, -1).join('/') || '/';
+                    const normalizedBase = baseDir.endsWith('/') ? baseDir : `${baseDir}/`;
+                    const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
+                    const nextUrl = `${origin}${normalizedBase}${targetFile}${search}${hash}`;
+                    window.location.href = nextUrl;
+                    return;
+                }
+
+                const basePath = pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
+                const suffix = basePath === '/' ? '' : basePath;
+                const nextPath = lang === 'zh' ? (basePath || '/') : `/${lang}${suffix}`;
+                const nextUrl = origin + nextPath + search + hash;
                 window.location.href = nextUrl;
-                return;
-            }
-
-            // 開発サーバーなど言語プレフィックスを使う場合のパス切り替え
-            const basePath = pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
-            const suffix = basePath === '/' ? '' : basePath;
-            const nextPath = lang === 'zh' ? (basePath || '/') : `/${lang}${suffix}`;
-            const nextUrl = origin + nextPath + search + hash;
-            window.location.href = nextUrl;
+            });
         });
     })();
 </script>
-
