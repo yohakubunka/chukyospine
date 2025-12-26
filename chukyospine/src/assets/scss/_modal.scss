@@ -1,0 +1,50 @@
+.modal-toggle {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 300px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.modal-open-btn,
+.close-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* チェック入ったら表示 */
+.modal-toggle:checked + .modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wechat-btn button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.wechat-btn img {
+  width: 40px; /* 好きな大きさに */
+  height: auto;
+}
