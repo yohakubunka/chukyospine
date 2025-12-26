@@ -12,6 +12,7 @@
     const leftTitle = pickText(site.mainVisualTextLeftTitle);
     const leftText = pickText(site.mainVisualTextLeftText);
     const mainTitleSub = pickText(site.mainVisualMainTitleSub);
+    const contactTitle = pickText(site.header.contactTitle);
     const mainTitle = withBr(site.mainVisualMainTitle);
     const subtitleClass = `mainvisual_subtitle mainvisual_subtitle_${lang}`;
     const textClass = `mainvisual_text${lang === 'en' ? ' mainvisual_text_en' : ''}`;
@@ -25,7 +26,7 @@
             <img src="./images/doctor.png" alt="髯｢髟ｷ縺ｮ蜀咏悄" class="doctor_image" />
             <div class="contact_us">
                 <p class="contact_title">
-                    閨ｯ郢ｫ謌大・
+                        <%= contactTitle %>
                 </p>
                 <div class="contact_sns_wrap">
                     <a class="contact_sns" href="#" onclick="alert('Comming soon...'); return false;">
@@ -33,7 +34,7 @@
                         <p>LINE</p>
                     </a>
                     <img src="./images/sns_line.svg" alt="" />
-                    <button  class="wechat_modal_open" >
+                    <button  class="wechat_modal_open contact_sns"  >
                         <img src="./images/wechat_icon.svg" alt="WeChat 繧｢繧､繧ｳ繝ｳ" />
                         <p>WeChat</p>
                     </button>
