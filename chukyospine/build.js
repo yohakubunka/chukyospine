@@ -1,4 +1,4 @@
-﻿const fs = require('fs-extra');
+const fs = require('fs-extra');
 const path = require('path');
 const ejs = require('ejs');
 const sass = require('sass');
@@ -7,7 +7,6 @@ const sass = require('sass');
 const BUILD_DIR = 'dist';
 const SRC_DIR = 'src';
 const DATA_DIR = 'data';
-const LANGUAGE_DIR_MAP = { en: 'en', zh: 'zh' };
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // ディレクトリをクリーンアップ
@@ -17,7 +16,7 @@ async function cleanBuildDir() {
     try {
       await fs.remove(BUILD_DIR);
       await fs.ensureDir(BUILD_DIR);
-      console.log('✓ Build directory cleaned');
+      console.log('? Build directory cleaned');
       return;
     } catch (error) {
       const isBusy = error && (error.code === 'EBUSY' || error.code === 'EPERM');
@@ -32,7 +31,7 @@ async function cleanBuildDir() {
         try {
           await fs.ensureDir(BUILD_DIR);
           await fs.emptyDir(BUILD_DIR);
-          console.log('✓ Build directory emptied');
+          console.log('? Build directory emptied');
           return;
         } catch (emptyErr) {
           console.error('Error emptying build directory:', emptyErr);
@@ -84,15 +83,8 @@ async function compileEJS() {
           });
 
           await fs.writeFile(outputPath, html);
-          console.log(`✓ Compiled ${page} (${code}) -> ${outputName}`);
-
-          const langDir = LANGUAGE_DIR_MAP[code];
-          if (langDir) {
-            const dirPath = path.join(BUILD_DIR, langDir);
-            await fs.ensureDir(dirPath);
-            await fs.writeFile(path.join(dirPath, 'index.html'), html);
-            console.log(`✓ Placed ${code} page at /${langDir}/index.html`);
-          }
+          console.log(`? Compiled ${page} (${code}) -> ${outputName}`);
+          // 言語別ディレクトリへの複製は不要（ルートの index-xx.html を利用）
         }
       }
     }
@@ -112,13 +104,14 @@ async function compileSCSS() {
     await fs.ensureDir(cssDir);
     await fs.writeFile(path.join(cssDir, 'style.css'), result.css);
     
-    console.log('✓ SCSS compiled to CSS');
+    console.log('? SCSS compiled to CSS');
   } catch (error) {
     console.error('Error compiling SCSS:', error);
     process.exit(1);
   }
 }
 
+// プレーンCSSをコピー（例: scroll-hint.cssなど）
 async function copyAdditionalCSS() {
   try {
     const cssDir = path.join(SRC_DIR, 'assets/css');
@@ -143,7 +136,7 @@ async function copyJavaScript() {
     
     if (await fs.pathExists(jsDir)) {
       await fs.copy(jsDir, outputJsDir);
-      console.log('✓ JavaScript files copied');
+      console.log('? JavaScript files copied');
     }
   } catch (error) {
     console.error('Error copying JavaScript:', error);
@@ -159,33 +152,12 @@ async function copyImages() {
     
     if (await fs.pathExists(imagesDir)) {
       await fs.copy(imagesDir, outputImagesDir);
-      console.log('✓ Images copied');
+      console.log('? Images copied');
     } else {
       console.log('! No images directory found, skipping');
     }
   } catch (error) {
     console.error('Error copying images:', error);
-    process.exit(1);
-  }
-}
-
-// 言語別ディレクトリにもアセットを複製（サブディレクトリ配信の安全策）
-async function copyAssetsToLanguageDirs() {
-  try {
-    const assetDirs = ['css', 'js', 'images'];
-    for (const langDir of Object.values(LANGUAGE_DIR_MAP)) {
-      for (const asset of assetDirs) {
-        const srcDir = path.join(BUILD_DIR, asset);
-        const destDir = path.join(BUILD_DIR, langDir, asset);
-        if (await fs.pathExists(srcDir)) {
-          await fs.ensureDir(destDir);
-          await fs.copy(srcDir, destDir);
-        }
-      }
-    }
-    console.log('? Assets copied into language-prefixed directories');
-  } catch (error) {
-    console.error('Error copying assets to language directories:', error);
     process.exit(1);
   }
 }
@@ -201,7 +173,7 @@ async function copyStaticFiles() {
       
       if (await fs.pathExists(srcFile)) {
         await fs.copy(srcFile, destFile);
-        console.log(`✓ Copied ${file}`);
+        console.log(`? Copied ${file}`);
       }
     }
   } catch (error) {
@@ -222,12 +194,12 @@ function outputBuildInfo() {
     JSON.stringify(buildInfo, null, 2)
   );
   
-  console.log('✓ Build info generated');
+  console.log('? Build info generated');
 }
 
 // メインのビルド関数
 async function build() {
-  console.log('🚀 Starting build process...\n');
+  console.log('?? Starting build process...\n');
   
   try {
     await cleanBuildDir();
@@ -236,16 +208,15 @@ async function build() {
     await copyAdditionalCSS();
     await copyJavaScript();
     await copyImages();
-    await copyAssetsToLanguageDirs();
     await copyStaticFiles();
     outputBuildInfo();
     
-    console.log('\n🎉 Build completed successfully!');
-    console.log(`📦 Output directory: ${BUILD_DIR}`);
-    console.log('💡 You can now upload the contents of the dist folder to your server');
+    console.log('\n?? Build completed successfully!');
+    console.log(`?? Output directory: ${BUILD_DIR}`);
+    console.log('?? You can now upload the contents of the dist folder to your server');
     
   } catch (error) {
-    console.error('\n❁ Build failed:', error);
+    console.error('\n? Build failed:', error);
     process.exit(1);
   }
 }

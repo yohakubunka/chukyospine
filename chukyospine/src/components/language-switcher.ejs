@@ -12,8 +12,8 @@
         </button>
         <div class="lang-switcher_dropdown" role="listbox" aria-label="Language">
             <a class="lang-switcher_link <%= lang === 'ja' ? 'is-active' : '' %>" data-lang="ja" href="https://chukyospine.com/" target="_blank" rel="noopener noreferrer" role="option">日本語</a>
-            <a class="lang-switcher_link <%= lang === 'en' ? 'is-active' : '' %>" data-lang="en" href="#" role="option">English</a>
-            <a class="lang-switcher_link <%= lang === 'zh' ? 'is-active' : '' %>" data-lang="zh" href="#" role="option">中文</a>
+            <a class="lang-switcher_link <%= lang === 'en' ? 'is-active' : '' %>" data-lang="en" href="./index-en.html" role="option">English</a>
+            <a class="lang-switcher_link <%= lang === 'zh' ? 'is-active' : '' %>" data-lang="zh" href="./index.html" role="option">中文</a>
         </div>
     </div>
 </div>
@@ -52,34 +52,19 @@
         links.forEach((link) => {
             link.addEventListener('click', (event) => {
                 const lang = link.dataset.lang;
-
                 if (lang === 'ja') {
-                    event.preventDefault();
-                    const opened = window.open(link.href, '_blank', 'noopener,noreferrer');
-                    // ポップアップブロックされた場合は何もしない（元ページは維持）
-                    closeDropdown();
-                    event.preventDefault();
+                    // 日本語は外部リンクを新規タブで開く
                     return;
                 }
 
                 event.preventDefault();
                 const { pathname, search, hash, origin } = window.location;
-                const isStaticHtml = /\.html?$/.test(pathname);
-
-                if (isStaticHtml) {
-                    const pathParts = pathname.split('/');
-                    const baseDir = pathParts.slice(0, -1).join('/') || '/';
-                    const normalizedBase = baseDir.endsWith('/') ? baseDir : `${baseDir}/`;
-                    const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
-                    const nextUrl = `${origin}${normalizedBase}${targetFile}${search}${hash}`;
-                    window.location.href = nextUrl;
-                    return;
-                }
-
-                const basePath = pathname.replace(/^\/(ja|en|zh)(?=\/|$)/, '') || '/';
-                const suffix = basePath === '/' ? '' : basePath;
-                const nextPath = lang === 'zh' ? (basePath || '/') : `/${lang}${suffix}`;
-                const nextUrl = origin + nextPath + search + hash;
+                const parts = pathname.split('/');
+                if (parts.length > 0) parts.pop(); // remove current file name
+                const baseDir = parts.join('/') || '/';
+                const normalizedBase = baseDir.endsWith('/') ? baseDir : `${baseDir}/`;
+                const targetFile = lang === 'zh' ? 'index.html' : `index-${lang}.html`;
+                const nextUrl = `${origin}${normalizedBase}${targetFile}${search}${hash}`;
                 window.location.href = nextUrl;
             });
         });
