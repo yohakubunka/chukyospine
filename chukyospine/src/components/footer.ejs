@@ -1,4 +1,4 @@
-<%
+﻿<%
 const pick = (obj) => {
     if (obj === null || obj === undefined) return '';
     if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
@@ -23,7 +23,7 @@ const footerLogo = footerLogoMap[lang] || './images/footer_logo.svg';
             <img class="footer_logo" src="<%= footerLogo %>" alt="" aria-hidden="true" />
             <div class="footer_cta">
                 <div class="footer_social_icons">
-                    <a href="#" onclick="alert('Coming soon...'); return false;" aria-label="LINE">
+                    <a href="https://line.me/ti/p/LExnujFyUp"  target="_blank" aria-label="LINE">
                         <img class="" src="./images/line_icon.svg" alt="" aria-hidden="true" />
                     </a>
                     <button  class="wechat_modal_open">

@@ -1,4 +1,4 @@
-<% const pickText=(obj)=> {
+﻿<% const pickText=(obj)=> {
         if (!obj) return '';
         if (typeof obj === 'string') return obj;
         const candidates = [obj[lang], obj.ja, obj.en, obj.zh, ...Object.values(obj)];
@@ -29,7 +29,7 @@
                         <%= contactTitle %>
                 </p>
                 <div class="contact_sns_wrap">
-                    <a class="contact_sns" href="#" onclick="alert('Coming soon...'); return false;">
+                    <a class="contact_sns" href="https://line.me/ti/p/LExnujFyUp" target="_blank">
                         <img src="./images/line_icon.svg" alt="Line アイコン" />
                         <p>LINE</p>
                     </a>
